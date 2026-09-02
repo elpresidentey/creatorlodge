@@ -2,12 +2,15 @@ import Navbar from "@/components/Navbar";
 import { useTitle } from "@/hooks/useTitle";
 import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link, useNavigate } from "react-router-dom";
 import { toast } from "@/hooks/use-toast";
 import { spaces, outlets } from "@/lib/lounge-data";
 import { supabase } from "@/lib/supabase";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function BookSpace() {
+  const { user } = useAuth();
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const initialOutlet = searchParams.get("outlet") || outlets[0].slug;
   const initialSpace = searchParams.get("space") || "desk";
@@ -24,6 +27,11 @@ export default function BookSpace() {
   });
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [loading, setLoading] = useState(false);
+
+  // prefill from auth
+  useEffect(() => {
+    if (user?.email) setForm(f => ({ ...f, email: user.email!, name: user.user_metadata?.full_name || f.name }));
+  }, [user]);
 
   // keep outlet/space in sync if query changes
   useEffect(() => {
@@ -49,6 +57,12 @@ export default function BookSpace() {
 
   const submit = async (e: React.FormEvent, payOnline = false) => {
     e.preventDefault();
+    if (!user) {
+      const next = `/book?outlet=${form.outlet}&space=${form.space}`;
+      toast({ title: "Sign in required", description: "Please sign up or log in to book." });
+      navigate(`/auth?next=${encodeURIComponent(next)}`);
+      return;
+    }
     if (!form.date || !form.name || !form.email) {
       toast({ title: "Missing info", description: "Name, email and date are required." });
       setStep(2);
@@ -212,6 +226,15 @@ export default function BookSpace() {
 
               {step === 2 && (
                 <>
+                  {!user && (
+                    <div className="rounded-xl border border-amber-200 bg-amber-50 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                      <div>
+                        <p className="font-semibold text-sm text-[#1D1D1F]">Sign in required</p>
+                        <p className="text-xs text-[#6E6E73]">You must be logged in to confirm a booking.</p>
+                      </div>
+                      <Link to={`/auth?next=${encodeURIComponent(`/book?outlet=${form.outlet}&space=${form.space}`)}`} className="inline-flex items-center justify-center h-[40px] px-5 rounded-[10px] bg-[#1D1D1F] text-white text-sm font-medium hover:bg-black shrink-0">Sign up / Log in</Link>
+                    </div>
+                  )}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-2">
                       <label className="text-[#1D1D1F] font-semibold text-xs tracking-wide">Full name *</label>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const services = [
   { title: "Dine", desc: "Wood-fired plates, garden-led menu.", image: "https://images.pexels.com/photos/29106106/pexels-photo-29106106.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/menu" },
   { title: "Bar", desc: "Palm wine, low-ABV, long pours.", image: "https://images.pexels.com/photos/4485379/pexels-photo-4485379.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/menu" },
-  { title: "Gym", desc: "HIIT, mobility, quiet strength.", image: "https://images.pexels.com/photos/4464780/pexels-photo-4464780.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/spaces" },
+  { title: "Gym", desc: "HIIT, mobility, quiet strength. Tap for workouts →", image: "https://images.pexels.com/photos/4464780/pexels-photo-4464780.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/book?space=gym" },
   { title: "Work", desc: "Desks, offices, studios.", image: "https://images.pexels.com/photos/6805154/pexels-photo-6805154.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/spaces" },
 ];
 

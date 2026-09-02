@@ -29,7 +29,7 @@ export function createServer() {
   });
 
   app.get("/api/demo", handleDemo);
-  app.post("/api/bookings", rateLimit({ max: 20, windowMs: 15*60*1000 }), optionalAuth, handleBookings);
+  app.post("/api/bookings", rateLimit({ max: 20, windowMs: 15*60*1000 }), requireAuth, handleBookings);
   app.get("/api/bookings", rateLimit({ max: 30, windowMs: 15*60*1000 }), requireAuth, handleListBookings);
   app.post("/api/paystack/initialize", rateLimit({ max: 10, windowMs: 15*60*1000 }), handlePaystackInit);
   app.get("/api/paystack/verify/:reference", handlePaystackVerify);

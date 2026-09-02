@@ -134,6 +134,16 @@ export const spaces: Space[] = [
     outletSlugs: ["vi-dome", "yaba-foundry", "lekki-garden"],
     amenities: ["Fine Dining", "Bar"],
   },
+  {
+    id: "gym",
+    name: "Gym Access",
+    price: "₦5,000/day",
+    desc: "Weights, cardio, HIIT & mobility — trainers on floor 6am–10pm.",
+    capacity: "1 guest",
+    image: "https://images.pexels.com/photos/4464780/pexels-photo-4464780.jpeg?auto=compress&cs=tinysrgb&w=600",
+    outletSlugs: ["vi-dome", "lekki-garden"],
+    amenities: ["Weights", "Cardio", "HIIT", "Trainer", "Towels"],
+  },
 ];
 
 export type MenuItem = { name: string; price: string; desc: string; tag?: string };
