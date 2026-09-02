@@ -108,19 +108,61 @@ export default function Auth() {
     else { setResetSent(true); toast({ title: "Reset email sent", description: "Click the link to set a new password." }); }
   };
 
+  const [history, setHistory] = useState<any[]>([]);
+  const [hLoading, setHLoading] = useState(false);
+  useEffect(() => {
+    if (!user || !supabase) return;
+    setHLoading(true);
+    supabase.auth.getSession().then(({ data }) => {
+      const token = data.session?.access_token;
+      fetch("/api/bookings", { headers: token ? { Authorization: `Bearer ${token}` } : {} })
+        .then(r => r.json()).then(d => setHistory(d.bookings || [])).catch(()=>{})
+        .finally(()=> setHLoading(false));
+    });
+  }, [user]);
+
   if (user) {
     return (
       <div className="min-h-screen bg-brand-dark"><Navbar />
-        <section className="px-6 md:px-10 lg:px-16 py-16"><div className="max-w-[480px] mx-auto bg-white rounded-[20px] border border-black/5 p-8 text-center shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
-          <p className="text-[#6E6E73] text-xs font-semibold tracking-widest uppercase">Signed in — secure session</p>
-          <p className="font-cabin font-semibold text-xl text-[#1D1D1F] mt-2 break-all">{user.email}</p>
-          <p className="text-[#6E6E73] text-xs mt-1">Verified: {user.email_confirmed_at ? "yes" : "check inbox"} · {new Date(user.created_at).toLocaleDateString()}</p>
-          <p className="text-[#6E6E73] text-sm mt-3">Bookings & membership are tied to this email. Session stored httpOnly via Supabase (PKCE).</p>
-          <div className="flex gap-3 mt-6">
-            <Link to="/book" className="flex-1 inline-flex items-center justify-center h-[50px] rounded-[10px] bg-[#1D1D1F] text-white font-medium">Book a space</Link>
-            <button onClick={signOut} className="flex-1 h-[50px] rounded-[10px] border border-[#D2D2D7] bg-white font-medium hover:bg-[#F5F5F7]">Sign out</button>
+        <section className="px-6 md:px-10 lg:px-16 py-12 md:py-16">
+          <div className="max-w-[640px] mx-auto flex flex-col gap-6">
+            <div className="bg-white rounded-[20px] border border-black/5 p-8 text-center shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
+              <p className="text-[#6E6E73] text-xs font-semibold tracking-widest uppercase">Signed in — secure session</p>
+              <p className="font-cabin font-semibold text-xl text-[#1D1D1F] mt-2 break-all">{user.email}</p>
+              <p className="text-[#6E6E73] text-xs mt-1">Verified: {user.email_confirmed_at ? "yes" : "check inbox"} · {new Date(user.created_at).toLocaleDateString()}</p>
+              <p className="text-[#6E6E73] text-sm mt-3">Bookings & membership are tied to this email. Session stored httpOnly via Supabase (PKCE).</p>
+              <div className="flex gap-3 mt-6">
+                <Link to="/book" className="flex-1 inline-flex items-center justify-center h-[50px] rounded-[10px] bg-[#1D1D1F] text-white font-medium">Book a space</Link>
+                <button onClick={signOut} className="flex-1 h-[50px] rounded-[10px] border border-[#D2D2D7] bg-white text-[#1D1D1F] font-medium hover:bg-[#F5F5F7]">Sign out</button>
+              </div>
+            </div>
+
+            {/* History */}
+            <div className="bg-white rounded-[20px] border border-black/5 p-6 md:p-8 shadow-sm">
+              <div className="flex items-center justify-between">
+                <h2 className="font-cabin font-semibold text-[17px] text-[#1D1D1F]">Your history</h2>
+                <span className="text-xs text-[#6E6E73]">{hLoading ? "Loading…" : `${history.length} booking${history.length!==1?"s":""}`}</span>
+              </div>
+              {history.length === 0 && !hLoading ? (
+                <p className="text-[#6E6E73] text-sm mt-4 text-center py-6 border border-dashed border-black/10 rounded-xl">No bookings yet — <Link to="/book" className="text-[#0071E3] font-medium hover:underline">book your first space</Link></p>
+              ) : (
+                <div className="flex flex-col gap-3 mt-4">
+                  {history.map((b:any)=>(
+                    <div key={b.id} className="rounded-xl border border-black/5 bg-[#F5F5F7] p-4 flex flex-col gap-1">
+                      <div className="flex items-start justify-between gap-2">
+                        <p className="font-semibold text-sm text-[#1D1D1F]">{b.spaceId} · {b.outletSlug}</p>
+                        <span className={`text-[11px] font-semibold px-2 py-1 rounded-full ${b.paid ? "bg-[#34C759] text-white" : "bg-white border border-black/10 text-[#6E6E73]"}`}>{b.paid ? "Paid" : b.amount===0 ? "Free" : "Pay at venue"}</span>
+                      </div>
+                      <p className="text-xs text-[#6E6E73]">{b.date} {b.time} · {b.guests} guest(s) · {b.name}</p>
+                      {b.notes && <p className="text-xs text-[#424245] mt-1">“{b.notes}”</p>}
+                      <p className="text-[11px] text-[#86868B] mt-1">ID {b.id} · {new Date(b.createdAt).toLocaleDateString()}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
-        </div></section><Footer /></div>
+        </section><Footer /></div>
     );
   }
 
@@ -157,13 +199,13 @@ export default function Auth() {
               {mode==="signin" && <button type="button" onClick={reset} className="self-start text-xs text-[#0071E3] hover:underline font-medium">{resetSent ? "Reset email sent ✓" : "Forgot password?"}</button>}
             </div>
 
-            <button disabled={loading || cooldown>0} className="inline-flex items-center justify-center h-[50px] rounded-[10px] bg-[#1D1D1F] text-white font-medium hover:bg-black disabled:opacity-50 transition">
+            <button disabled={loading || cooldown>0} className="inline-flex items-center justify-center h-[50px] rounded-[10px] bg-[#1D1D1F] text-white font-medium hover:bg-black disabled:opacity-60 disabled:text-white/80 transition">
               {cooldown>0 ? `Wait ${cooldown}s` : loading ? "Please wait…" : mode==="signin"?"Sign in securely":"Create secure account"}
             </button>
 
             <div className="relative py-1"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-black/5" /></div><div className="relative flex justify-center"><span className="bg-white px-3 text-xs text-[#6E6E73]">or</span></div></div>
 
-            <button type="button" onClick={magic} disabled={cooldown>0} className="h-[50px] rounded-[10px] border border-[#D2D2D7] bg-white font-medium text-sm hover:bg-[#F5F5F7] disabled:opacity-50 flex items-center justify-center gap-2">
+            <button type="button" onClick={magic} disabled={cooldown>0} className="h-[50px] rounded-[10px] border border-[#D2D2D7] bg-white text-[#1D1D1F] font-medium text-sm hover:bg-[#F5F5F7] disabled:opacity-60 disabled:text-[#86868B] flex items-center justify-center gap-2">
               <span>✉️</span> Send magic link {cooldown>0 && `(${cooldown}s)`}
             </button>
 
