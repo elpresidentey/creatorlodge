@@ -1,0 +1,13 @@
+import pg from "pg";
+const cs = "postgresql://postgres.qupykncakpthuofrvvgf:6rrMnavZncYiXhoa@aws-0-eu-west-2.pooler.supabase.com:6543/postgres?pgbouncer=true";
+const p = new pg.Pool({ connectionString: cs, ssl: { rejectUnauthorized: false } });
+const q = async (sql) => { try { await p.query(sql); console.log("ok", sql.slice(0,60)); } catch(e){ console.log("fail", e.message.slice(0,120)); } };
+await q(`alter table bookings enable row level security;`);
+await q(`drop policy if exists "users_own_select" on bookings;`);
+await q(`create policy "users_own_select" on bookings for select to authenticated using (email = auth.email());`);
+await q(`drop policy if exists "users_own_insert" on bookings;`);
+await q(`create policy "users_own_insert" on bookings for insert to authenticated with check (email = auth.email());`);
+await q(`drop policy if exists "deny_anon" on bookings; create policy "deny_anon" on bookings for all to anon using (false) with check (false);`);
+const r = await p.query(`select policyname, roles, cmd from pg_policies where tablename='bookings'`);
+console.log(r.rows);
+await p.end();
