@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 
 export default function Navbar() {
@@ -7,11 +7,22 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const initial = user?.email?.[0]?.toUpperCase() || "•";
+  const location = useLocation();
+  const navigate = useNavigate();
+  const goHome = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
+  };
 
   return (
     <nav className="sticky top-0 w-full bg-[#1D1D1F]/95 backdrop-blur-xl supports-[backdrop-filter]:bg-[#1D1D1F]/80 border-b border-white/10 px-6 md:px-10 lg:px-16 py-2.5 flex items-center justify-between z-50 gap-3">
-      {/* Logo */}
-      <Link to="/" className="flex flex-col items-center gap-1 shrink-0">
+      {/* Logo — always an obvious way home */}
+      <a href="/" onClick={goHome} aria-label="Creators Lounge — home" className="flex flex-col items-center gap-1 shrink-0 rounded-lg px-1 py-0.5 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30 transition">
         <div className="w-11 h-11 rounded-full border-2 border-[#B79238] flex items-center justify-center bg-transparent">
           <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -24,11 +35,11 @@ export default function Navbar() {
         <span className="text-white font-cabin font-semibold text-[8px] tracking-[0.22em] text-center leading-none uppercase">
           CREATORS LOUNGE
         </span>
-      </Link>
+      </a>
 
       {/* Desktop Nav — 5 primary + More dropdown */}
       <div className="hidden lg:flex items-center gap-1 flex-1 justify-center max-w-[580px] mx-3">
-        <Link to="/" className="text-white font-cabin font-medium text-[13px] hover:text-brand-yellow transition-colors px-2 py-1.5 rounded-lg hover:bg-white/5">
+        <Link to="/" onClick={() => window.scrollTo({ top: 0 })} className="text-white font-cabin font-medium text-[13px] hover:text-brand-yellow transition-colors px-2 py-1.5 rounded-lg hover:bg-white/5">
           Home
         </Link>
         <Link to="/spaces" className="text-white font-cabin font-medium text-[13px] hover:text-brand-yellow transition-colors px-2 py-1.5 rounded-lg hover:bg-white/5">
