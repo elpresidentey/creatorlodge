@@ -26,8 +26,7 @@ export default function HeroSection() {
         aria-hidden
         className="absolute inset-0 h-full w-full object-cover opacity-[0.22] scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1D1D1F] via-[#1D1D1F]/92 to-[#1D1D1F]/55" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#1D1D1F] via-transparent to-[#1D1D1F]/50" />
+      <div className="absolute inset-0 bg-[#1D1D1F]/78" />
       <div className="absolute top-0 inset-x-0 h-px bg-white/[0.08]" />
       <div className="absolute bottom-0 inset-x-0 h-px bg-white/[0.08]" />
 
@@ -57,13 +56,13 @@ export default function HeroSection() {
             <div className="flex flex-wrap gap-3 pt-1">
               <a
                 href="/outlets"
-                className="inline-flex items-center justify-center h-[50px] px-7 rounded-[12px] bg-brand-yellow text-[#1D1D1F] font-semibold text-[14px] hover:opacity-90 transition-opacity shadow-[0_8px_24px_rgba(254,212,64,0.22)]"
+                className="inline-flex items-center justify-center h-[50px] px-7 rounded-[10px] bg-brand-yellow text-[#1D1D1F] font-medium text-[14px] hover:opacity-90 transition-opacity shadow-[0_8px_24px_rgba(254,212,64,0.22)]"
               >
                 Explore houses
               </a>
               <a
                 href="/spaces"
-                className="inline-flex items-center justify-center h-[50px] px-7 rounded-[12px] border border-white/18 bg-white/[0.04] text-white font-medium text-[14px] hover:bg-white/10 transition-colors backdrop-blur-sm"
+                className="inline-flex items-center justify-center h-[50px] px-7 rounded-[10px] border border-white/20 bg-white/[0.04] text-white font-medium text-[14px] hover:bg-white/10 transition-colors backdrop-blur-sm"
               >
                 View spaces
               </a>
@@ -81,7 +80,7 @@ export default function HeroSection() {
                   className="h-full w-full object-cover"
                   fetchPriority="high"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
+                <div className="absolute inset-0 bg-black/25" />
               </div>
 
               <div className="hero-float-delay absolute right-0 top-0 w-[46%] h-[48%] rounded-[22px] overflow-hidden border border-white/12 shadow-[0_16px_40px_rgba(0,0,0,0.4)] z-10">

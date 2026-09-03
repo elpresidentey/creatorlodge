@@ -23,7 +23,7 @@ export default function ServicesSection() {
           {services.map((s) => (
             <Link key={s.title} to={s.href} className="group relative overflow-hidden rounded-[20px] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.18)] hover:-translate-y-0.5 transition-all duration-300 aspect-[4/3.4]">
               <img src={s.image} alt={s.title} className="absolute inset-0 h-full w-full object-cover group-hover:scale-[1.04] transition duration-700" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-70" />
+              <div className="absolute inset-0 bg-black/20" />
               <div className="absolute bottom-3 inset-x-3 rounded-[16px] bg-white/[0.12] backdrop-blur-xl border border-white/20 p-4 shadow-[0_4px_24px_rgba(0,0,0,0.15)]">
                 <h3 className="font-cabin font-semibold text-[17px] tracking-[-0.02em] text-white leading-none drop-shadow-[0_1px_8px_rgba(0,0,0,0.3)]">{s.title}</h3>
                 <p className="text-white/80 text-xs leading-relaxed mt-1 drop-shadow-sm">{s.desc}</p>

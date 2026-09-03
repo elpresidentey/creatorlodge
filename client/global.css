@@ -82,7 +82,7 @@
 
 @layer components {
   .surface-card {
-    @apply rounded-[22px] overflow-hidden bg-white border border-black/[0.05]
+    @apply rounded-[20px] overflow-hidden bg-white border border-black/[0.05]
       shadow-[0_1px_2px_rgba(29,29,31,0.04),0_10px_28px_rgba(29,29,31,0.06)]
       transition-[transform,box-shadow,border-color] duration-500;
     transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
@@ -97,17 +97,17 @@
     @apply outline-none ring-2 ring-[#0071E3] ring-offset-2;
   }
   .surface-card-dark {
-    @apply rounded-[22px] overflow-hidden text-white
-      bg-gradient-to-b from-[#2C2C30] to-[#1D1D1F]
-      border border-[#FED440]/35
-      shadow-[0_12px_40px_rgba(254,212,64,0.1)]
+    @apply rounded-[20px] overflow-hidden text-white
+      bg-[#1D1D1F]
+      border border-white/10
+      shadow-[0_8px_32px_rgba(0,0,0,0.18)]
       transition-[transform,box-shadow,border-color] duration-500;
     transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
   @media (hover: hover) {
     .surface-card-dark:hover {
-      @apply -translate-y-1.5 border-[#FED440]/55
-        shadow-[0_18px_50px_rgba(254,212,64,0.16)];
+      @apply -translate-y-1.5 border-white/20
+        shadow-[0_12px_40px_rgba(0,0,0,0.22)];
     }
   }
   .surface-media {

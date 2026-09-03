@@ -27,8 +27,8 @@ export default function TeamSection() {
           {team.map((m) => (
             <Link key={m.name} to={`/outlets/${outletSlug[m.outlet] || "vi-dome"}`} className="group relative overflow-hidden rounded-[20px] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.18)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.22)] hover:-translate-y-0.5 transition-all duration-300 aspect-[4/3.4]">
               <img src={m.image} alt={`${m.name} — ${m.role}`} style={{ objectPosition: (m as any).pos }} className="absolute inset-0 h-full w-full object-cover group-hover:scale-[1.04] transition duration-700" loading="lazy" />
-              {/* subtle top vignette keeps face bright */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-60" />
+              {/* subtle scrim keeps glass legible, face stays bright */}
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-black/25" />
               <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-white/90 backdrop-blur-md px-2.5 py-1 border border-white/30 shadow-sm">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#34C759] shadow-[0_0_6px_rgba(52,199,89,0.6)]" />
                 <span className="text-[#1D1D1F] text-[8px] font-semibold tracking-widest uppercase">{m.outlet}</span>
@@ -43,7 +43,7 @@ export default function TeamSection() {
           ))}
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-white border border-black/5 px-6 py-5 shadow-sm">
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-[16px] bg-white border border-black/5 px-6 py-5 shadow-sm">
           <p className="text-[#424245] text-sm">Want to join? <span className="text-[#1D1D1F] font-medium">We're hiring hosts & creatives.</span></p>
           <a href="/contact" className="inline-flex items-center justify-center h-[50px] px-6 rounded-[10px] bg-[#1D1D1F] text-white font-medium text-[14px] hover:bg-black transition-colors">View open roles</a>
         </div>

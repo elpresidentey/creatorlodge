@@ -21,41 +21,41 @@ export default function Navbar() {
             />
           </svg>
         </div>
-        <span className="text-white font-bold text-[8px] tracking-widest font-times text-center leading-none uppercase" style={{ fontFamily: "Times, serif" }}>
+        <span className="text-white font-cabin font-semibold text-[8px] tracking-[0.22em] text-center leading-none uppercase">
           CREATORS LOUNGE
         </span>
       </Link>
 
       {/* Desktop Nav — 5 primary + More dropdown */}
       <div className="hidden lg:flex items-center gap-1 flex-1 justify-center max-w-[580px] mx-3">
-        <Link to="/" className="text-white font-bold text-[12px] tracking-wide hover:text-brand-yellow transition-colors px-2 py-1.5 rounded-lg hover:bg-white/5">
+        <Link to="/" className="text-white font-cabin font-medium text-[13px] hover:text-brand-yellow transition-colors px-2 py-1.5 rounded-lg hover:bg-white/5">
           Home
         </Link>
-        <Link to="/spaces" className="text-white font-bold text-[12px] tracking-wide hover:text-brand-yellow transition-colors px-2 py-1.5 rounded-lg hover:bg-white/5">
+        <Link to="/spaces" className="text-white font-cabin font-medium text-[13px] hover:text-brand-yellow transition-colors px-2 py-1.5 rounded-lg hover:bg-white/5">
           Spaces
         </Link>
-        <Link to="/outlets" className="text-white font-bold text-[12px] tracking-wide hover:text-brand-yellow transition-colors px-2 py-1.5 rounded-lg hover:bg-white/5">
+        <Link to="/outlets" className="text-white font-cabin font-medium text-[13px] hover:text-brand-yellow transition-colors px-2 py-1.5 rounded-lg hover:bg-white/5">
           Outlets
         </Link>
-        <Link to="/membership" className="text-white font-bold text-[12px] tracking-wide hover:text-brand-yellow transition-colors px-2 py-1.5 rounded-lg hover:bg-white/5">
+        <Link to="/membership" className="text-white font-cabin font-medium text-[13px] hover:text-brand-yellow transition-colors px-2 py-1.5 rounded-lg hover:bg-white/5">
           Membership
         </Link>
-        <Link to="/contact" className="text-white font-bold text-[12px] tracking-wide hover:text-brand-yellow transition-colors px-2 py-1.5 rounded-lg hover:bg-white/5">
+        <Link to="/contact" className="text-white font-cabin font-medium text-[13px] hover:text-brand-yellow transition-colors px-2 py-1.5 rounded-lg hover:bg-white/5">
           Contact
         </Link>
 
         {/* More dropdown — click + hover with bridge, no flicker */}
         <div className="relative">
-          <button onClick={() => setMoreOpen(!moreOpen)} onMouseEnter={() => setMoreOpen(true)} className="text-white/80 font-bold text-[12px] tracking-wide hover:text-white transition-colors px-2 py-1.5 rounded-lg hover:bg-white/5 flex items-center gap-1">
+          <button onClick={() => setMoreOpen(!moreOpen)} onMouseEnter={() => setMoreOpen(true)} className="text-white/80 font-cabin font-medium text-[13px] hover:text-white transition-colors px-2 py-1.5 rounded-lg hover:bg-white/5 flex items-center gap-1">
             More <span className={`text-[9px] transition ${moreOpen ? "rotate-180" : ""}`}>▼</span>
           </button>
           {moreOpen && (
             <div onMouseLeave={() => setMoreOpen(false)} className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50">
               <div className="w-44 bg-white rounded-xl shadow-xl border border-black/10 overflow-hidden py-1">
-                <Link to="/menu" onClick={() => setMoreOpen(false)} className="block px-4 py-2.5 text-sm font-bold text-[#1D1D1F] hover:bg-black/5">Menu</Link>
-                <Link to="/events" onClick={() => setMoreOpen(false)} className="block px-4 py-2.5 text-sm font-bold text-[#1D1D1F] hover:bg-black/5">Events</Link>
-                <Link to="/community" onClick={() => setMoreOpen(false)} className="block px-4 py-2.5 text-sm font-bold text-[#1D1D1F] hover:bg-black/5">Community</Link>
-                <Link to="/about" onClick={() => setMoreOpen(false)} className="block px-4 py-2.5 text-sm font-bold text-[#1D1D1F] hover:bg-black/5">About</Link>
+                <Link to="/menu" onClick={() => setMoreOpen(false)} className="block px-4 py-2.5 text-sm font-medium text-[#1D1D1F] hover:bg-black/5">Menu</Link>
+                <Link to="/events" onClick={() => setMoreOpen(false)} className="block px-4 py-2.5 text-sm font-medium text-[#1D1D1F] hover:bg-black/5">Events</Link>
+                <Link to="/community" onClick={() => setMoreOpen(false)} className="block px-4 py-2.5 text-sm font-medium text-[#1D1D1F] hover:bg-black/5">Community</Link>
+                <Link to="/about" onClick={() => setMoreOpen(false)} className="block px-4 py-2.5 text-sm font-medium text-[#1D1D1F] hover:bg-black/5">About</Link>
               </div>
             </div>
           )}
@@ -107,17 +107,17 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="absolute top-full left-0 right-0 bg-brand-dark border-t border-white/10 flex flex-col p-6 gap-4 lg:hidden max-h-[75vh] overflow-auto shadow-2xl z-50">
-          <Link to="/" className="text-white font-bold text-base" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to="/spaces" className="text-white font-bold text-base" onClick={() => setMenuOpen(false)}>Spaces</Link>
-          <Link to="/outlets" className="text-white font-bold text-base" onClick={() => setMenuOpen(false)}>Outlets</Link>
-          <Link to="/membership" className="text-white font-bold text-base" onClick={() => setMenuOpen(false)}>Membership</Link>
+          <Link to="/" className="text-white font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to="/spaces" className="text-white font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Spaces</Link>
+          <Link to="/outlets" className="text-white font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Outlets</Link>
+          <Link to="/membership" className="text-white font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Membership</Link>
           <div className="h-px bg-white/10 my-1" />
-          <p className="text-white/40 text-xs font-bold tracking-widest uppercase">More</p>
-          <Link to="/menu" className="text-white/90 font-bold text-base" onClick={() => setMenuOpen(false)}>Menu</Link>
-          <Link to="/events" className="text-white/90 font-bold text-base" onClick={() => setMenuOpen(false)}>Events</Link>
-          <Link to="/community" className="text-white/90 font-bold text-base" onClick={() => setMenuOpen(false)}>Community</Link>
-          <Link to="/about" className="text-white/90 font-bold text-base" onClick={() => setMenuOpen(false)}>About</Link>
-          <Link to="/contact" className="text-white/90 font-bold text-base" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <p className="text-white/40 text-xs font-medium tracking-[0.18em] uppercase">More</p>
+          <Link to="/menu" className="text-white/90 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Menu</Link>
+          <Link to="/events" className="text-white/90 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Events</Link>
+          <Link to="/community" className="text-white/90 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Community</Link>
+          <Link to="/about" className="text-white/90 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>About</Link>
+          <Link to="/contact" className="text-white/90 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Contact</Link>
           <div className="flex flex-col gap-3 pt-3 border-t border-white/10 mt-1">
             {user ? (
               <>
