@@ -26,7 +26,7 @@ export default function HeroSection() {
         aria-hidden
         className="absolute inset-0 h-full w-full object-cover opacity-[0.22] scale-105"
       />
-      <div className="absolute inset-0 bg-[#1D1D1F]/78" />
+      <div className="absolute inset-0 bg-[#1D1D1F]/85" />
       <div className="absolute top-0 inset-x-0 h-px bg-white/[0.08]" />
       <div className="absolute bottom-0 inset-x-0 h-px bg-white/[0.08]" />
 
