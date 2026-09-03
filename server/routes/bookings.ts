@@ -1,6 +1,7 @@
 import { RequestHandler } from "express";
 import { BookingRequestSchema, BookingResponse } from "../../shared/api";
 import { getPool, ensureBookingsTable } from "../lib/db";
+import { sendBookingEmail } from "../lib/email";
 
 // server-side price lookup (prevent client tampering) — mirrors lounge-data but canonical
 const priceMap: Record<string, number> = {
@@ -25,10 +26,19 @@ export const handleBookings: RequestHandler = async (req, res) => {
   // server-side amount (ignore client amount)
   const amount = priceMap[body.spaceId] ?? 0;
 
-  // optional: if Authorization present, verify email matches token user (handled by optionalAuth)
   const user = (req as any).user;
   if (user && user.email?.toLowerCase() !== body.email.toLowerCase()) {
     return res.status(403).json({ error: "Email must match signed-in user" });
+  }
+
+  // Availability check
+  const useDbCheck = await checkDb();
+  if (useDbCheck) {
+    const pool = getPool()!;
+    const conflict = await pool.query(`select id from bookings where outlet_slug=$1 and space_id=$2 and date=$3 and coalesce(time,'')=coalesce($4,'') limit 1`, [body.outletSlug, body.spaceId, body.date, body.time || null]);
+    if ((conflict.rowCount ?? 0) > 0) return res.status(409).json({ error: "Slot already booked — pick another time" });
+  } else {
+    if (memBookings.find(b => b.outletSlug===body.outletSlug && b.spaceId===body.spaceId && b.date===body.date && (b.time||"")=== (body.time||""))) return res.status(409).json({ error: "Slot already booked — pick another time" });
   }
 
   const id = `CL-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2, 5).toUpperCase()}`;
@@ -44,6 +54,9 @@ export const handleBookings: RequestHandler = async (req, res) => {
         [id, body.outletSlug, body.spaceId, body.date, body.time || null, body.guests || null, body.name, body.email, body.notes || null, createdAt, amount, amount === 0]
       );
     } catch (e: any) {
+      if (e?.code === "23505") {
+        return res.status(409).json({ error: "Slot already booked — pick another time" });
+      }
       console.error("DB insert failed, falling back to memory:", e.message);
       memBookings.push(record);
     }
@@ -56,29 +69,44 @@ export const handleBookings: RequestHandler = async (req, res) => {
     message: `Booking confirmed for ${body.spaceId} at ${body.outletSlug} on ${body.date}`,
     booking: body,
   };
+  // fire-and-forget email (don't block response)
+  sendBookingEmail(body.email, `Booking ${id} confirmed — ${body.spaceId} @ ${body.outletSlug}`, `<p>Hi ${body.name},</p><p>Your booking <b>${id}</b> for <b>${body.spaceId}</b> at <b>${body.outletSlug}</b> on <b>${body.date} ${body.time||""}</b> is confirmed.</p><p>Guests: ${body.guests} · Amount: ₦${amount.toLocaleString()} ${amount===0?"(Free)":""}</p><p>View history: https://creatorslounge.vercel.app/auth</p>`).catch(()=>{});
   res.status(201).json({ ...response, amount });
 };
 
 export const handleListBookings: RequestHandler = async (req, res) => {
-  // protected: only allow if authenticated or internal
   const user = (req as any).user;
   if (!user) return res.status(401).json({ error: "Unauthorized — sign in to view bookings" });
-
+  const admins = (process.env.ADMIN_EMAILS || "").split(",").map(s=>s.trim().toLowerCase()).filter(Boolean);
+  const isAdmin = admins.includes(user.email.toLowerCase()) || user.email.toLowerCase().endsWith("@creatorslounge.com");
   const useDb = await checkDb();
   if (useDb) {
     const pool = getPool()!;
     try {
-      // scope to user's email
-      const r = await pool.query(
-        `select id, outlet_slug as "outletSlug", space_id as "spaceId", date, time, guests, name, email, notes, created_at as "createdAt", amount, paid from bookings where email=$1 order by created_at desc limit 100`,
-        [user.email]
-      );
+      if (isAdmin) {
+        const r = await pool.query(`select id, outlet_slug as "outletSlug", space_id as "spaceId", date, time, guests, name, email, notes, created_at as "createdAt", amount, paid from bookings order by created_at desc limit 200`);
+        return res.json({ bookings: r.rows, source: "db", admin: true });
+      }
+      const r = await pool.query(`select id, outlet_slug as "outletSlug", space_id as "spaceId", date, time, guests, name, email, notes, created_at as "createdAt", amount, paid from bookings where email=$1 order by created_at desc limit 100`, [user.email]);
       return res.json({ bookings: r.rows, source: "db" });
-    } catch (e: any) {
-      console.error("DB select failed:", e.message);
-    }
+    } catch (e: any) { console.error("DB select failed:", e.message); }
   }
-  // memory fallback scoped
-  const mine = memBookings.filter(b => b.email.toLowerCase() === user.email.toLowerCase());
-  res.json({ bookings: mine, source: "memory" });
+  const mine = isAdmin ? memBookings : memBookings.filter(b => b.email.toLowerCase() === user.email.toLowerCase());
+  res.json({ bookings: mine, source: "memory", admin: isAdmin });
+};
+
+export const handleDeleteBooking: RequestHandler = async (req, res) => {
+  const user = (req as any).user;
+  if (!user) return res.status(401).json({ error: "Unauthorized" });
+  const id = (req.params as any).id;
+  const pool = getPool();
+  if (pool) {
+    try {
+      const r = await pool.query(`delete from bookings where id=$1 and email=$2 returning id`, [id, user.email]);
+      if ((r.rowCount ?? 0) > 0) return res.json({ ok: true });
+    } catch(e:any){ return res.status(500).json({ error: e.message }); }
+  }
+  const idx = memBookings.findIndex(b => b.id===id && b.email.toLowerCase()===user.email.toLowerCase());
+  if (idx>=0) { memBookings.splice(idx,1); return res.json({ ok:true }); }
+  res.status(404).json({ error: "Not found" });
 };

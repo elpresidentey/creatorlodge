@@ -2,6 +2,12 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { createClient } from "@supabase/supabase-js";
 import pg from "pg";
 
+async function sendEmail(to: string, subject: string, html: string) {
+  const key = process.env.RESEND_API_KEY;
+  if (!key) { console.log(`[email mock] to:${to}`); return; }
+  await fetch("https://api.resend.com/emails", { method: "POST", headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" }, body: JSON.stringify({ from: process.env.EMAIL_FROM || "Creators Lounge <hello@creatorslounge.ng>", to, subject, html }) }).catch(()=>{});
+}
+
 function getPool() {
   const cs = process.env.DATABASE_POOLER_URL || process.env.DATABASE_URL || "";
   if (!cs) return null;
@@ -31,21 +37,32 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const pool = getPool();
     if (pool) {
       try {
+        const c = await pool.query(`select id from bookings where outlet_slug=$1 and space_id=$2 and date=$3 and coalesce(time,'')=coalesce($4,'') limit 1`, [b.outletSlug, b.spaceId, b.date, b.time||null]);
+        if ((c.rowCount ?? 0) > 0) { await pool.end(); return res.status(409).json({ error: "Slot already booked" }); }
         await pool.query(`insert into bookings (id, outlet_slug, space_id, date, time, guests, name, email, notes, amount, paid) values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)`, [id, b.outletSlug, b.spaceId, b.date, b.time||null, b.guests||null, b.name, b.email, b.notes||null, amount, amount===0]);
         await pool.end();
-      } catch(e:any){ return res.status(500).json({ error: e.message }); }
+      } catch(e:any){
+        await pool.end().catch(()=>{});
+        if (e?.code === "23505") return res.status(409).json({ error: "Slot already booked" });
+        return res.status(500).json({ error: e.message });
+      }
     }
+    sendEmail(b.email, `Booking ${id} confirmed`, `<p>Hi ${b.name}, booking ${id} for ${b.spaceId} @ ${b.outletSlug} on ${b.date} confirmed. Amount ₦${amount.toLocaleString()}</p>`).catch(()=>{});
     return res.status(201).json({ id, message: `Booking confirmed for ${b.spaceId}`, booking: b, amount });
   }
 
   if (req.method === "GET") {
     if (!user) return res.status(401).json({ error: "Sign in required" });
+    const admins = (process.env.ADMIN_EMAILS || "").split(",").map((s:string)=>s.trim().toLowerCase()).filter(Boolean);
+    const isAdmin = admins.includes(user.email.toLowerCase()) || user.email.toLowerCase().endsWith("@creatorslounge.com");
     const pool = getPool();
     if (!pool) return res.json({ bookings: [], source: "no-db" });
     try {
-      const r = await pool.query(`select id, outlet_slug as "outletSlug", space_id as "spaceId", date, time, guests, name, email, notes, created_at as "createdAt", amount, paid from bookings where email=$1 order by created_at desc limit 100`, [user.email]);
+      const r = isAdmin
+        ? await pool.query(`select id, outlet_slug as "outletSlug", space_id as "spaceId", date, time, guests, name, email, notes, created_at as "createdAt", amount, paid from bookings order by created_at desc limit 200`)
+        : await pool.query(`select id, outlet_slug as "outletSlug", space_id as "spaceId", date, time, guests, name, email, notes, created_at as "createdAt", amount, paid from bookings where email=$1 order by created_at desc limit 100`, [user.email]);
       await pool.end();
-      return res.json({ bookings: r.rows, source: "db" });
+      return res.json({ bookings: r.rows, source: "db", admin: isAdmin });
     } catch(e:any){ return res.status(500).json({ error: e.message }); }
   }
 

@@ -82,6 +82,8 @@ export async function ensureBookingsTable(): Promise<boolean> {
     // Add paid column if not exists
     await p.query(`alter table bookings add column if not exists paid boolean default false;`);
     await p.query(`alter table bookings add column if not exists amount integer;`);
+    // Availability: prevent double-book same space/outlet/date/time
+    await p.query(`create unique index if not exists bookings_unique_slot on bookings (outlet_slug, space_id, date, coalesce(time,''));`);
     ensured = true;
     return true;
   } catch (e: any) {
