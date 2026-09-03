@@ -25,19 +25,17 @@ export default function TeamSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {team.map((m) => (
-            <Link key={m.name} to={`/outlets/${outletSlug[m.outlet] || "vi-dome"}`} className="group relative overflow-hidden rounded-[20px] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.18)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.22)] hover:-translate-y-0.5 transition-all duration-300 aspect-[4/3.4]">
+              <Link key={m.name} to={`/outlets/${outletSlug[m.outlet] || "vi-dome"}`} className="group relative overflow-hidden rounded-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.18)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.22)] hover:-translate-y-0.5 transition-all duration-300 aspect-[4/3.4]">
               <img src={m.image} alt={`${m.name} — ${m.role}`} style={{ objectPosition: (m as any).pos }} className="absolute inset-0 h-full w-full object-cover group-hover:scale-[1.04] transition duration-700" loading="lazy" />
-              {/* subtle scrim keeps glass legible, face stays bright */}
-              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-black/25" />
-              <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-white/90 backdrop-blur-md px-2.5 py-1 border border-white/30 shadow-sm">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#34C759] shadow-[0_0_6px_rgba(52,199,89,0.6)]" />
-                <span className="text-[#1D1D1F] text-[8px] font-semibold tracking-widest uppercase">{m.outlet}</span>
+              <div className="absolute inset-0 bg-black/45 group-hover:bg-black/50 transition" />
+              <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-black/50 px-2.5 py-1 border border-white/15">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#34C759]" />
+                <span className="text-white text-[8px] font-semibold tracking-widest uppercase">{m.outlet}</span>
               </div>
-              {/* liquid glass */}
-              <div className="absolute bottom-3 inset-x-3 rounded-[16px] bg-white/[0.12] backdrop-blur-xl border border-white/20 p-4 shadow-[0_4px_24px_rgba(0,0,0,0.15)]">
-                <h3 className="font-cabin font-semibold text-[16px] tracking-[-0.02em] text-white leading-none drop-shadow-[0_1px_8px_rgba(0,0,0,0.3)]">{m.name}</h3>
-                <p className="text-white/90 text-xs font-medium tracking-wide mt-1 drop-shadow-sm">{m.role}</p>
-                <p className="text-white/60 text-[11px] mt-1 flex items-center gap-1">View house <span className="text-white/80">→</span></p>
+              <div className="absolute bottom-0 inset-x-0 p-5">
+                <h3 className="font-cabin font-semibold text-[16px] tracking-[-0.02em] text-white leading-none">{m.name}</h3>
+                <p className="text-white/80 text-xs font-medium tracking-wide mt-1.5">{m.role}</p>
+                <p className="text-white/60 text-[11px] mt-1 flex items-center gap-1">View house <span>→</span></p>
               </div>
             </Link>
           ))}

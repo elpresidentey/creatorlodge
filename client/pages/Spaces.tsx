@@ -2,51 +2,52 @@ import Navbar from "@/components/Navbar";
 import { useTitle } from "@/hooks/useTitle";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { spaces, outlets } from "@/lib/lounge-data";
 
 export default function Spaces() {
+  useTitle("Spaces — Work the way you want");
   const [filter, setFilter] = useState<string>("all");
-  const filtered = filter === "all" ? spaces : spaces.filter((s) => s.outletSlugs.includes(filter));
+  const [q, setQ] = useState("");
+  const [dq, setDq] = useState("");
+  useEffect(() => { const t = setTimeout(() => setDq(q), 300); return () => clearTimeout(t); }, [q]);
+  const filtered = (() => {
+    let r = filter === "all" ? spaces : spaces.filter((s) => s.outletSlugs.includes(filter));
+    if (dq) {
+      const qq = dq.toLowerCase();
+      r = r.filter(s => `${s.name} ${s.desc} ${s.amenities.join(" ")}`.toLowerCase().includes(qq));
+    }
+    return r;
+  })();
 
   return (
     <div className="min-h-screen bg-[#1D1D1F]">
       <Navbar />
       <section className="px-6 md:px-10 lg:px-16 py-16 md:py-24">
         <div className="max-w-[1312px] mx-auto">
-          <p className="text-[#6E6E73] md:text-white/50 font-semibold tracking-[0.18em] text-xs uppercase">Spaces</p>
-          <h1 className="font-cabin font-semibold text-[56px] leading-[0.92] tracking-[-0.04em] text-white mt-3">
-            Work. Create. Celebrate.
-          </h1>
+          <p className="text-white/50 font-semibold tracking-[0.18em] text-xs uppercase">Spaces</p>
+          <h1 className="font-cabin font-semibold text-[56px] leading-[0.92] tracking-[-0.04em] text-white mt-3">Work. Create. Celebrate.</h1>
           <p className="text-white/60 text-[15px] leading-relaxed mt-3 max-w-xl">From hot desks to podcast booths — every space is designed for focus and flow.</p>
-
-          <div className="flex flex-wrap gap-2 mt-6">
-            <button
-              onClick={() => setFilter("all")}
-              className={`px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase ${filter === "all" ? "bg-white text-brand-dark" : "bg-white/10 text-white"}`}
-            >
-              All outlets
-            </button>
-            {outlets.map((o) => (
-              <button
-                key={o.slug}
-                onClick={() => setFilter(o.slug)}
-                className={`px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase ${filter === o.slug ? "bg-brand-yellow text-brand-dark" : "bg-white/10 text-white hover:bg-white/20"}`}
-              >
-                {o.slug.replace("-", " ")}
-              </button>
-            ))}
+          <div className="flex flex-col sm:flex-row gap-3 mt-6">
+            <div className="flex flex-wrap gap-2">
+              <button onClick={() => setFilter("all")} className={`px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase ${filter === "all" ? "bg-white text-[#1D1D1F]" : "bg-white/10 text-white"}`}>All outlets</button>
+              {outlets.map((o) => (
+                <button key={o.slug} onClick={() => setFilter(o.slug)} className={`px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase ${filter === o.slug ? "bg-brand-yellow text-[#1D1D1F]" : "bg-white/10 text-white hover:bg-white/20"}`}>{o.slug.replace("-", " ")}</button>
+              ))}
+            </div>
+            <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Search spaces…" className="sm:ml-auto w-full sm:w-64 h-[44px] rounded-full bg-white/10 border border-white/15 px-4 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-white/30" />
           </div>
+          <p className="text-white/40 text-xs mt-3">{filtered.length} result{filtered.length!==1?"s":""} {dq && `for "${dq}"`}</p>
         </div>
       </section>
 
       <section className="px-6 md:px-10 lg:px-16 pb-16 md:pb-24">
         <div className="max-w-[1312px] mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {filtered.map((s) => (
-            <div key={s.id} className="group surface-card flex flex-col">
-              <div className="surface-media h-[180px]">
-                <img src={s.image} alt={s.name} />
-                <span className="surface-chip absolute top-3 right-3 z-10 bg-brand-yellow text-[#1D1D1F]">{s.price}</span>
+            <div key={s.id} className="group bg-white rounded-[20px] overflow-hidden border border-black/5 shadow-sm flex flex-col hover:shadow-md transition">
+              <div className="relative h-[180px] overflow-hidden">
+                <img src={s.image} alt={s.name} className="h-full w-full object-cover" />
+                <span className="absolute top-3 right-3 z-10 bg-brand-yellow text-[#1D1D1F] text-[11px] font-semibold px-2 py-0.5 rounded-full">{s.price}</span>
               </div>
               <div className="p-6 flex flex-col gap-2 flex-1">
                 <h3 className="font-cabin font-semibold text-[17px] leading-tight text-[#1D1D1F]">{s.name}</h3>
@@ -54,18 +55,12 @@ export default function Spaces() {
                 <p className="text-[#424245] text-[15px] leading-relaxed">{s.desc}</p>
                 <div className="flex flex-wrap gap-1.5 mt-2">
                   {s.amenities.map((a) => (
-                    <span key={a} className="bg-[#F5F5F7] border border-black/5 text-[#424245] text-[11px] px-2 py-1 rounded-full">
-                      {a}
-                    </span>
+                    <span key={a} className="bg-[#F5F5F7] border border-black/5 text-[#424245] text-[11px] px-2 py-1 rounded-full">{a}</span>
                   ))}
                 </div>
                 <div className="flex gap-3 mt-4">
-                  <Link to={`/book?space=${s.id}&outlet=${filter !== "all" ? filter : outlets[0].slug}`} className="inline-flex flex-1 bg-[#1D1D1F] text-white text-[15px] font-medium rounded-[10px] text-center hover:bg-black h-[50px] items-center justify-center">
-                    Book
-                  </Link>
-                  <Link to="/outlets" className="inline-flex items-center justify-center px-4 border border-black/10 text-[#1D1D1F] text-[15px] font-medium h-[50px] rounded-[10px] hover:bg-[#F5F5F7]">
-                    Outlets
-                  </Link>
+                  <Link to={`/book?space=${s.id}&outlet=${filter !== "all" ? filter : outlets[0].slug}`} className="inline-flex flex-1 bg-[#1D1D1F] text-white text-[15px] font-medium rounded-[10px] text-center hover:bg-black h-[50px] items-center justify-center">Book</Link>
+                  <Link to="/outlets" className="inline-flex items-center justify-center px-4 border border-black/10 text-[#1D1D1F] text-[15px] font-medium h-[50px] rounded-[10px] hover:bg-[#F5F5F7]">Outlets</Link>
                 </div>
               </div>
             </div>
