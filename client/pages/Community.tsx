@@ -11,7 +11,7 @@ export default function Community() {
       <section className="px-6 md:px-10 lg:px-16 py-16 md:py-24 text-center">
         <div className="max-w-[1312px] mx-auto">
         <p className="text-white/50 font-semibold tracking-[0.18em] text-xs uppercase">Community</p>
-        <h1 className="font-cabin font-semibold text-[56px] leading-[0.92] tracking-[-0.04em] text-white mt-3">
+        <h1 className="font-cabin font-semibold text-[40px] sm:text-[56px] leading-[0.92] tracking-[-0.04em] text-white mt-3">
           Built by creators
         </h1>
         <p className="text-white/60 text-[15px] mt-3 max-w-2xl mx-auto">Meet members who call the lounge home — founders, filmmakers, designers, podcasters.</p>

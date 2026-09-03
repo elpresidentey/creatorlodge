@@ -29,11 +29,11 @@ export default function OutletDetail() {
 
       <section className="relative h-[320px] md:h-[460px] overflow-hidden">
         <img src={outlet.image} alt={outlet.name} className="absolute inset-0 w-full h-full object-cover scale-105" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1D1D1F] via-black/50 to-black/25" />
+        <div className="absolute inset-0 bg-black/55" />
         <div className="relative h-full flex flex-col justify-end px-6 md:px-10 lg:px-16 pb-10">
           <div className="max-w-[1312px] mx-auto w-full">
             <p className="text-white/70 font-semibold tracking-[0.18em] text-xs uppercase">{outlet.tag}</p>
-            <h1 className="text-white font-cabin font-semibold text-[56px] leading-[0.92] tracking-[-0.04em] mt-2">{outlet.name}</h1>
+            <h1 className="text-white font-cabin font-semibold text-[40px] sm:text-[56px] leading-[0.92] tracking-[-0.04em] mt-2">{outlet.name}</h1>
             <p className="text-white/70 text-[15px] mt-2">{outlet.address} • {outlet.hours}</p>
           </div>
         </div>

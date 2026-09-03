@@ -51,7 +51,7 @@
   }
   h1 {
     font-family: "Cabin", system-ui, sans-serif;
-    font-size: 56px;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
     line-height: 0.92;
     letter-spacing: -0.04em;
     font-weight: 700;

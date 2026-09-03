@@ -12,7 +12,7 @@ export default function Outlets() {
       <section className="px-6 md:px-10 lg:px-16 py-16 md:py-24">
         <div className="max-w-[1312px] mx-auto">
           <p className="text-white/50 font-semibold tracking-[0.18em] text-xs uppercase">Outlets</p>
-          <h1 className="font-cabin font-semibold text-[56px] leading-[0.92] tracking-[-0.04em] text-white mt-3">
+          <h1 className="font-cabin font-semibold text-[40px] sm:text-[56px] leading-[0.92] tracking-[-0.04em] text-white mt-3">
             Find your dome
           </h1>
           <p className="text-white/60 text-[15px] leading-relaxed mt-3 max-w-xl">Three locations, one vibe. Each outlet blends dining, bar and focused work.</p>

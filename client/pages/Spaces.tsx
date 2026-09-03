@@ -26,13 +26,13 @@ export default function Spaces() {
       <section className="px-6 md:px-10 lg:px-16 py-16 md:py-24">
         <div className="max-w-[1312px] mx-auto">
           <p className="text-white/50 font-semibold tracking-[0.18em] text-xs uppercase">Spaces</p>
-          <h1 className="font-cabin font-semibold text-[56px] leading-[0.92] tracking-[-0.04em] text-white mt-3">Work. Create. Celebrate.</h1>
+          <h1 className="font-cabin font-semibold text-[40px] sm:text-[56px] leading-[0.92] tracking-[-0.04em] text-white mt-3">Work. Create. Celebrate.</h1>
           <p className="text-white/60 text-[15px] leading-relaxed mt-3 max-w-xl">From hot desks to podcast booths — every space is designed for focus and flow.</p>
           <div className="flex flex-col sm:flex-row gap-3 mt-6">
             <div className="flex flex-wrap gap-2">
-              <button onClick={() => setFilter("all")} className={`px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase ${filter === "all" ? "bg-white text-[#1D1D1F]" : "bg-white/10 text-white"}`}>All outlets</button>
+              <button onClick={() => setFilter("all")} className={`px-4 py-2 rounded-full text-[13px] font-medium ${filter === "all" ? "bg-white text-[#1D1D1F]" : "bg-white/10 text-white"}`}>All outlets</button>
               {outlets.map((o) => (
-                <button key={o.slug} onClick={() => setFilter(o.slug)} className={`px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase ${filter === o.slug ? "bg-brand-yellow text-[#1D1D1F]" : "bg-white/10 text-white hover:bg-white/20"}`}>{o.slug.replace("-", " ")}</button>
+                <button key={o.slug} onClick={() => setFilter(o.slug)} className={`px-4 py-2 rounded-full text-[13px] font-medium capitalize ${filter === o.slug ? "bg-brand-yellow text-[#1D1D1F]" : "bg-white/10 text-white hover:bg-white/20"}`}>{o.slug.replace("-", " ")}</button>
               ))}
             </div>
             <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Search spaces…" className="sm:ml-auto w-full sm:w-64 h-[44px] rounded-full bg-white/10 border border-white/15 px-4 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-white/30" />

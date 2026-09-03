@@ -22,6 +22,7 @@ const Events = lazy(() => import("./pages/Events"));
 const Community = lazy(() => import("./pages/Community"));
 const Auth = lazy(() => import("./pages/Auth"));
 const UpdatePassword = lazy(() => import("./pages/UpdatePassword"));
+const Admin = lazy(() => import("./pages/Admin"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/community" element={<Community />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/update-password" element={<UpdatePassword />} />
+          <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

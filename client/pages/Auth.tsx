@@ -131,7 +131,20 @@ export default function Auth() {
               <p className="font-cabin font-semibold text-xl text-[#1D1D1F] mt-2 break-all">{user.email}</p>
               <p className="text-[#6E6E73] text-xs mt-1">Verified: {user.email_confirmed_at ? "yes" : "check inbox"} · {new Date(user.created_at).toLocaleDateString()}</p>
               <p className="text-[#6E6E73] text-sm mt-3">Bookings & membership are tied to this email. Session stored httpOnly via Supabase (PKCE).</p>
-              <div className="flex gap-3 mt-6">
+              <div className="rounded-xl bg-[#F5F5F7] border border-black/5 p-4 mt-4 text-left">
+                <p className="text-xs font-semibold tracking-widest uppercase text-[#6E6E73]">Membership</p>
+                <p className="font-cabin font-semibold text-sm text-[#1D1D1F] mt-1">{history.length >= 5 ? "Creator" : history.length >= 1 ? "Pass" : "Visitor"} · {history.length} bookings</p>
+                <Link to="/membership" className="text-xs text-[#0071E3] font-medium hover:underline">View tiers →</Link>
+              </div>
+              <div className="flex flex-col gap-2 mt-4 text-left">
+                <label className="text-[#1D1D1F] font-semibold text-xs">Display name</label>
+                <input value={user.user_metadata?.full_name || ""} onChange={async e=>{
+                  const v=e.target.value;
+                  await supabase!.auth.updateUser({ data:{ full_name: v }});
+                  toast({ title:"Profile updated" });
+                }} placeholder="Ada Lovelace" className="w-full border border-[#D2D2D7] bg-white rounded-xl px-4 h-[48px] text-[15px] text-[#1D1D1F] placeholder:text-[#86868B] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20" />
+              </div>
+              <div className="flex gap-2 mt-4">
                 <Link to="/book" className="flex-1 inline-flex items-center justify-center h-[50px] rounded-[10px] bg-[#1D1D1F] text-white font-medium">Book a space</Link>
                 <button onClick={signOut} className="flex-1 h-[50px] rounded-[10px] border border-[#D2D2D7] bg-white text-[#1D1D1F] font-medium hover:bg-[#F5F5F7]">Sign out</button>
               </div>
@@ -151,11 +164,19 @@ export default function Auth() {
                     <div key={b.id} className="rounded-xl border border-black/5 bg-[#F5F5F7] p-4 flex flex-col gap-1">
                       <div className="flex items-start justify-between gap-2">
                         <p className="font-semibold text-sm text-[#1D1D1F]">{b.spaceId} · {b.outletSlug}</p>
-                        <span className={`text-[11px] font-semibold px-2 py-1 rounded-full ${b.paid ? "bg-[#34C759] text-white" : "bg-white border border-black/10 text-[#6E6E73]"}`}>{b.paid ? "Paid" : b.amount===0 ? "Free" : "Pay at venue"}</span>
+                        <span className={`text-[11px] font-semibold px-2 py-1 rounded-full ${b.paid ? "bg-[#34C759] text-white" : b.amount===0 ? "bg-white border border-black/10 text-[#6E6E73]" : "bg-amber-100 text-amber-800"}`}>{b.paid ? "Paid" : b.amount===0 ? "Free" : "Unpaid"}</span>
                       </div>
                       <p className="text-xs text-[#6E6E73]">{b.date} {b.time} · {b.guests} guest(s) · {b.name}</p>
                       {b.notes && <p className="text-xs text-[#424245] mt-1">“{b.notes}”</p>}
                       <p className="text-[11px] text-[#86868B] mt-1">ID {b.id} · {new Date(b.createdAt).toLocaleDateString()}</p>
+                      <div className="flex gap-2 mt-2">
+                        <button onClick={async()=>{
+                          const { data:{session} } = await supabase!.auth.getSession();
+                          const r = await fetch(`/api/bookings/${b.id}`, { method: "DELETE", headers: { Authorization: `Bearer ${session?.access_token}` }});
+                          if (r.ok) { toast({ title:"Cancelled", description:`${b.id} cancelled`}); setHistory(h=>h.filter(x=>x.id!==b.id)); } else toast({ title:"Error", description: await r.text() });
+                        }} className="text-xs font-medium text-red-600 hover:text-red-700 border border-red-200 bg-white px-3 py-1.5 rounded-full">Cancel</button>
+                        <Link to={`/book?outlet=${b.outletSlug}&space=${b.spaceId}`} className="text-xs font-medium text-[#0071E3] hover:underline px-3 py-1.5">Modify →</Link>
+                      </div>
                     </div>
                   ))}
                 </div>

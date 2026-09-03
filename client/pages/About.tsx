@@ -26,7 +26,7 @@ export default function About() {
         <div className="max-w-[1312px] mx-auto flex flex-col lg:flex-row gap-10 items-center">
           <div className="lg:w-[55%] flex flex-col gap-6">
             <p className="text-white/50 font-semibold tracking-[0.18em] text-xs uppercase">Our Story</p>
-            <h1 className="font-cabin font-semibold text-[56px] leading-[0.92] tracking-[-0.04em] text-white">
+            <h1 className="font-cabin font-semibold text-[40px] sm:text-[56px] leading-[0.92] tracking-[-0.04em] text-white">
               Built for creators,<br />dreamers & doers.
             </h1>
             <p className="text-white/70 text-[15px] leading-relaxed max-w-[560px]">

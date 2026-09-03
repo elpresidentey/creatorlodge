@@ -2,7 +2,7 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import { handleDemo } from "./routes/demo";
-import { handleBookings, handleListBookings } from "./routes/bookings";
+import { handleBookings, handleListBookings, handleDeleteBooking } from "./routes/bookings";
 import { handlePaystackInit, handlePaystackVerify, handlePaystackWebhook } from "./routes/payments";
 import { rateLimit } from "./middleware/rateLimit";
 import { optionalAuth, requireAuth } from "./middleware/verifyAuth";
@@ -31,6 +31,7 @@ export function createServer() {
   app.get("/api/demo", handleDemo);
   app.post("/api/bookings", rateLimit({ max: 20, windowMs: 15*60*1000 }), requireAuth, handleBookings);
   app.get("/api/bookings", rateLimit({ max: 30, windowMs: 15*60*1000 }), requireAuth, handleListBookings);
+  app.delete("/api/bookings/:id", rateLimit({ max: 20, windowMs: 15*60*1000 }), requireAuth, handleDeleteBooking);
   app.post("/api/paystack/initialize", rateLimit({ max: 10, windowMs: 15*60*1000 }), handlePaystackInit);
   app.get("/api/paystack/verify/:reference", handlePaystackVerify);
   app.post("/api/paystack/webhook", handlePaystackWebhook);

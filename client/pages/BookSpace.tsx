@@ -33,6 +33,23 @@ export default function BookSpace() {
     if (user?.email) setForm(f => ({ ...f, email: user.email!, name: user.user_metadata?.full_name || f.name }));
   }, [user]);
 
+  // Paystack return ?pay=verify&reference=CL-xxx
+  useEffect(() => {
+    const pay = searchParams.get("pay");
+    const ref = searchParams.get("reference");
+    if (pay === "verify" && ref) {
+      fetch(`/api/paystack/verify?reference=${ref}`).then(r=>r.json()).then(d=>{
+        if (d.status === "success" || d.mock) {
+          toast({ title: "Payment verified", description: `Booking ${ref} is now Paid. Check history in profile.` });
+          setStep(3);
+          setForm(f => ({ ...f, name: f.name }));
+        } else {
+          toast({ title: "Payment pending", description: "We’ll update once Paystack confirms." });
+        }
+      }).catch(()=>{});
+    }
+  }, [searchParams]);
+
   // keep outlet/space in sync if query changes
   useEffect(() => {
     const o = searchParams.get("outlet");
@@ -108,7 +125,7 @@ export default function BookSpace() {
       <section className="px-6 md:px-10 lg:px-16 py-16 md:py-24">
         <div className="max-w-[1312px] mx-auto">
           <p className="text-white/50 font-semibold tracking-[0.18em] text-xs uppercase">Book a space</p>
-          <h1 className="font-cabin font-semibold text-[56px] leading-[0.92] tracking-[-0.04em] text-white mt-3">
+          <h1 className="font-cabin font-semibold text-[40px] sm:text-[56px] leading-[0.92] tracking-[-0.04em] text-white mt-3">
             Your space, on your terms
           </h1>
           <p className="text-white/60 text-[15px] leading-relaxed mt-3 max-w-xl">3 steps — outlet → details → confirm. Pay at venue or online.</p>
@@ -177,7 +194,7 @@ export default function BookSpace() {
                     >
                       <div className="flex justify-between items-start gap-4">
                         <p className={`font-semibold text-sm tracking-wide uppercase ${form.space === s.id ? "text-[#1D1D1F]" : "text-white"}`}>{s.name}</p>
-                        <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${form.space === s.id ? "bg-[#1D1D1F] text-white" : "bg-white/15 text-white"}`}>{s.price}</span>
+                        <span className={`text-[11px] font-medium px-2 py-0.5 rounded-full shrink-0 ${form.space === s.id ? "bg-[#1D1D1F] text-white" : "bg-white/15 text-white"}`}>{s.price}</span>
                       </div>
                       <p className={`text-xs mt-1.5 leading-relaxed ${form.space === s.id ? "text-[#424245]" : "text-white/70"}`}>{s.desc} • {s.capacity}</p>
                     </button>
