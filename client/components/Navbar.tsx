@@ -44,17 +44,19 @@ export default function Navbar() {
           Contact
         </Link>
 
-        {/* More dropdown */}
-        <div className="relative" onMouseEnter={() => setMoreOpen(true)} onMouseLeave={() => setMoreOpen(false)}>
-          <button className="text-white/80 font-bold text-[12px] tracking-wide hover:text-white transition-colors px-2 py-1.5 rounded-lg hover:bg-white/5 flex items-center gap-1">
+        {/* More dropdown — click + hover with bridge, no flicker */}
+        <div className="relative">
+          <button onClick={() => setMoreOpen(!moreOpen)} onMouseEnter={() => setMoreOpen(true)} className="text-white/80 font-bold text-[12px] tracking-wide hover:text-white transition-colors px-2 py-1.5 rounded-lg hover:bg-white/5 flex items-center gap-1">
             More <span className={`text-[9px] transition ${moreOpen ? "rotate-180" : ""}`}>▼</span>
           </button>
           {moreOpen && (
-            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-44 bg-white rounded-xl shadow-xl border border-black/10 overflow-hidden py-1 z-50">
-              <Link to="/menu" onClick={() => setMoreOpen(false)} className="block px-4 py-2.5 text-sm font-bold text-brand-dark hover:bg-black/5">Menu</Link>
-              <Link to="/events" onClick={() => setMoreOpen(false)} className="block px-4 py-2.5 text-sm font-bold text-brand-dark hover:bg-black/5">Events</Link>
-              <Link to="/community" onClick={() => setMoreOpen(false)} className="block px-4 py-2.5 text-sm font-bold text-brand-dark hover:bg-black/5">Community</Link>
-              <Link to="/about" onClick={() => setMoreOpen(false)} className="block px-4 py-2.5 text-sm font-bold text-brand-dark hover:bg-black/5">About</Link>
+            <div onMouseLeave={() => setMoreOpen(false)} className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50">
+              <div className="w-44 bg-white rounded-xl shadow-xl border border-black/10 overflow-hidden py-1">
+                <Link to="/menu" onClick={() => setMoreOpen(false)} className="block px-4 py-2.5 text-sm font-bold text-[#1D1D1F] hover:bg-black/5">Menu</Link>
+                <Link to="/events" onClick={() => setMoreOpen(false)} className="block px-4 py-2.5 text-sm font-bold text-[#1D1D1F] hover:bg-black/5">Events</Link>
+                <Link to="/community" onClick={() => setMoreOpen(false)} className="block px-4 py-2.5 text-sm font-bold text-[#1D1D1F] hover:bg-black/5">Community</Link>
+                <Link to="/about" onClick={() => setMoreOpen(false)} className="block px-4 py-2.5 text-sm font-bold text-[#1D1D1F] hover:bg-black/5">About</Link>
+              </div>
             </div>
           )}
         </div>
