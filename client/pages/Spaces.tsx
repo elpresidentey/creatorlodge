@@ -47,7 +47,7 @@ export default function Spaces() {
             <div key={s.id} className="group bg-white rounded-[20px] overflow-hidden border border-black/5 shadow-sm flex flex-col hover:shadow-md transition">
               <div className="relative h-[180px] overflow-hidden">
                 <img src={s.image} alt={s.name} className="h-full w-full object-cover" />
-                <span className="absolute top-3 right-3 z-10 bg-brand-yellow text-[#1D1D1F] text-[11px] font-semibold px-2 py-0.5 rounded-full">{s.price}</span>
+                <span className="absolute top-2.5 right-2.5 z-10 bg-brand-yellow text-[#1D1D1F] text-[10px] font-semibold px-2 py-0.5 rounded-full leading-tight">{s.price}</span>
               </div>
               <div className="p-6 flex flex-col gap-2 flex-1">
                 <h3 className="font-cabin font-semibold text-[17px] leading-tight text-[#1D1D1F]">{s.name}</h3>

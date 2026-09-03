@@ -19,7 +19,7 @@ export default function SpacesPreview() {
             <Link key={s.id} to={`/book?space=${s.id}&outlet=${outlets[0].slug}`} className="group surface-card bg-[#F5F5F7]">
               <div className="surface-media aspect-[4/3]">
                 <img src={s.image} alt={s.name} loading="lazy" />
-                <span className="surface-chip absolute top-3 right-3 z-10 bg-white/95 text-[#1D1D1F] border border-black/5">{s.price}</span>
+                <span className="absolute top-2.5 right-2.5 z-10 bg-white/95 text-[#1D1D1F] border border-black/5 text-[10px] font-semibold px-2 py-0.5 rounded-full leading-tight">{s.price}</span>
               </div>
               <div className="p-5">
                 <h3 className="font-cabin font-semibold text-[17px] leading-tight text-[#1D1D1F]">{s.name}</h3>
