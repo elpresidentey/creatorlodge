@@ -30,7 +30,7 @@ export default function Outlets() {
               <span className="surface-chip absolute left-4 top-4 z-10 border border-[#C6A15B]/40 bg-black/60 uppercase tracking-[0.14em] text-gold-soft backdrop-blur-md">
                 {o.tag}
               </span>
-              <div className="relative flex flex-1 flex-col justify-end p-5">
+              <div className="overlay-text relative flex flex-1 flex-col justify-end p-5">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-soft">{o.area}</p>
                 <h3 className="mt-1.5 line-clamp-2 min-h-[50px] font-display text-[20px] font-medium leading-tight text-ivory">{o.name}</h3>
                 <p className="mt-2 truncate text-[13px] leading-relaxed text-white/70">{o.address}</p>

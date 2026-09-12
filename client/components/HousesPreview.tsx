@@ -23,7 +23,7 @@ export default function HousesPreview() {
                 <span className="surface-chip border border-[#C6A15B]/40 bg-black/60 text-gold-soft backdrop-blur-md">{o.tag}</span>
                 <span className="font-display text-[12px] italic text-white/75">N°{["I", "II", "III", "IV", "V", "VI", "VII", "VIII"][i] ?? i + 1}</span>
               </div>
-              <div className="absolute inset-x-0 bottom-0 p-5">
+              <div className="overlay-text absolute inset-x-0 bottom-0 p-5">
                 <h3 className="line-clamp-2 min-h-[50px] font-display text-[20px] font-medium leading-tight text-ivory">{o.name}</h3>
                 <p className="mt-1.5 truncate font-display text-[12px] italic leading-snug text-gold-soft/90">{o.address}</p>
                 <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.16em] text-white/55">{o.hours}</p>

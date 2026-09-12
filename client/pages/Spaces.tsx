@@ -50,7 +50,7 @@ export default function Spaces() {
               <img src={s.image} alt={s.name} className="absolute inset-0 h-full w-full object-cover transition duration-1000 group-hover:scale-[1.05]" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/45 to-black/10" />
               <span className="absolute right-4 top-4 z-10 rounded-full border border-[#C6A15B]/40 bg-black/60 px-2.5 py-1 text-[11px] font-semibold leading-none text-gold-soft backdrop-blur-md">{s.price}</span>
-              <div className="relative flex flex-1 flex-col justify-end p-5">
+              <div className="overlay-text relative flex flex-1 flex-col justify-end p-5">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-soft">{s.capacity}</p>
                 <h3 className="mt-1.5 font-display text-[20px] font-medium leading-tight text-ivory">{s.name}</h3>
                 <p className="mt-2 line-clamp-2 min-h-[42px] text-[13px] leading-relaxed text-white/70">{s.desc}</p>

@@ -35,9 +35,9 @@ export default function OutletDetail() {
 
       <section className="relative h-[320px] md:h-[460px] overflow-hidden">
         <img src={outlet.image} alt={outlet.name} className="absolute inset-0 w-full h-full object-cover scale-105" />
-        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/20" />
         <div className="relative h-full flex flex-col justify-end px-6 md:px-10 lg:px-16 pb-10">
-          <div className="max-w-[1312px] mx-auto w-full">
+          <div className="overlay-text max-w-[1312px] mx-auto w-full">
             <p className="text-white/70 font-semibold tracking-[0.18em] text-xs uppercase">{outlet.tag}</p>
             <h1 className="text-white font-cabin font-semibold text-[40px] sm:text-[56px] leading-[0.92] tracking-[-0.04em] mt-2">{outlet.name}</h1>
             <p className="text-white/70 text-[15px] mt-2">{outlet.address} • {outlet.hours}</p>
@@ -72,7 +72,7 @@ export default function OutletDetail() {
                 <img src={s.image} alt={s.name} className="absolute inset-0 h-full w-full object-cover transition duration-1000 group-hover:scale-[1.05]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/45 to-black/10" />
                 <span className="absolute right-4 top-4 z-10 rounded-full border border-[#C6A15B]/40 bg-black/60 px-2.5 py-1 text-[11px] font-semibold leading-none text-gold-soft backdrop-blur-md">{s.price}</span>
-                <div className="relative flex flex-col p-5">
+                <div className="overlay-text relative flex flex-col p-5">
                   <p className="font-display text-[19px] font-medium leading-tight text-ivory">{s.name}</p>
                   <p className="mt-2 line-clamp-2 text-[13px] leading-relaxed text-white/70">{s.desc}</p>
                   <Link to={`/book?space=${s.id}&outlet=${outlet.slug}`} className="mt-4 inline-flex h-[46px] items-center justify-center rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[13px] font-semibold uppercase tracking-[0.08em] text-[#171410] transition hover:brightness-105">

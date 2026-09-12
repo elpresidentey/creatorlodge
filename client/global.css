@@ -142,6 +142,12 @@
     border-color: rgba(198, 161, 91, 0.32);
     background: rgba(20, 19, 16, 0.55);
   }
+  /* Guaranteed legibility for type set over photography */
+  .overlay-text {
+    text-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.7),
+      0 2px 18px rgba(0, 0, 0, 0.5);
+  }
   .section-lede {
     @apply max-w-md text-[15px] leading-[1.7];
   }

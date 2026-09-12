@@ -38,7 +38,7 @@ export default function GalleryPreview() {
                 <span className="surface-chip bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[#171410]">Now showing</span>
                 <span className="surface-chip border border-[#C6A15B]/30 bg-black/60 text-ivory backdrop-blur-md">{now.dates}</span>
               </div>
-              <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
+              <div className="overlay-text absolute inset-x-0 bottom-0 p-6 md:p-8">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold-soft">{now.edition} · {now.venue}</p>
                 <h3 className="mt-2 font-display text-[30px] font-medium leading-[1.05] text-ivory md:text-[36px]">{now.title}</h3>
                 <p className="mt-2 max-w-md text-[14px] leading-relaxed text-white/70">{now.blurb}</p>
@@ -63,7 +63,7 @@ export default function GalleryPreview() {
                     className="absolute inset-0 h-full w-full object-cover transition duration-1000 group-hover:scale-[1.05]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/15" />
-                  <div className="relative flex h-full min-h-[200px] flex-col justify-center p-6">
+                  <div className="overlay-text relative flex h-full min-h-[200px] flex-col justify-center p-6">
                     <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold-soft">{e.dates} · {e.venue}</p>
                     <h3 className="mt-1.5 font-display text-[24px] font-medium leading-tight text-ivory">{e.title}</h3>
                     <p className="mt-1 line-clamp-1 text-[13px] text-white/65">{e.blurb}</p>

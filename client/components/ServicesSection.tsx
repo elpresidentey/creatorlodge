@@ -30,7 +30,7 @@ export default function ServicesSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10 transition group-hover:from-black/90" />
               <span className="absolute left-5 top-5 font-display text-[13px] italic tracking-[0.1em] text-gold-soft/90">{s.no}</span>
               <span className="absolute right-5 top-5 h-px w-8 bg-[#C6A15B]/50" />
-              <div className="absolute inset-x-0 bottom-0 p-6">
+              <div className="overlay-text absolute inset-x-0 bottom-0 p-6">
                 <h3 className="font-display text-[22px] font-medium leading-tight text-ivory">{s.title}</h3>
                 <p className="mt-2 text-[13px] leading-relaxed text-white/65">{s.desc}</p>
                 <span className="mt-4 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-soft transition-all group-hover:gap-3">Enter <span aria-hidden>→</span></span>

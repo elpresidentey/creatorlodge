@@ -22,7 +22,7 @@ export default function SpacesPreview() {
               <img src={s.image} alt={s.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-1000 group-hover:scale-[1.06]" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 transition group-hover:from-black/95" />
               <span className="absolute right-4 top-4 z-10 rounded-full border border-[#C6A15B]/40 bg-black/60 px-2.5 py-1 text-[11px] font-semibold leading-none text-gold-soft backdrop-blur-md">{s.price}</span>
-              <div className="absolute inset-x-0 bottom-0 p-5">
+              <div className="overlay-text absolute inset-x-0 bottom-0 p-5">
                 <h3 className="font-display text-[19px] font-medium leading-tight text-ivory">{s.name}</h3>
                 <p className="mt-2 line-clamp-2 min-h-[42px] text-[13px] leading-relaxed text-white/70">{s.desc}</p>
                 <p className="mt-3 border-t border-white/15 pt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-soft">{s.capacity}</p>

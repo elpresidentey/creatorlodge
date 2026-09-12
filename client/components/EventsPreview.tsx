@@ -23,7 +23,7 @@ export default function EventsPreview() {
                 <span className="surface-chip border border-[#C6A15B]/30 bg-black/60 text-ivory backdrop-blur-md">{e.date} · {e.time}</span>
                 <span className="surface-chip bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[#171410]">{e.fee}</span>
               </div>
-              <div className="absolute inset-x-0 bottom-0 flex flex-col p-5">
+              <div className="overlay-text absolute inset-x-0 bottom-0 flex flex-col p-5">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold-soft">{e.outlet}</p>
                 <h3 className="mt-1.5 line-clamp-2 min-h-[52px] font-display text-[21px] font-medium leading-tight text-ivory">{e.title}</h3>
                 <Link to="/events" className="pressable mt-4 inline-flex h-[46px] items-center justify-center rounded-[12px] border border-[#C6A15B]/40 bg-white/[0.06] text-[12px] font-semibold uppercase tracking-[0.12em] text-ivory backdrop-blur-sm transition hover:border-[#C6A15B]/70 hover:bg-white/10">RSVP</Link>

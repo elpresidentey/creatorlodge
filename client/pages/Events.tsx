@@ -32,7 +32,7 @@ export default function Events() {
                 <span className="surface-chip border border-[#C6A15B]/30 bg-black/60 uppercase tracking-[0.14em] text-ivory backdrop-blur-md">{e.date} • {e.time}</span>
                 <span className="surface-chip bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[#171410]">{e.fee}</span>
               </div>
-              <div className="relative flex flex-col p-5">
+              <div className="overlay-text relative flex flex-col p-5">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold-soft">{e.outlet}</p>
                 <h3 className="mt-1.5 font-display text-[21px] font-medium leading-tight text-ivory">{e.title}</h3>
                 <button

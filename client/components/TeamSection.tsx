@@ -29,12 +29,12 @@ export default function TeamSection() {
             <Reveal key={m.name} delay={(i % 3) * 110}>
               <Link to={`/outlets/${outletSlug[m.outlet] || "vi-dome"}`} className="group card-lift pressable relative block aspect-[4/3.4] overflow-hidden rounded-[20px] border border-[#C6A15B]/15 shadow-[0_8px_32px_rgba(0,0,0,0.18)] hover:border-[#C6A15B]/45 hover:shadow-[0_12px_40px_rgba(0,0,0,0.22)]">
               <img src={m.image} alt={`${m.name} — ${m.role}`} style={{ objectPosition: (m as any).pos }} className="absolute inset-0 h-full w-full object-cover transition duration-1000 group-hover:scale-[1.06]" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition group-hover:from-black/80" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10 transition group-hover:from-black/90" />
               <div className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-[#C6A15B]/30 bg-black/55 px-3 py-1.5 backdrop-blur-md">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#34C759]" />
                 <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-white">{m.outlet}</span>
               </div>
-              <div className="absolute inset-x-0 bottom-0 p-6">
+              <div className="overlay-text absolute inset-x-0 bottom-0 p-6">
                 <h3 className="card-title text-white">{m.name}</h3>
                 <p className="mt-1.5 text-[13px] font-medium tracking-wide text-white/80">{m.role}</p>
                 <p className="mt-2 flex items-center gap-1.5 text-[12px] text-gold-soft/80 transition-all group-hover:gap-3">View house <span aria-hidden>→</span></p>
