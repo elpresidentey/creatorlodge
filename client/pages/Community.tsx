@@ -24,7 +24,7 @@ export default function Community() {
         <div className="max-w-[1312px] mx-auto grid grid-cols-2 gap-5 md:grid-cols-4">
           {creators.map((c) => (
             <div key={c.name} className="group relative aspect-[3/4] overflow-hidden rounded-[20px] border border-[#C6A15B]/20 text-center shadow-[0_24px_60px_rgba(0,0,0,0.4)] transition-all duration-500 hover:-translate-y-1 hover:border-[#C6A15B]/55">
-              <img src={c.image} alt={c.name} className="absolute inset-0 h-full w-full object-cover transition duration-[1200ms] group-hover:scale-[1.06]" />
+              <img src={c.image} alt={c.name} className="absolute inset-0 h-full w-full object-cover transition duration-1000 group-hover:scale-[1.06]" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-4">
                 <p className="font-display text-[17px] font-medium leading-tight text-ivory">{c.name}</p>

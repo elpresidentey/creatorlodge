@@ -18,7 +18,7 @@ export default function CreatorsStrip() {
             <Reveal key={c.name} delay={(i % 4) * 80}>
             <div className="card-lift flex items-center gap-3.5 rounded-[16px] border border-[#C6A15B]/25 bg-[#141310] p-5 shadow-[0_18px_45px_rgba(23,20,16,0.3)] hover:border-[#C6A15B]/55">
               <img src={c.image} alt={c.name} className="h-12 w-12 shrink-0 rounded-full border border-[#C6A15B]/40 object-cover shadow-sm transition duration-700 hover:scale-110" loading="lazy" />
-              <div className="min-w-0"><p className="truncate font-display text-[15px] font-medium leading-tight text-ivory">{c.name}</p><p className="mt-1 text-[12px] leading-snug text-white/55">{c.role} · {c.outlet}</p></div>
+              <div className="min-w-0"><p className="truncate font-display text-[15px] font-medium leading-tight text-ivory">{c.name}</p><p className="mt-1 truncate text-[12px] leading-snug text-white/55">{c.role} · {c.outlet}</p></div>
             </div>
             </Reveal>
           ))}

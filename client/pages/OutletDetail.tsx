@@ -69,7 +69,7 @@ export default function OutletDetail() {
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {outletSpaces.map((s) => (
               <div key={s.id} className="group relative flex min-h-[400px] flex-col justify-end overflow-hidden rounded-[20px] border border-[#C6A15B]/20 shadow-[0_24px_60px_rgba(0,0,0,0.4)] transition-all duration-500 hover:-translate-y-1 hover:border-[#C6A15B]/55">
-                <img src={s.image} alt={s.name} className="absolute inset-0 h-full w-full object-cover transition duration-[1200ms] group-hover:scale-[1.05]" />
+                <img src={s.image} alt={s.name} className="absolute inset-0 h-full w-full object-cover transition duration-1000 group-hover:scale-[1.05]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/45 to-black/10" />
                 <span className="absolute right-4 top-4 z-10 rounded-full border border-[#C6A15B]/40 bg-black/60 px-2.5 py-1 text-[11px] font-semibold leading-none text-gold-soft backdrop-blur-md">{s.price}</span>
                 <div className="relative flex flex-col p-5">

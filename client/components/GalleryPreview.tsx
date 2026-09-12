@@ -31,7 +31,7 @@ export default function GalleryPreview() {
                 src={now.image}
                 alt={now.title}
                 loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition duration-[1200ms] group-hover:scale-[1.05]"
+                className="absolute inset-0 h-full w-full object-cover transition duration-1000 group-hover:scale-[1.05]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/40 to-black/10" />
               <div className="absolute inset-x-0 top-0 flex flex-wrap gap-2 p-5">
@@ -60,7 +60,7 @@ export default function GalleryPreview() {
                     src={e.image}
                     alt={e.title}
                     loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover transition duration-[1200ms] group-hover:scale-[1.05]"
+                    className="absolute inset-0 h-full w-full object-cover transition duration-1000 group-hover:scale-[1.05]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/15" />
                   <div className="relative flex h-full min-h-[200px] flex-col justify-center p-6">

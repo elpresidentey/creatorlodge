@@ -26,7 +26,7 @@ export default function ServicesSection() {
           {services.map((s, i) => (
             <Reveal key={s.title} delay={(i % 3) * 110}>
             <Link to={s.href} className="group card-lift pressable relative block aspect-[4/4.1] overflow-hidden rounded-[20px] border border-[#C6A15B]/20 shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:border-[#C6A15B]/45 hover:shadow-[0_28px_70px_rgba(0,0,0,0.5)]">
-              <img src={s.image} alt={s.title} className="absolute inset-0 h-full w-full object-cover transition duration-[1200ms] group-hover:scale-[1.06]" loading="lazy" />
+              <img src={s.image} alt={s.title} className="absolute inset-0 h-full w-full object-cover transition duration-1000 group-hover:scale-[1.06]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10 transition group-hover:from-black/90" />
               <span className="absolute left-5 top-5 font-display text-[13px] italic tracking-[0.1em] text-gold-soft/90">{s.no}</span>
               <span className="absolute right-5 top-5 h-px w-8 bg-[#C6A15B]/50" />

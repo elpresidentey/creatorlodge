@@ -55,7 +55,7 @@ export default function Gallery() {
             <img
               src={now.image}
               alt={now.title}
-              className="absolute inset-0 h-full w-full object-cover transition duration-[1400ms] group-hover:scale-[1.04]"
+              className="absolute inset-0 h-full w-full object-cover transition duration-1000 group-hover:scale-[1.04]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/40 to-black/10" />
             <div className="absolute inset-x-0 top-0 flex flex-wrap items-center gap-2 p-5 md:p-8">
@@ -90,7 +90,7 @@ export default function Gallery() {
           {upcoming.map((e, i) => (
             <Reveal key={e.slug} delay={(i % 2) * 110}>
               <div className="group card-lift relative flex min-h-[380px] flex-col justify-end overflow-hidden rounded-[20px] border border-[#C6A15B]/20 shadow-[0_24px_60px_rgba(0,0,0,0.45)] hover:border-[#C6A15B]/50">
-                <img src={e.image} alt={e.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-[1200ms] group-hover:scale-[1.06]" />
+                <img src={e.image} alt={e.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-1000 group-hover:scale-[1.06]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/40 to-black/10" />
                 <div className="absolute inset-x-0 top-0 flex flex-wrap gap-2 p-4">
                   <span className="surface-chip border border-[#C6A15B]/30 bg-black/60 text-ivory backdrop-blur-md">{e.dates}</span>
@@ -121,7 +121,7 @@ export default function Gallery() {
             {past.map((e, i) => (
               <Reveal key={e.slug} delay={(i % 3) * 100}>
                 <div className="group card-lift relative aspect-[3/3.6] overflow-hidden rounded-[20px] border border-[#171410]/10 shadow-[0_20px_55px_rgba(23,20,16,0.18)] hover:border-[#C6A15B]/50">
-                  <img src={e.image} alt={e.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover saturate-[0.85] transition duration-[1200ms] group-hover:scale-[1.06] group-hover:saturate-100" />
+                  <img src={e.image} alt={e.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover saturate-[0.85] transition duration-1000 group-hover:scale-[1.06] group-hover:saturate-100" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/10" />
                   <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-black/55 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/75 backdrop-blur-md">Archive · {e.dates}</span>
                   <div className="absolute inset-x-0 bottom-0 p-5">
@@ -151,8 +151,8 @@ export default function Gallery() {
               <div className="card-lift flex items-center gap-3.5 rounded-[16px] border border-[#C6A15B]/25 bg-white/[0.04] p-5 hover:border-[#C6A15B]/55">
                 <img src={c.image} alt={c.name} loading="lazy" className="h-12 w-12 shrink-0 rounded-full border border-[#C6A15B]/40 object-cover" />
                 <div className="min-w-0">
-                  <p className="truncate font-display text-[15px] font-medium leading-tight text-ivory">{c.name}</p>
-                  <p className="mt-1 text-[12px] leading-snug text-white/55">{c.role} · {c.outlet}</p>
+                  <p className="truncate font-display text-[15px] font-medium leading-tight text-ivory" title={c.name}>{c.name}</p>
+                  <p className="mt-1 truncate text-[12px] leading-snug text-white/55">{c.role} · {c.outlet}</p>
                 </div>
               </div>
             </Reveal>
