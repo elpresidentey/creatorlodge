@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Breadcrumb from "@/components/Breadcrumb";
 import { useTitle } from "@/hooks/useTitle";
 import Footer from "@/components/Footer";
 import { menu } from "@/lib/lounge-data";
@@ -18,6 +19,8 @@ export default function Menu() {
   return (
     <div className="min-h-screen bg-[#1D1D1F]">
       <Navbar />
+      <Breadcrumb trail={[{ label: "Carte & Bar" }]} />
+
       <section className="px-6 md:px-10 lg:px-16 py-16 md:py-24">
         <div className="max-w-[1312px] mx-auto text-center">
           <p className="eyebrow text-white/50">Dine & Bar</p>

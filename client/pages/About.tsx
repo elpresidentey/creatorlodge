@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Breadcrumb from "@/components/Breadcrumb";
 import { useTitle } from "@/hooks/useTitle";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
@@ -20,6 +21,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-[#1D1D1F]">
       <Navbar />
+      <Breadcrumb trail={[{ label: "Maison" }]} />
 
       {/* Hero */}
       <section className="lounge-container pt-16 md:pt-24 pb-12 md:pb-16">

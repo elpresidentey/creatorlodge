@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Breadcrumb from "@/components/Breadcrumb";
 import { useTitle } from "@/hooks/useTitle";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
@@ -18,6 +19,7 @@ export default function Gallery() {
   return (
     <div className="min-h-screen bg-[#0E0E0F]">
       <Navbar />
+      <Breadcrumb trail={[{ label: "La Galerie" }]} />
 
       {/* Hero */}
       <section className="lounge-container pb-12 pt-16 md:pb-16 md:pt-24">

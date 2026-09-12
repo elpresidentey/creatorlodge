@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Breadcrumb from "@/components/Breadcrumb";
 import { useTitle } from "@/hooks/useTitle";
 import Footer from "@/components/Footer";
 import { Link, useParams } from "react-router-dom";
@@ -11,6 +12,7 @@ export default function OutletDetail() {
     return (
       <div className="min-h-screen bg-[#1D1D1F]">
         <Navbar />
+        <Breadcrumb trail={[{ label: "Houses", to: "/outlets" }]} />
         <div className="px-6 md:px-10 lg:px-16 py-20 text-center">
           <p className="text-white/60 text-[15px]">Outlet not found.</p>
           <Link to="/outlets" className="text-brand-yellow underline mt-4 inline-block text-[15px]">
@@ -26,6 +28,10 @@ export default function OutletDetail() {
   return (
     <div className="min-h-screen bg-[#1D1D1F]">
       <Navbar />
+      <Breadcrumb
+        trail={[{ label: "Houses", to: "/outlets" }, { label: outlet.name }]}
+        className="pb-5 md:pb-6"
+      />
 
       <section className="relative h-[320px] md:h-[460px] overflow-hidden">
         <img src={outlet.image} alt={outlet.name} className="absolute inset-0 w-full h-full object-cover scale-105" />

@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Breadcrumb from "@/components/Breadcrumb";
 import { useTitle } from "@/hooks/useTitle";
 import Footer from "@/components/Footer";
 import { useState } from "react";
@@ -24,6 +25,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-[#1D1D1F]">
       <Navbar />
+      <Breadcrumb trail={[{ label: "Contact" }]} />
 
       <section className="px-6 md:px-10 lg:px-16 py-16 md:py-24">
         <div className="max-w-[1312px] mx-auto">
