@@ -9,6 +9,8 @@ export default {
       fontFamily: {
         sans: ["Cabin", "system-ui", "-apple-system", "Helvetica", "Arial", "sans-serif"],
         cabin: ["Cabin", "system-ui", "sans-serif"],
+        display: ["Fraunces", "Georgia", "Times New Roman", "serif"],
+        serif: ["Fraunces", "Georgia", "Times New Roman", "serif"],
       },
       colors: {
         border: "hsl(var(--border))", input: "hsl(var(--input))", ring: "hsl(var(--ring))",
@@ -21,6 +23,9 @@ export default {
         popover: { DEFAULT: "hsl(var(--popover))", foreground: "hsl(var(--popover-foreground))" },
         card: { DEFAULT: "hsl(var(--card))", foreground: "hsl(var(--card-foreground))" },
         brand: { pink: "#FEC3C7", blue: "#0071E3", yellow: "#FED440", dark: "#1D1D1F", light: "#F5F5F7" },
+        gold: { DEFAULT: "#C6A15B", deep: "#9A7B3F", soft: "#E8DCC3", faint: "#F5EFE3" },
+        ivory: "#FAF7F0",
+        noir: "#0B0B0C",
       },
       borderRadius: { lg: "var(--radius)", md: "calc(var(--radius) - 2px)", sm: "calc(var(--radius) - 4px)" },
       keyframes: { "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } }, "accordion-up": { from: { height: "var(--radix-accordion-content-height)" }, to: { height: "0" } } },

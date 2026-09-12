@@ -20,11 +20,11 @@ export default function Menu() {
       <Navbar />
       <section className="px-6 md:px-10 lg:px-16 py-16 md:py-24">
         <div className="max-w-[1312px] mx-auto text-center">
-          <p className="text-white/50 font-semibold tracking-[0.18em] text-xs uppercase">Dine & Bar</p>
-          <h1 className="font-cabin font-semibold text-[40px] sm:text-[56px] leading-[0.92] tracking-[-0.04em] text-white mt-3">
+          <p className="eyebrow text-white/50">Dine & Bar</p>
+          <h1 className="mt-4 font-cabin text-[40px] font-semibold leading-[0.95] tracking-[-0.035em] text-white sm:text-[56px]">
             Wood-fired, garden-led
           </h1>
-          <p className="text-white/60 text-[15px] mt-3">Seasonal plates from our open kitchen. Same menu across all domes.</p>
+          <p className="mx-auto mt-4 max-w-xl text-[15px] leading-[1.7] text-white/65">Seasonal plates from our open kitchen. Same menu across all domes.</p>
           <div className="mt-6">
             <Link to="/book?space=dine" className="inline-flex items-center justify-center bg-brand-yellow text-[#1D1D1F] font-semibold text-[15px] h-[50px] px-7 rounded-[10px] hover:opacity-90">
               Reserve a table

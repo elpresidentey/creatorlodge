@@ -27,11 +27,11 @@ export default function Contact() {
 
       <section className="px-6 md:px-10 lg:px-16 py-16 md:py-24">
         <div className="max-w-[1312px] mx-auto">
-          <p className="text-white/50 font-semibold tracking-[0.18em] text-xs uppercase">Contact</p>
-          <h1 className="font-cabin font-semibold text-[40px] sm:text-[56px] leading-[0.92] tracking-[-0.04em] text-white mt-3">
+          <p className="eyebrow text-white/50">Contact</p>
+          <h1 className="mt-4 font-cabin text-[40px] font-semibold leading-[0.95] tracking-[-0.035em] text-white sm:text-[56px]">
             Talk to us
           </h1>
-          <p className="text-white/60 text-[15px] leading-relaxed mt-3 max-w-xl">Questions, collaborations or reservations — drop us a line.</p>
+          <p className="mt-4 max-w-xl text-[15px] leading-[1.7] text-white/65">Questions, collaborations or reservations — drop us a line.</p>
         </div>
       </section>
 
@@ -57,8 +57,8 @@ export default function Contact() {
             </div>
             <div className="rounded-2xl overflow-hidden h-[200px] bg-white/10 border border-white/10">
               <img
-                src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Map placeholder"
+                src="https://images.pexels.com/photos/35415671/pexels-photo-35415671.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Cultural festival in Lagos, Nigeria"
                 className="w-full h-full object-cover opacity-60"
               />
             </div>

@@ -1,35 +1,42 @@
 import { Link } from "react-router-dom";
+import { Reveal } from "@/hooks/useReveal";
 
 const services = [
-  { title: "Dine", desc: "Wood-fired plates, garden-led menu.", image: "https://images.pexels.com/photos/29106106/pexels-photo-29106106.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/menu" },
-  { title: "Bar", desc: "Palm wine, low-ABV, long pours.", image: "https://images.pexels.com/photos/4485379/pexels-photo-4485379.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/menu" },
-  { title: "Gym", desc: "HIIT, mobility, quiet strength. Tap for workouts →", image: "https://images.pexels.com/photos/4464780/pexels-photo-4464780.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/book?space=gym" },
-  { title: "Work", desc: "Desks, offices, studios.", image: "https://images.pexels.com/photos/6805154/pexels-photo-6805154.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/spaces" },
+  { no: "I", title: "La Table", desc: "Jollof, suya & garden plates.", image: "https://images.pexels.com/photos/37538487/pexels-photo-37538487.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/menu" },
+  { no: "II", title: "Le Bar", desc: "Flamed cocktails, Lagos nights.", image: "https://images.pexels.com/photos/37461041/pexels-photo-37461041.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/menu" },
+  { no: "III", title: "L’Atelier", desc: "Desks, studios & quiet salons.", image: "https://images.pexels.com/photos/30688907/pexels-photo-30688907.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/spaces" },
+  { no: "IV", title: "La Galerie", desc: "Monthly shows, private views.", image: "https://images.pexels.com/photos/38942545/pexels-photo-38942545.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/gallery" },
+  { no: "V", title: "Le Jardin", desc: "Brunch, beats & celebration halls.", image: "https://images.pexels.com/photos/35730164/pexels-photo-35730164.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/spaces" },
+  { no: "VI", title: "La Scène", desc: "Jazz, drums & runway salons.", image: "https://images.pexels.com/photos/37572315/pexels-photo-37572315.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/events" },
 ];
 
 export default function ServicesSection() {
   return (
-    <section className="w-full bg-[#F5F5F7]">
-      <div className="max-w-[1312px] mx-auto px-6 md:px-10 lg:px-16 py-16 md:py-24">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
-          <div>
-            <p className="text-[#6E6E73] text-xs font-medium tracking-[0.18em] uppercase">What we do</p>
-            <h2 className="font-cabin font-semibold text-[32px] tracking-[-0.03em] text-[#1D1D1F] mt-2 leading-none">Four houses, one roof.</h2>
+    <section className="w-full bg-[#0E0E0F]">
+      <div className="lounge-container section-pad">
+        <Reveal className="section-head">
+          <div className="section-head-copy">
+            <p className="eyebrow eyebrow-rule text-[#C6A15B]">Les Salons</p>
+            <h2 className="section-title text-ivory">Six salons, <span className="italic text-gold-soft">one roof.</span></h2>
           </div>
-          <p className="text-[#424245] text-[15px] max-w-sm leading-relaxed">Restaurant, bar, gym and workspaces — calibrated for focus and ease.</p>
-        </div>
+          <p className="section-lede pb-1 text-white/60">Restaurant, bar, atelier and galerie — composed for lingering, not rushing.</p>
+        </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {services.map((s) => (
-            <Link key={s.title} to={s.href} className="group relative overflow-hidden rounded-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.12)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.18)] hover:-translate-y-0.5 transition-all duration-300 aspect-[4/3.4]">
-              <img src={s.image} alt={s.title} className="absolute inset-0 h-full w-full object-cover group-hover:scale-[1.04] transition duration-700" loading="lazy" />
-              <div className="absolute inset-0 bg-black/55 group-hover:bg-black/60 transition" />
-              <div className="absolute bottom-0 inset-x-0 p-5">
-                <h3 className="font-cabin font-semibold text-[17px] tracking-[-0.02em] text-white leading-none">{s.title}</h3>
-                <p className="text-white/75 text-xs leading-relaxed mt-1.5">{s.desc}</p>
-                <span className="inline-flex items-center gap-1 text-white text-xs font-medium mt-2 group-hover:gap-1.5 transition-all">Explore <span>→</span></span>
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          {services.map((s, i) => (
+            <Reveal key={s.title} delay={(i % 3) * 110}>
+            <Link to={s.href} className="group card-lift pressable relative block aspect-[4/4.1] overflow-hidden rounded-[20px] border border-[#C6A15B]/20 shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:border-[#C6A15B]/45 hover:shadow-[0_28px_70px_rgba(0,0,0,0.5)]">
+              <img src={s.image} alt={s.title} className="absolute inset-0 h-full w-full object-cover transition duration-[1200ms] group-hover:scale-[1.06]" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10 transition group-hover:from-black/90" />
+              <span className="absolute left-5 top-5 font-display text-[13px] italic tracking-[0.1em] text-gold-soft/90">{s.no}</span>
+              <span className="absolute right-5 top-5 h-px w-8 bg-[#C6A15B]/50" />
+              <div className="absolute inset-x-0 bottom-0 p-6">
+                <h3 className="font-display text-[22px] font-medium leading-tight text-ivory">{s.title}</h3>
+                <p className="mt-2 text-[13px] leading-relaxed text-white/65">{s.desc}</p>
+                <span className="mt-4 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-soft transition-all group-hover:gap-3">Enter <span aria-hidden>→</span></span>
               </div>
             </Link>
+            </Reveal>
           ))}
         </div>
       </div>

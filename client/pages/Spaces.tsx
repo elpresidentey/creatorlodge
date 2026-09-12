@@ -25,9 +25,9 @@ export default function Spaces() {
       <Navbar />
       <section className="px-6 md:px-10 lg:px-16 py-16 md:py-24">
         <div className="max-w-[1312px] mx-auto">
-          <p className="text-white/50 font-semibold tracking-[0.18em] text-xs uppercase">Spaces</p>
-          <h1 className="font-cabin font-semibold text-[40px] sm:text-[56px] leading-[0.92] tracking-[-0.04em] text-white mt-3">Work. Create. Celebrate.</h1>
-          <p className="text-white/60 text-[15px] leading-relaxed mt-3 max-w-xl">From hot desks to podcast booths — every space is designed for focus and flow.</p>
+          <p className="eyebrow text-white/50">Spaces</p>
+          <h1 className="mt-4 font-cabin text-[40px] font-semibold leading-[0.95] tracking-[-0.035em] text-white sm:text-[56px]">Work. Create. Celebrate.</h1>
+          <p className="mt-4 max-w-xl text-[15px] leading-[1.7] text-white/65">From hot desks to podcast booths — every space is designed for focus and flow.</p>
           <div className="flex flex-col sm:flex-row gap-3 mt-6">
             <div className="flex flex-wrap gap-2">
               <button onClick={() => setFilter("all")} className={`px-4 py-2 rounded-full text-[13px] font-medium ${filter === "all" ? "bg-white text-[#1D1D1F]" : "bg-white/10 text-white"}`}>All outlets</button>
@@ -42,25 +42,24 @@ export default function Spaces() {
       </section>
 
       <section className="px-6 md:px-10 lg:px-16 pb-16 md:pb-24">
-        <div className="max-w-[1312px] mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="max-w-[1312px] mx-auto grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((s) => (
-            <div key={s.id} className="group bg-white rounded-[20px] overflow-hidden border border-black/5 shadow-sm flex flex-col hover:shadow-md transition">
-              <div className="relative h-[180px] overflow-hidden">
-                <img src={s.image} alt={s.name} className="h-full w-full object-cover" />
-                <span className="absolute top-2.5 right-2.5 z-10 bg-brand-yellow text-[#1D1D1F] text-[10px] font-semibold px-2 py-0.5 rounded-full leading-tight">{s.price}</span>
-              </div>
-              <div className="p-6 flex flex-col gap-2 flex-1">
-                <h3 className="font-cabin font-semibold text-[17px] leading-tight text-[#1D1D1F]">{s.name}</h3>
-                <p className="text-[#6E6E73] text-xs uppercase tracking-widest">{s.capacity}</p>
-                <p className="text-[#424245] text-[15px] leading-relaxed">{s.desc}</p>
-                <div className="flex flex-wrap gap-1.5 mt-2">
-                  {s.amenities.map((a) => (
-                    <span key={a} className="bg-[#F5F5F7] border border-black/5 text-[#424245] text-[11px] px-2 py-1 rounded-full">{a}</span>
+            <div key={s.id} className="group relative flex min-h-[460px] flex-col justify-end overflow-hidden rounded-[20px] border border-[#C6A15B]/20 shadow-[0_24px_60px_rgba(0,0,0,0.4)] transition-all duration-500 hover:-translate-y-1 hover:border-[#C6A15B]/55">
+              <img src={s.image} alt={s.name} className="absolute inset-0 h-full w-full object-cover transition duration-[1200ms] group-hover:scale-[1.05]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/45 to-black/10" />
+              <span className="absolute right-4 top-4 z-10 rounded-full border border-[#C6A15B]/40 bg-black/60 px-2.5 py-1 text-[11px] font-semibold leading-none text-gold-soft backdrop-blur-md">{s.price}</span>
+              <div className="relative flex flex-1 flex-col justify-end p-5">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-soft">{s.capacity}</p>
+                <h3 className="mt-1.5 font-display text-[20px] font-medium leading-tight text-ivory">{s.name}</h3>
+                <p className="mt-2 line-clamp-2 text-[13px] leading-relaxed text-white/70">{s.desc}</p>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {s.amenities.slice(0, 3).map((a) => (
+                    <span key={a} className="rounded-full border border-white/15 bg-white/10 px-2 py-1 text-[11px] leading-none text-white/80 backdrop-blur-sm">{a}</span>
                   ))}
                 </div>
-                <div className="flex gap-3 mt-4">
-                  <Link to={`/book?space=${s.id}&outlet=${filter !== "all" ? filter : outlets[0].slug}`} className="inline-flex flex-1 bg-[#1D1D1F] text-white text-[15px] font-medium rounded-[10px] text-center hover:bg-black h-[50px] items-center justify-center">Book</Link>
-                  <Link to="/outlets" className="inline-flex items-center justify-center px-4 border border-black/10 text-[#1D1D1F] text-[15px] font-medium h-[50px] rounded-[10px] hover:bg-[#F5F5F7]">Outlets</Link>
+                <div className="mt-4 flex gap-2.5">
+                  <Link to={`/book?space=${s.id}&outlet=${filter !== "all" ? filter : outlets[0].slug}`} className="inline-flex h-[46px] flex-1 items-center justify-center rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[13px] font-semibold uppercase tracking-[0.08em] text-[#171410] transition hover:brightness-105">Book</Link>
+                  <Link to="/outlets" className="inline-flex h-[46px] items-center justify-center rounded-[10px] border border-white/20 bg-white/10 px-5 text-[13px] font-semibold uppercase tracking-[0.08em] text-white backdrop-blur-sm transition hover:bg-white/15">Houses</Link>
                 </div>
               </div>
             </div>

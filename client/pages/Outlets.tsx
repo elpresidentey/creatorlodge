@@ -11,34 +11,33 @@ export default function Outlets() {
 
       <section className="px-6 md:px-10 lg:px-16 py-16 md:py-24">
         <div className="max-w-[1312px] mx-auto">
-          <p className="text-white/50 font-semibold tracking-[0.18em] text-xs uppercase">Outlets</p>
-          <h1 className="font-cabin font-semibold text-[40px] sm:text-[56px] leading-[0.92] tracking-[-0.04em] text-white mt-3">
+          <p className="eyebrow text-white/50">Outlets</p>
+          <h1 className="mt-4 font-cabin text-[40px] font-semibold leading-[0.95] tracking-[-0.035em] text-white sm:text-[56px]">
             Find your dome
           </h1>
-          <p className="text-white/60 text-[15px] leading-relaxed mt-3 max-w-xl">Three locations, one vibe. Each outlet blends dining, bar and focused work.</p>
+          <p className="mt-4 max-w-xl text-[15px] leading-[1.7] text-white/65">Three locations, one vibe. Each outlet blends dining, bar and focused work.</p>
         </div>
       </section>
 
       <section className="px-6 md:px-10 lg:px-16 pb-8">
-        <div className="max-w-[1312px] mx-auto grid md:grid-cols-3 gap-5">
+        <div className="max-w-[1312px] mx-auto grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {outlets.map((o) => (
-            <div key={o.slug} className="group surface-card flex flex-col">
-              <div className="surface-media h-[200px]">
-                <img src={o.image} alt={o.name} />
-                <span className="surface-chip absolute top-3 left-3 z-10 bg-[#1D1D1F]/90 text-white backdrop-blur-sm border border-white/10 tracking-widest uppercase">
-                  {o.tag}
-                </span>
-              </div>
-              <div className="p-6 flex flex-col gap-2 flex-1">
-                <h3 className="font-cabin font-semibold text-[17px] leading-tight text-[#1D1D1F]">{o.name}</h3>
-                <p className="text-[#6E6E73] text-xs tracking-widest uppercase">{o.area}</p>
-                <p className="text-[#424245] text-[15px]">{o.address}</p>
-                <p className="text-[#86868B] text-xs">{o.hours} • {o.phone}</p>
-                <div className="flex gap-3 mt-4">
-                  <Link to={`/outlets/${o.slug}`} className="flex-1 inline-flex items-center justify-center bg-white border border-black/10 text-[#1D1D1F] text-[15px] font-medium h-[50px] rounded-[10px] text-center hover:bg-[#F5F5F7]">
+            <div key={o.slug} className="group relative flex min-h-[440px] flex-col justify-end overflow-hidden rounded-[20px] border border-[#C6A15B]/20 shadow-[0_24px_60px_rgba(0,0,0,0.4)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#C6A15B]/55">
+              <img src={o.image} alt={o.name} className="absolute inset-0 h-full w-full object-cover transition duration-[1200ms] group-hover:scale-[1.06]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/40 to-black/10" />
+              <span className="surface-chip absolute left-4 top-4 z-10 border border-[#C6A15B]/40 bg-black/60 uppercase tracking-[0.14em] text-gold-soft backdrop-blur-md">
+                {o.tag}
+              </span>
+              <div className="relative flex flex-1 flex-col justify-end p-5">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-soft">{o.area}</p>
+                <h3 className="mt-1.5 font-display text-[20px] font-medium leading-tight text-ivory">{o.name}</h3>
+                <p className="mt-2 text-[13px] leading-relaxed text-white/70">{o.address}</p>
+                <p className="mt-1 text-[12px] text-white/50">{o.hours} • {o.phone}</p>
+                <div className="mt-4 flex gap-2.5">
+                  <Link to={`/outlets/${o.slug}`} className="inline-flex h-[46px] flex-1 items-center justify-center rounded-[10px] border border-white/20 bg-white/10 text-[13px] font-semibold uppercase tracking-[0.08em] text-white backdrop-blur-sm transition hover:border-[#C6A15B]/60 hover:bg-white/15">
                     View
                   </Link>
-                  <Link to={`/book?outlet=${o.slug}`} className="inline-flex flex-1 bg-[#1D1D1F] text-white text-[15px] font-medium rounded-[10px] text-center hover:bg-black h-[50px] items-center justify-center">
+                  <Link to={`/book?outlet=${o.slug}`} className="inline-flex h-[46px] flex-1 items-center justify-center rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[13px] font-semibold uppercase tracking-[0.08em] text-[#171410] transition hover:brightness-105">
                     Book
                   </Link>
                 </div>

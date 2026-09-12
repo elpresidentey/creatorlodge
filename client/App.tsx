@@ -19,6 +19,7 @@ const BookSpace = lazy(() => import("./pages/BookSpace"));
 const Membership = lazy(() => import("./pages/Membership"));
 const Menu = lazy(() => import("./pages/Menu"));
 const Events = lazy(() => import("./pages/Events"));
+const Gallery = lazy(() => import("./pages/Gallery"));
 const Community = lazy(() => import("./pages/Community"));
 const Auth = lazy(() => import("./pages/Auth"));
 const UpdatePassword = lazy(() => import("./pages/UpdatePassword"));
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/membership" element={<Membership />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/community" element={<Community />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/update-password" element={<UpdatePassword />} />

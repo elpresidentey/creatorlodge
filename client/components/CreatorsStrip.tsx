@@ -1,20 +1,26 @@
 import { Link } from "react-router-dom";
 import { creators } from "@/lib/lounge-data";
+import { Reveal } from "@/hooks/useReveal";
 
 export default function CreatorsStrip() {
   return (
-    <section className="w-full bg-white px-6 md:px-10 lg:px-16 py-16 md:py-24 border-y border-black/5">
-      <div className="max-w-[1312px] mx-auto">
-        <div className="flex items-end justify-between gap-4 mb-8">
-          <h2 className="font-cabin font-semibold text-[32px] tracking-[-0.03em] text-[#1D1D1F]">Made by our people.</h2>
-          <Link to="/community" className="text-[#0071E3] text-[15px] font-medium hover:underline">Community →</Link>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-          {creators.map((c)=>(
-            <div key={c.name} className="surface-card rounded-[16px] bg-[#F5F5F7] p-4 flex gap-3 items-center">
-              <img src={c.image} alt={c.name} className="h-12 w-12 rounded-full object-cover shrink-0 ring-2 ring-white shadow-sm" loading="lazy" />
-              <div><p className="font-semibold text-[13px] text-[#1D1D1F] leading-none">{c.name}</p><p className="text-[#6E6E73] text-xs mt-1">{c.role} · {c.outlet}</p></div>
+    <section className="w-full border-y border-[#C6A15B]/20 bg-ivory">
+      <div className="lounge-container section-pad">
+        <Reveal className="section-head">
+          <div className="section-head-copy">
+            <p className="eyebrow eyebrow-rule text-[#9A7B3F]">Le Cercle</p>
+            <h2 className="section-title text-[#171410]">Made by <span className="italic text-[#9A7B3F]">our people.</span></h2>
+          </div>
+          <Link to="/community" className="section-link pressable text-[#9A7B3F] hover:text-[#171410]">The circle →</Link>
+        </Reveal>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:gap-5">
+          {creators.map((c, i)=>(
+            <Reveal key={c.name} delay={(i % 4) * 80}>
+            <div className="card-lift flex items-center gap-3.5 rounded-[16px] border border-[#C6A15B]/25 bg-[#141310] p-5 shadow-[0_18px_45px_rgba(23,20,16,0.3)] hover:border-[#C6A15B]/55">
+              <img src={c.image} alt={c.name} className="h-12 w-12 shrink-0 rounded-full border border-[#C6A15B]/40 object-cover shadow-sm transition duration-700 hover:scale-110" loading="lazy" />
+              <div className="min-w-0"><p className="truncate font-display text-[15px] font-medium leading-tight text-ivory">{c.name}</p><p className="mt-1 text-[12px] leading-snug text-white/55">{c.role} · {c.outlet}</p></div>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>

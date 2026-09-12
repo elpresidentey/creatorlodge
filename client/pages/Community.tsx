@@ -10,25 +10,24 @@ export default function Community() {
       <Navbar />
       <section className="px-6 md:px-10 lg:px-16 py-16 md:py-24 text-center">
         <div className="max-w-[1312px] mx-auto">
-        <p className="text-white/50 font-semibold tracking-[0.18em] text-xs uppercase">Community</p>
-        <h1 className="font-cabin font-semibold text-[40px] sm:text-[56px] leading-[0.92] tracking-[-0.04em] text-white mt-3">
+        <p className="eyebrow text-white/50">Community</p>
+        <h1 className="mt-4 font-cabin text-[40px] font-semibold leading-[0.95] tracking-[-0.035em] text-white sm:text-[56px]">
           Built by creators
         </h1>
-        <p className="text-white/60 text-[15px] mt-3 max-w-2xl mx-auto">Meet members who call the lounge home — founders, filmmakers, designers, podcasters.</p>
+        <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-[1.7] text-white/65">Meet members who call the lounge home — founders, filmmakers, designers, podcasters.</p>
         </div>
       </section>
 
       <section className="px-6 md:px-10 lg:px-16 pb-8">
-        <div className="max-w-[1312px] mx-auto grid sm:grid-cols-2 md:grid-cols-4 gap-5">
+        <div className="max-w-[1312px] mx-auto grid grid-cols-2 gap-5 md:grid-cols-4">
           {creators.map((c) => (
-            <div key={c.name} className="group surface-card text-center">
-              <div className="surface-media h-[180px]">
-                <img src={c.image} alt={c.name} />
-              </div>
-              <div className="p-4">
-                <p className="font-cabin font-semibold text-[17px] text-[#1D1D1F]">{c.name}</p>
-                <p className="text-[#424245] text-[15px]">{c.role}</p>
-                <p className="text-[#6E6E73] text-[11px] tracking-widest uppercase mt-1">{c.outlet}</p>
+            <div key={c.name} className="group relative aspect-[3/4] overflow-hidden rounded-[20px] border border-[#C6A15B]/20 text-center shadow-[0_24px_60px_rgba(0,0,0,0.4)] transition-all duration-500 hover:-translate-y-1 hover:border-[#C6A15B]/55">
+              <img src={c.image} alt={c.name} className="absolute inset-0 h-full w-full object-cover transition duration-[1200ms] group-hover:scale-[1.06]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-4">
+                <p className="font-display text-[17px] font-medium leading-tight text-ivory">{c.name}</p>
+                <p className="mt-1 font-display text-[13px] italic text-gold-soft">{c.role}</p>
+                <p className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/55">{c.outlet}</p>
               </div>
             </div>
           ))}
@@ -36,10 +35,10 @@ export default function Community() {
       </section>
 
       <section className="px-6 md:px-10 lg:px-16 pb-16 md:pb-24">
-        <div className="max-w-[1312px] mx-auto bg-[#F5F5F7] rounded-[20px] p-8 md:p-10 text-center border border-black/5">
-          <h3 className="font-cabin font-semibold text-[32px] tracking-[-0.03em] text-[#1D1D1F]">Want in?</h3>
-          <p className="text-[#424245] text-[15px] mt-2">Apply for membership — we review within 48 hours. No gatekeeping, just good fit.</p>
-          <div className="flex justify-center gap-3 mt-6">
+        <div className="max-w-[1312px] mx-auto bg-[#F5F5F7] rounded-[24px] p-8 md:p-12 text-center border border-black/5">
+          <h2 className="section-title text-[#1D1D1F]">Want in?</h2>
+          <p className="mx-auto mt-3 max-w-xl text-[15px] leading-[1.7] text-[#424245]">Apply for membership — we review within 48 hours. No gatekeeping, just good fit.</p>
+          <div className="flex flex-wrap justify-center gap-3 mt-8">
             <Link to="/membership" className="inline-flex bg-[#1D1D1F] text-white font-medium text-[15px] px-7 rounded-[10px] h-[50px] items-center justify-center hover:bg-black">
               View membership
             </Link>

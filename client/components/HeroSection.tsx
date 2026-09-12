@@ -1,101 +1,115 @@
 const gallery = [
   {
-    src: "https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    alt: "Dining interior at Creators Lounge",
+    src: "https://images.pexels.com/photos/30987048/pexels-photo-30987048.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    alt: "African dining table with cocktail in Nairobi restaurant",
   },
   {
-    src: "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Workspace",
+    src: "https://images.pexels.com/photos/30689114/pexels-photo-30689114.jpeg?auto=compress&cs=tinysrgb&w=800",
+    alt: "Creative team collaborating in Lagos office",
   },
   {
-    src: "https://images.pexels.com/photos/29106106/pexels-photo-29106106.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Fine dining plate",
+    src: "https://images.pexels.com/photos/37538487/pexels-photo-37538487.jpeg?auto=compress&cs=tinysrgb&w=800",
+    alt: "Jollof rice and chicken in Abuja café",
   },
   {
-    src: "https://images.pexels.com/photos/4485379/pexels-photo-4485379.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Bar",
+    src: "https://images.pexels.com/photos/38942545/pexels-photo-38942545.jpeg?auto=compress&cs=tinysrgb&w=800",
+    alt: "Guest viewing abstract art in Lagos gallery",
   },
 ];
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-[#1D1D1F] w-full overflow-hidden lg:min-h-[calc(100vh-74px)] lg:flex lg:items-center">
+    <section className="relative w-full overflow-hidden bg-[#0E0E0F] lg:flex lg:min-h-[calc(100vh-74px)] lg:items-center">
       <img
-        src="https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=1600"
+        src="https://images.pexels.com/photos/38942545/pexels-photo-38942545.jpeg?auto=compress&cs=tinysrgb&w=1600"
         alt=""
         aria-hidden
-        className="absolute inset-0 h-full w-full object-cover opacity-[0.22] scale-105"
+        className="absolute inset-0 h-full w-full scale-105 object-cover opacity-[0.18]"
       />
-      <div className="absolute inset-0 bg-[#1D1D1F]/85" />
-      <div className="absolute top-0 inset-x-0 h-px bg-white/[0.08]" />
-      <div className="absolute bottom-0 inset-x-0 h-px bg-white/[0.08]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0E0E0F]/70 via-[#0E0E0F]/85 to-[#0E0E0F]" />
+      <div className="absolute inset-x-0 top-0 h-px bg-[#C6A15B]/25" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-[#C6A15B]/20" />
 
-      <div className="relative max-w-[1312px] mx-auto w-full px-6 md:px-10 lg:px-16 py-16 md:py-24 lg:py-14">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
-          <div className="flex flex-col gap-6 lg:w-[46%] w-full lg:py-4">
-            <div className="inline-flex items-center gap-2.5 self-start rounded-full border border-white/12 bg-white/[0.07] backdrop-blur-md px-3.5 py-1.5 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inset-0 rounded-full bg-[#34C759] animate-ping opacity-40" />
-                <span className="relative h-2 w-2 rounded-full bg-[#34C759]" />
+      <div className="lounge-container relative w-full py-20 md:py-28 lg:py-24">
+        <div className="flex flex-col items-start justify-between gap-14 lg:flex-row lg:items-center lg:gap-16">
+          <div className="flex w-full flex-col gap-6 lg:w-[48%] lg:py-4">
+            <div className="plaque animate-rise self-start" style={{ animationDelay: "60ms" }}>
+              <span className="font-cabin text-[10px] font-semibold uppercase tracking-[0.24em] text-gold-soft">N°01 — Salon · Galerie · Maison</span>
+              <span className="h-3 w-px bg-[#C6A15B]/30" />
+              <span className="flex items-center gap-1.5 text-[11px] text-white/60">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inset-0 animate-ping rounded-full bg-[#34C759] opacity-40" />
+                  <span className="relative h-1.5 w-1.5 rounded-full bg-[#34C759]" />
+                </span>
+                VI · Yaba · Lekki
               </span>
-              <span className="text-white/75 text-[11px] font-medium tracking-[0.18em]">VI · YABA · LEKKI</span>
-              <span className="h-3 w-px bg-white/15" />
-              <span className="text-white/50 text-[11px]">8am — 11pm daily</span>
             </div>
 
-            <h1 className="font-cabin font-semibold text-[42px] sm:text-[52px] md:text-[64px] leading-[0.9] tracking-[-0.045em] text-white">
-              A place to
-              <span className="block font-semibold text-white">dine, work</span>
-              <span className="block font-semibold text-brand-yellow">&amp; create.</span>
+            <h1 className="animate-rise font-display text-[44px] font-medium leading-[1.02] tracking-[-0.015em] text-ivory sm:text-[56px] md:text-[68px]" style={{ animationDelay: "160ms" }}>
+              A private house
+              <span className="block">to dine, create</span>
+              <span className="block italic text-gold-soft">&amp; be seen.</span>
             </h1>
 
-            <p className="text-white/65 text-[15px] md:text-[17px] leading-relaxed max-w-[440px] font-light">
-              Three houses — one membership. Restaurant, bar, workspaces and studios for Lagos creators.
+            <p className="animate-rise max-w-[460px] text-[15px] font-normal leading-[1.75] text-white/65 md:text-[17px]" style={{ animationDelay: "280ms" }}>
+              Three houses, one circle — restaurant, bar, ateliers and gallery walls for Lagos&rsquo; patrons, artists and muses.
             </p>
 
-            <div className="flex flex-wrap gap-3 pt-1">
+            <div className="animate-rise flex flex-wrap items-center gap-3 pt-2" style={{ animationDelay: "400ms" }}>
               <a
-                href="/outlets"
-                className="inline-flex items-center justify-center h-[50px] px-7 rounded-[10px] bg-brand-yellow text-[#1D1D1F] font-medium text-[14px] hover:opacity-90 transition-opacity shadow-[0_8px_24px_rgba(254,212,64,0.22)]"
+                href="/membership"
+                className="btn-shine pressable inline-flex h-[52px] items-center justify-center rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] px-8 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#171410] shadow-[0_12px_32px_rgba(198,161,91,0.3),inset_0_1px_0_rgba(255,255,255,0.45)] hover:brightness-105"
               >
-                Explore houses
+                Request invitation
               </a>
               <a
-                href="/spaces"
-                className="inline-flex items-center justify-center h-[50px] px-7 rounded-[10px] border border-white/20 bg-white/[0.04] text-white font-medium text-[14px] hover:bg-white/10 transition-colors backdrop-blur-sm"
+                href="/outlets"
+                className="pressable inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#C6A15B]/30 bg-white/[0.04] px-8 text-[13px] font-medium uppercase tracking-[0.1em] text-ivory backdrop-blur-sm hover:border-[#C6A15B]/60 hover:bg-white/[0.08]"
               >
-                View spaces
+                Enter the houses
               </a>
             </div>
 
-            <p className="text-white/40 text-xs tracking-wide">Members from ₦15k/day · Day passes available</p>
+            <div className="animate-fade flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-[#C6A15B]/20 pt-5 text-[12px] tracking-[0.08em] text-white/45" style={{ animationDelay: "560ms" }}>
+              <span className="uppercase">Patronage from ₦15k / day</span>
+              <span className="hidden h-3 w-px bg-white/15 sm:block" />
+              <span className="uppercase">Exhibitions monthly</span>
+              <span className="hidden h-3 w-px bg-white/15 sm:block" />
+              <span className="uppercase">8am — 11pm</span>
+            </div>
           </div>
 
-          <div className="lg:w-[52%] w-full flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[540px] h-[360px] sm:h-[420px] lg:h-[480px]">
-              <div className="hero-float absolute left-0 top-8 sm:top-10 w-[58%] h-[78%] rounded-[28px] overflow-hidden border border-white/12 shadow-[0_24px_60px_rgba(0,0,0,0.45)] ring-1 ring-[#B79238]/35">
+          <div className="flex w-full justify-center lg:w-[52%] lg:justify-end">
+            <div className="animate-scale-in relative h-[380px] w-full max-w-[560px] sm:h-[440px] lg:h-[520px]" style={{ animationDelay: "240ms" }}>
+              <div className="hero-float absolute left-0 top-8 h-[78%] w-[58%] overflow-hidden rounded-[20px] border border-[#C6A15B]/30 shadow-[0_32px_80px_rgba(0,0,0,0.55)] ring-1 ring-black/40 sm:top-10">
                 <img
                   src={gallery[0].src}
                   alt={gallery[0].alt}
                   className="h-full w-full object-cover"
                   fetchPriority="high"
                 />
-                <div className="absolute inset-0 bg-black/25" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between rounded-xl border border-white/15 bg-black/55 px-3 py-2 backdrop-blur-md">
+                  <span className="font-cabin text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-soft">The Dining Salon</span>
+                  <span className="font-display text-[11px] italic text-white/70">N°I</span>
+                </div>
               </div>
 
-              <div className="hero-float-delay absolute right-0 top-0 w-[46%] h-[48%] rounded-[22px] overflow-hidden border border-white/12 shadow-[0_16px_40px_rgba(0,0,0,0.4)] z-10">
+              <div className="hero-float-delay absolute right-0 top-0 z-10 h-[48%] w-[46%] overflow-hidden rounded-[18px] border border-[#C6A15B]/25 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                 <img src={gallery[1].src} alt={gallery[1].alt} className="h-full w-full object-cover" />
-                <div className="absolute inset-0 bg-black/15" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+                <span className="absolute left-3 top-3 rounded-full border border-white/15 bg-black/55 px-2.5 py-1 font-cabin text-[9px] font-semibold uppercase tracking-[0.2em] text-white/85 backdrop-blur-md">Atelier</span>
               </div>
 
-              <div className="absolute right-3 sm:right-5 bottom-8 w-[42%] h-[38%] rounded-[22px] overflow-hidden border border-white/12 shadow-[0_16px_40px_rgba(0,0,0,0.4)] z-20">
+              <div className="absolute bottom-8 right-3 z-20 h-[38%] w-[42%] overflow-hidden rounded-[18px] border border-[#C6A15B]/25 shadow-[0_20px_50px_rgba(0,0,0,0.5)] sm:right-5">
                 <img src={gallery[2].src} alt={gallery[2].alt} className="h-full w-full object-cover" />
-                <div className="absolute inset-0 bg-black/10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                <span className="absolute bottom-3 left-3 rounded-full border border-white/15 bg-black/55 px-2.5 py-1 font-cabin text-[9px] font-semibold uppercase tracking-[0.2em] text-white/85 backdrop-blur-md">La Carte</span>
               </div>
 
-              <div className="absolute left-[8%] -bottom-1 z-30 inline-flex items-center gap-2 rounded-full border border-white/15 bg-[#1D1D1F]/80 backdrop-blur-md px-3.5 py-2 shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
-                <img src={gallery[3].src} alt="" className="h-6 w-6 rounded-full object-cover" />
-                <span className="text-white/80 text-[11px] font-medium tracking-wide">Open now · kitchen &amp; desks</span>
+              <div className="absolute -bottom-1 left-[8%] z-30 inline-flex items-center gap-2.5 rounded-full border border-[#C6A15B]/30 bg-[#121110]/90 py-2 pl-2 pr-4 shadow-[0_12px_32px_rgba(0,0,0,0.45)] backdrop-blur-md">
+                <img src={gallery[3].src} alt="" className="h-7 w-7 rounded-full border border-[#C6A15B]/40 object-cover" />
+                <span className="text-[11px] font-medium tracking-[0.06em] text-white/85">Now showing · <span className="font-display italic text-gold-soft">Lagos in Gold</span></span>
               </div>
             </div>
           </div>

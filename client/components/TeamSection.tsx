@@ -1,50 +1,53 @@
 import { Link } from "react-router-dom";
+import { Reveal } from "@/hooks/useReveal";
 
 const outletSlug: Record<string, string> = { "VI Dome": "vi-dome", Foundry: "yaba-foundry", Garden: "lekki-garden" };
 
 const team = [
-  { name: "Leonard", role: "Executive Chef", outlet: "VI Dome", image: "https://images.pexels.com/photos/32224390/pexels-photo-32224390.jpeg?auto=compress&cs=tinysrgb&w=800", pos: "50% 18%" },
-  { name: "Udoka", role: "Mixologist", outlet: "Foundry", image: "https://images.pexels.com/photos/31893698/pexels-photo-31893698.jpeg?auto=compress&cs=tinysrgb&w=800", pos: "50% 15%" },
-  { name: "Kemi", role: "Community", outlet: "VI Dome", image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=800", pos: "50% 22%" },
-  { name: "Aneeka", role: "Gym Lead", outlet: "VI Dome", image: "https://images.pexels.com/photos/3912944/pexels-photo-3912944.jpeg?auto=compress&cs=tinysrgb&w=800", pos: "50% 12%" },
-  { name: "David", role: "Studio Producer", outlet: "Foundry", image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=800", pos: "50% 16%" },
-  { name: "Loretta", role: "Housekeeping", outlet: "Garden", image: "https://images.pexels.com/photos/33871730/pexels-photo-33871730.jpeg?auto=compress&cs=tinysrgb&w=800", pos: "50% 10%" },
+  { name: "Leonard", role: "Executive Chef", outlet: "VI Dome", image: "https://images.pexels.com/photos/36838303/pexels-photo-36838303.jpeg?auto=compress&cs=tinysrgb&w=800", pos: "50% 18%" },
+  { name: "Udoka", role: "Mixologist", outlet: "Foundry", image: "https://images.pexels.com/photos/37461041/pexels-photo-37461041.jpeg?auto=compress&cs=tinysrgb&w=800", pos: "50% 15%" },
+  { name: "Kemi", role: "Community", outlet: "VI Dome", image: "https://images.pexels.com/photos/36245744/pexels-photo-36245744.jpeg?auto=compress&cs=tinysrgb&w=800", pos: "50% 22%" },
+  { name: "Aneeka", role: "Gym Lead", outlet: "VI Dome", image: "https://images.pexels.com/photos/27593743/pexels-photo-27593743.jpeg?auto=compress&cs=tinysrgb&w=800", pos: "50% 12%" },
+  { name: "David", role: "Studio Producer", outlet: "Foundry", image: "https://images.pexels.com/photos/20695302/pexels-photo-20695302.jpeg?auto=compress&cs=tinysrgb&w=800", pos: "50% 16%" },
+  { name: "Loretta", role: "Housekeeping", outlet: "Garden", image: "https://images.pexels.com/photos/38909243/pexels-photo-38909243.jpeg?auto=compress&cs=tinysrgb&w=800", pos: "50% 10%" },
 ];
 
 export default function TeamSection() {
   return (
-    <section className="bg-[#F5F5F7] w-full px-6 md:px-10 lg:px-16 py-16 md:py-24">
-      <div className="max-w-[1312px] mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
-          <div>
-            <p className="text-[#6E6E73] text-xs font-semibold tracking-[0.18em] uppercase">The people</p>
-            <h2 className="font-cabin font-semibold text-[32px] tracking-[-0.03em] text-[#1D1D1F] mt-2 leading-none">The team behind the dome</h2>
+    <section className="w-full bg-[#0E0E0F]">
+      <div className="lounge-container section-pad">
+        <Reveal className="section-head">
+          <div className="section-head-copy">
+            <p className="eyebrow eyebrow-rule text-[#C6A15B]">Les Hôtes</p>
+            <h2 className="section-title text-ivory">The hands behind <span className="italic text-gold-soft">the house</span></h2>
           </div>
-          <p className="text-[#424245] text-[15px] max-w-md leading-relaxed">Faces you’ll actually meet — no stock, no dark filters.</p>
-        </div>
+          <p className="section-lede pb-1 text-white/60">Faces you&rsquo;ll actually meet — chefs, sommeliers, ateliers, muses.</p>
+        </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {team.map((m) => (
-              <Link key={m.name} to={`/outlets/${outletSlug[m.outlet] || "vi-dome"}`} className="group relative overflow-hidden rounded-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.18)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.22)] hover:-translate-y-0.5 transition-all duration-300 aspect-[4/3.4]">
-              <img src={m.image} alt={`${m.name} — ${m.role}`} style={{ objectPosition: (m as any).pos }} className="absolute inset-0 h-full w-full object-cover group-hover:scale-[1.04] transition duration-700" loading="lazy" />
-              <div className="absolute inset-0 bg-black/45 group-hover:bg-black/50 transition" />
-              <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-black/50 px-2.5 py-1 border border-white/15">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#34C759]" />
-                <span className="text-white text-[8px] font-semibold tracking-widest uppercase">{m.outlet}</span>
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          {team.map((m, i) => (
+            <Reveal key={m.name} delay={(i % 3) * 110}>
+              <Link to={`/outlets/${outletSlug[m.outlet] || "vi-dome"}`} className="group card-lift pressable relative block aspect-[4/3.4] overflow-hidden rounded-[20px] border border-[#C6A15B]/15 shadow-[0_8px_32px_rgba(0,0,0,0.18)] hover:border-[#C6A15B]/45 hover:shadow-[0_12px_40px_rgba(0,0,0,0.22)]">
+              <img src={m.image} alt={`${m.name} — ${m.role}`} style={{ objectPosition: (m as any).pos }} className="absolute inset-0 h-full w-full object-cover transition duration-[1200ms] group-hover:scale-[1.06]" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition group-hover:from-black/80" />
+              <div className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-[#C6A15B]/30 bg-black/55 px-3 py-1.5 backdrop-blur-md">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#34C759]" />
+                <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-white">{m.outlet}</span>
               </div>
-              <div className="absolute bottom-0 inset-x-0 p-5">
-                <h3 className="font-cabin font-semibold text-[16px] tracking-[-0.02em] text-white leading-none">{m.name}</h3>
-                <p className="text-white/80 text-xs font-medium tracking-wide mt-1.5">{m.role}</p>
-                <p className="text-white/60 text-[11px] mt-1 flex items-center gap-1">View house <span>→</span></p>
+              <div className="absolute inset-x-0 bottom-0 p-6">
+                <h3 className="card-title text-white">{m.name}</h3>
+                <p className="mt-1.5 text-[13px] font-medium tracking-wide text-white/80">{m.role}</p>
+                <p className="mt-2 flex items-center gap-1.5 text-[12px] text-gold-soft/80 transition-all group-hover:gap-3">View house <span aria-hidden>→</span></p>
               </div>
             </Link>
+            </Reveal>
           ))}
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-[16px] bg-white border border-black/5 px-6 py-5 shadow-sm">
-          <p className="text-[#424245] text-sm">Want to join? <span className="text-[#1D1D1F] font-medium">We're hiring hosts & creatives.</span></p>
-          <a href="/contact" className="inline-flex items-center justify-center h-[50px] px-6 rounded-[10px] bg-[#1D1D1F] text-white font-medium text-[14px] hover:bg-black transition-colors">View open roles</a>
-        </div>
+        <Reveal delay={120} className="mt-10 flex flex-col gap-5 rounded-[20px] border border-[#C6A15B]/25 bg-gradient-to-br from-[#171510] to-[#101010] p-6 shadow-[0_24px_60px_rgba(0,0,0,0.4)] sm:flex-row sm:items-center sm:justify-between md:p-8">
+          <p className="text-[15px] leading-relaxed text-white/70">Want to join? <span className="font-medium text-ivory">We’re hiring hosts & creatives.</span></p>
+          <a href="/contact" className="btn-shine pressable inline-flex h-[48px] shrink-0 items-center justify-center rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] px-6 text-[13px] font-semibold uppercase tracking-[0.08em] text-[#171410] hover:brightness-105">View open roles</a>
+        </Reveal>
       </div>
     </section>
   );
