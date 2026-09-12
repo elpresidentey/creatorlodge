@@ -28,6 +28,20 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
+// Force-adopt updates: when a newer service worker takes control of this
+// page, reload once so clients never sit on a stale cached build forever.
+// (Only arms when a worker already controls us — never on first install,
+// so there is no reload loop.)
+if (
+  typeof window !== "undefined" &&
+  "serviceWorker" in navigator &&
+  navigator.serviceWorker.controller
+) {
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    window.location.reload();
+  });
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <AuthProvider>
