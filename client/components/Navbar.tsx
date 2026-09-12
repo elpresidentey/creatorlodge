@@ -24,8 +24,8 @@ export default function Navbar() {
   return (
     <nav className={`sticky top-0 z-50 w-full border-b backdrop-blur-xl transition-all duration-500 ${scrolled ? "border-[#C6A15B]/35 bg-[#0B0B0C]/95 shadow-[0_12px_40px_rgba(0,0,0,0.45)]" : "border-[#C6A15B]/20 bg-[#0E0E0F]/92 supports-[backdrop-filter]:bg-[#0E0E0F]/80"}`}>
       <div className="border-b border-white/[0.06]">
-        <div className="lounge-container flex items-center justify-center py-1.5">
-          <p className="text-[10px] font-medium uppercase tracking-[0.28em] text-[#C6A15B]/90">Private members&rsquo; house — Lagos · Est. MMXIX</p>
+        <div className="lounge-container flex items-center justify-center px-4 py-1.5">
+          <p className="truncate text-center text-[9px] font-medium uppercase tracking-[0.18em] text-[#C6A15B]/90 sm:text-[10px] sm:tracking-[0.28em]">Private members&rsquo; house — Lagos<span className="hidden min-[400px]:inline"> · Est. MMXIX</span></p>
         </div>
       </div>
       <div className="lounge-container flex items-center justify-between gap-3 py-3">
@@ -109,7 +109,7 @@ export default function Navbar() {
 
       {/* Hamburger — visible below lg (1024) */}
       <button
-        className="lg:hidden text-white p-2 -mr-2 shrink-0"
+        className="shrink-0 p-2.5 -mr-2 text-white lg:hidden"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle menu"
       >
@@ -132,7 +132,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="animate-fade absolute left-0 right-0 top-full z-50 flex max-h-[75vh] flex-col gap-4 overflow-auto border-t border-[#C6A15B]/20 bg-[#0E0E0F] p-6 shadow-2xl lg:hidden">
+        <div className="animate-fade absolute left-0 right-0 top-full z-50 flex max-h-[80dvh] flex-col gap-4 overflow-auto border-t border-[#C6A15B]/20 bg-[#0E0E0F] p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-2xl lg:hidden">
           <Link to="/" className="text-white font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link to="/spaces" className="text-white font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Spaces</Link>
           <Link to="/outlets" className="text-white font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Outlets</Link>

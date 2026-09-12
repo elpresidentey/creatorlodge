@@ -56,7 +56,7 @@ export default function OutletDetail() {
       </section>
 
       <section className="px-6 md:px-10 lg:px-16 pb-8">
-        <div className="max-w-[1312px] mx-auto grid grid-cols-3 gap-5">
+        <div className="max-w-[1312px] mx-auto grid grid-cols-3 gap-3 md:gap-5">
           {outlet.gallery.map((g, i) => (
             <img key={i} src={g} alt="" className="h-[140px] md:h-[200px] w-full object-cover rounded-[20px] border border-white/10" />
           ))}
@@ -82,7 +82,7 @@ export default function OutletDetail() {
               </div>
             ))}
           </div>
-          <div className="flex gap-3 mt-8">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link to={`/book?outlet=${outlet.slug}`} className="inline-flex bg-brand-yellow text-[#1D1D1F] font-semibold text-[15px] px-8 rounded-[10px] h-[50px] items-center justify-center hover:opacity-90">
               Book at this outlet
             </Link>

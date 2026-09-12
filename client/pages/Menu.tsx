@@ -66,7 +66,7 @@ export default function Menu() {
           ))}
         </div>
         {selectedItems.length > 0 && (
-          <div className="max-w-[1312px] mx-auto mt-6 bg-white rounded-[16px] border border-black/5 p-4 md:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-[0_8px_24px_rgba(0,0,0,0.08)] sticky bottom-4 z-10">
+          <div className="max-w-[1312px] mx-auto mt-6 bg-white rounded-[16px] border border-black/5 p-4 md:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-[0_8px_24px_rgba(0,0,0,0.08)] sticky bottom-[max(1rem,env(safe-area-inset-bottom))] z-10">
             <div className="min-w-0 flex-1">
               <p className="font-cabin font-semibold text-sm text-[#1D1D1F]">{selectedItems.length} selected · ₦{total.toLocaleString()}</p>
               <p className="text-xs text-[#6E6E73] truncate">{selectedItems.map(i=>i.name).join(" · ")}</p>

@@ -33,7 +33,7 @@ export default function HeroSection() {
       <div className="lounge-container relative w-full py-20 md:py-28 lg:py-24">
         <div className="flex flex-col items-start justify-between gap-14 lg:flex-row lg:items-center lg:gap-16">
           <div className="flex w-full flex-col gap-6 lg:w-[48%] lg:py-4">
-            <div className="plaque animate-rise self-start" style={{ animationDelay: "60ms" }}>
+            <div className="plaque animate-rise max-w-full flex-wrap self-start" style={{ animationDelay: "60ms" }}>
               <span className="font-cabin text-[10px] font-semibold uppercase tracking-[0.24em] text-gold-soft">N°01 — Salon · Galerie · Maison</span>
               <span className="h-3 w-px bg-[#C6A15B]/30" />
               <span className="flex items-center gap-1.5 text-[11px] text-white/60">
@@ -45,7 +45,7 @@ export default function HeroSection() {
               </span>
             </div>
 
-            <h1 className="animate-rise font-display text-[44px] font-medium leading-[1.02] tracking-[-0.015em] text-ivory sm:text-[56px] md:text-[68px]" style={{ animationDelay: "160ms" }}>
+            <h1 className="animate-rise font-display text-[40px] font-medium leading-[1.02] tracking-[-0.015em] text-ivory min-[400px]:text-[44px] sm:text-[56px] md:text-[68px]" style={{ animationDelay: "160ms" }}>
               A private house
               <span className="block">to dine, create</span>
               <span className="block italic text-gold-soft">&amp; be seen.</span>

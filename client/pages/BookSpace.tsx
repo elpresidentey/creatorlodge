@@ -143,9 +143,9 @@ export default function BookSpace() {
 
       {step === 3 ? (
         <section className="px-6 md:px-10 lg:px-16 pb-16 md:pb-24">
-          <div className="max-w-[600px] mx-auto bg-white rounded-[20px] p-8 text-center border border-black/5 shadow-sm">
+          <div className="max-w-[600px] mx-auto bg-white rounded-[20px] p-6 md:p-8 text-center border border-black/5 shadow-sm">
             <p className="text-5xl">✨</p>
-            <h2 className="font-cabin font-semibold text-[32px] tracking-[-0.03em] text-[#1D1D1F] mt-4">You’re all set, {form.name.split(" ")[0]}!</h2>
+            <h2 className="font-cabin font-semibold text-[28px] sm:text-[32px] tracking-[-0.03em] text-[#1D1D1F] mt-4">You’re all set, {form.name.split(" ")[0]}!</h2>
             <p className="text-[#424245] text-[15px] mt-2">
               {selectedSpace.name} at {selectedOutlet.name} on {form.date} {form.time && `at ${form.time}`}. We sent a confirmation to {form.email}.
             </p>
