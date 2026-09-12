@@ -4,12 +4,12 @@ import { Reveal } from "@/hooks/useReveal";
 const outletSlug: Record<string, string> = { "VI Dome": "vi-dome", Foundry: "yaba-foundry", Garden: "lekki-garden" };
 
 const team = [
-  { name: "Leonard", role: "Executive Chef", outlet: "VI Dome", image: "https://images.pexels.com/photos/36838303/pexels-photo-36838303.jpeg?auto=compress&cs=tinysrgb&w=800", pos: "50% 18%" },
-  { name: "Udoka", role: "Mixologist", outlet: "Foundry", image: "https://images.pexels.com/photos/37461041/pexels-photo-37461041.jpeg?auto=compress&cs=tinysrgb&w=800", pos: "50% 15%" },
-  { name: "Kemi", role: "Community", outlet: "VI Dome", image: "https://images.pexels.com/photos/36245744/pexels-photo-36245744.jpeg?auto=compress&cs=tinysrgb&w=800", pos: "50% 22%" },
-  { name: "Aneeka", role: "Gym Lead", outlet: "VI Dome", image: "https://images.pexels.com/photos/27593743/pexels-photo-27593743.jpeg?auto=compress&cs=tinysrgb&w=800", pos: "50% 12%" },
-  { name: "David", role: "Studio Producer", outlet: "Foundry", image: "https://images.pexels.com/photos/20695302/pexels-photo-20695302.jpeg?auto=compress&cs=tinysrgb&w=800", pos: "50% 16%" },
-  { name: "Loretta", role: "Housekeeping", outlet: "Garden", image: "https://images.pexels.com/photos/38909243/pexels-photo-38909243.jpeg?auto=compress&cs=tinysrgb&w=800", pos: "50% 10%" },
+  { name: "Leonard", role: "Executive Chef", outlet: "VI Dome", image: "/images/pexels-36838303.jpg", pos: "50% 18%" },
+  { name: "Udoka", role: "Mixologist", outlet: "Foundry", image: "/images/pexels-37461041.jpg", pos: "50% 15%" },
+  { name: "Kemi", role: "Community", outlet: "VI Dome", image: "/images/pexels-36245744.jpg", pos: "50% 22%" },
+  { name: "Aneeka", role: "Gym Lead", outlet: "VI Dome", image: "/images/pexels-27593743.jpg", pos: "50% 12%" },
+  { name: "David", role: "Studio Producer", outlet: "Foundry", image: "/images/pexels-20695302.jpg", pos: "50% 16%" },
+  { name: "Loretta", role: "Housekeeping", outlet: "Garden", image: "/images/pexels-38909243.jpg", pos: "50% 10%" },
 ];
 
 export default function TeamSection() {

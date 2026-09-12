@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import { Reveal } from "@/hooks/useReveal";
 
 const services = [
-  { no: "I", title: "La Table", desc: "Jollof, suya & garden plates.", image: "https://images.pexels.com/photos/37538487/pexels-photo-37538487.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/menu" },
-  { no: "II", title: "Le Bar", desc: "Flamed cocktails, Lagos nights.", image: "https://images.pexels.com/photos/37461041/pexels-photo-37461041.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/menu" },
-  { no: "III", title: "L’Atelier", desc: "Desks, studios & quiet salons.", image: "https://images.pexels.com/photos/30688907/pexels-photo-30688907.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/spaces" },
-  { no: "IV", title: "La Galerie", desc: "Monthly shows, private views.", image: "https://images.pexels.com/photos/38942545/pexels-photo-38942545.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/gallery" },
-  { no: "V", title: "Le Jardin", desc: "Brunch, beats & celebration halls.", image: "https://images.pexels.com/photos/35730164/pexels-photo-35730164.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/spaces" },
-  { no: "VI", title: "La Scène", desc: "Jazz, drums & runway salons.", image: "https://images.pexels.com/photos/37572315/pexels-photo-37572315.jpeg?auto=compress&cs=tinysrgb&w=1200", href: "/events" },
+  { no: "I", title: "La Table", desc: "Jollof, suya & garden plates.", image: "/images/pexels-37538487.jpg", href: "/menu" },
+  { no: "II", title: "Le Bar", desc: "Flamed cocktails, Lagos nights.", image: "/images/pexels-37461041.jpg", href: "/menu" },
+  { no: "III", title: "L’Atelier", desc: "Desks, studios & quiet salons.", image: "/images/pexels-30688907.jpg", href: "/spaces" },
+  { no: "IV", title: "La Galerie", desc: "Monthly shows, private views.", image: "/images/pexels-38942545.jpg", href: "/gallery" },
+  { no: "V", title: "Le Jardin", desc: "Brunch, beats & celebration halls.", image: "/images/pexels-35730164.jpg", href: "/spaces" },
+  { no: "VI", title: "La Scène", desc: "Jazz, drums & runway salons.", image: "/images/pexels-37572315.jpg", href: "/events" },
 ];
 
 export default function ServicesSection() {

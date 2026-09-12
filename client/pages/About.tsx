@@ -46,7 +46,7 @@ export default function About() {
           </div>
           <div className="lg:w-[45%] w-full">
             <img
-              src="https://images.pexels.com/photos/30689114/pexels-photo-30689114.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              src="/images/pexels-30689114.jpg"
               alt="Creative team collaborating in Lagos office"
               className="w-full h-[380px] md:h-[460px] object-cover rounded-[20px] border border-white/10"
             />

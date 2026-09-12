@@ -59,7 +59,7 @@ export default function Contact() {
             </div>
             <div className="rounded-2xl overflow-hidden h-[200px] bg-white/10 border border-white/10">
               <img
-                src="https://images.pexels.com/photos/35415671/pexels-photo-35415671.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/images/pexels-35415671.jpg"
                 alt="Cultural festival in Lagos, Nigeria"
                 className="w-full h-full object-cover opacity-60"
               />

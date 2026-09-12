@@ -72,17 +72,15 @@ export default defineConfig(({ mode }) => ({
         globPatterns: ["**/*.{js,css,html,ico,png,svg,woff2}"],
         navigateFallback: "index.html",
         navigateFallbackDenylist: [/^\/api/],
-        // NOTE: cross-origin <img>/font fetches are opaque (status 0).
-        // Caching opaque entries breaks rendering inside installed mobile
-        // PWAs, so we only ever store real 200s and always prefer network.
+        // House photos are first-party (same-origin /images/*), so responses
+        // are real 200s — safe to cache for instant repeat views + offline.
         runtimeCaching: [
           {
-            urlPattern: /^https:\/\/images\.pexels\.com\/.*/i,
-            handler: "NetworkFirst",
+            urlPattern: ({ url }) => url.origin === self.location.origin && url.pathname.startsWith("/images/"),
+            handler: "CacheFirst",
             options: {
-              cacheName: "pexels-images-v2",
-              networkTimeoutSeconds: 4,
-              expiration: { maxEntries: 80, maxAgeSeconds: 60 * 60 * 24 * 7 },
+              cacheName: "house-images-v1",
+              expiration: { maxEntries: 100, maxAgeSeconds: 60 * 60 * 24 * 30 },
               cacheableResponse: { statuses: [200] },
             },
           },

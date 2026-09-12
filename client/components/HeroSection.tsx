@@ -1,18 +1,18 @@
 const gallery = [
   {
-    src: "https://images.pexels.com/photos/30987048/pexels-photo-30987048.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    src: "/images/pexels-30987048.jpg",
     alt: "African dining table with cocktail in Nairobi restaurant",
   },
   {
-    src: "https://images.pexels.com/photos/30689114/pexels-photo-30689114.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: "/images/pexels-30689114.jpg",
     alt: "Creative team collaborating in Lagos office",
   },
   {
-    src: "https://images.pexels.com/photos/37538487/pexels-photo-37538487.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: "/images/pexels-37538487.jpg",
     alt: "Jollof rice and chicken in Abuja café",
   },
   {
-    src: "https://images.pexels.com/photos/38942545/pexels-photo-38942545.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: "/images/pexels-38942545.jpg",
     alt: "Guest viewing abstract art in Lagos gallery",
   },
 ];
@@ -21,7 +21,7 @@ export default function HeroSection() {
   return (
     <section className="relative w-full overflow-hidden bg-[#0E0E0F] lg:flex lg:min-h-[calc(100vh-74px)] lg:items-center">
       <img
-        src="https://images.pexels.com/photos/38942545/pexels-photo-38942545.jpeg?auto=compress&cs=tinysrgb&w=1600"
+        src="/images/pexels-38942545.jpg"
         alt=""
         aria-hidden
         className="absolute inset-0 h-full w-full scale-105 object-cover opacity-[0.18]"
