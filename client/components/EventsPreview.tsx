@@ -26,7 +26,7 @@ export default function EventsPreview() {
               <div className="overlay-text absolute inset-x-0 bottom-0 flex flex-col p-5">
                 <p className="photo-meta tracking-[0.2em]">{e.outlet}</p>
                 <h3 className="mt-1.5 line-clamp-2 min-h-[52px] font-display text-[20px] font-medium leading-tight text-ivory">{e.title}</h3>
-                <Link to="/events" className="pressable mt-4 inline-flex h-[46px] items-center justify-center rounded-[10px] border border-[#C6A15B]/40 bg-white/[0.06] text-[12px] font-semibold uppercase tracking-[0.12em] text-ivory backdrop-blur-sm transition hover:border-[#C6A15B]/70 hover:bg-white/10">RSVP</Link>
+                <Link to="/events" className="pressable mt-4 btn-shine inline-flex h-[46px] items-center justify-center rounded-[10px] border border-[#E8C77A]/40 bg-gradient-to-b from-[#E8C77A] to-[#C6A15B] text-[12px] font-semibold uppercase tracking-[0.12em] text-[#171410] shadow-[0_8px_28px_rgba(212,168,75,0.4),0_0_14px_rgba(212,168,75,0.15)] transition hover:brightness-110">RSVP</Link>
               </div>
             </div>
             </Reveal>

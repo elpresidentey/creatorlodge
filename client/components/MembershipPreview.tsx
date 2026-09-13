@@ -21,7 +21,7 @@ export default function MembershipPreview() {
               </div>
               <p className="mt-4 font-display text-[34px] font-medium leading-none tracking-[-0.01em] text-ivory">{t.price}<span className="ml-1.5 font-cabin text-sm font-normal tracking-normal text-white/50">{t.period}</span></p>
               <ul className="mt-6 flex flex-1 flex-col gap-3 border-t border-[#C6A15B]/20 pt-6">{t.perks.map((p)=><li key={p} className="flex gap-2.5 text-[14px] leading-relaxed text-white/75"><span aria-hidden className="text-gold-soft">✦</span>{p}</li>)}</ul>
-              <Link to="/membership" className={`pressable mt-8 inline-flex h-[50px] items-center justify-center rounded-[12px] text-[13px] font-semibold uppercase tracking-[0.1em] transition ${t.featured ? "btn-shine bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[#171410] shadow-[0_12px_32px_rgba(198,161,91,0.3)] hover:brightness-105" : "border border-white/15 text-white hover:border-[#C6A15B]/50 hover:bg-white/5"}`}>{t.cta}</Link>
+              <Link to="/membership" className={`pressable mt-8 inline-flex h-[50px] items-center justify-center rounded-[12px] text-[13px] font-semibold uppercase tracking-[0.1em] transition ${t.featured ? "btn-shine border border-[#E8C77A]/40 bg-gradient-to-b from-[#E8C77A] to-[#C6A15B] text-[#171410] shadow-[0_12px_40px_rgba(212,168,75,0.45),0_0_20px_rgba(212,168,75,0.2),inset_0_1px_0_rgba(255,255,255,0.5)] hover:brightness-110" : "border border-white/15 text-white hover:border-[#C6A15B]/50 hover:bg-white/5"}`}>{t.cta}</Link>
             </div>
             </Reveal>
           ))}

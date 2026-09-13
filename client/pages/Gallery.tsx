@@ -34,13 +34,13 @@ export default function Gallery() {
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
               to="/book?space=gallery-wall"
-              className="btn-shine pressable inline-flex h-[52px] items-center justify-center rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] px-8 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#171410] shadow-[0_12px_32px_rgba(198,161,91,0.3)] hover:brightness-105"
+              className="btn-shine pressable inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#E8C77A]/40 bg-gradient-to-b from-[#E8C77A] to-[#C6A15B] px-8 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#171410] shadow-[0_12px_40px_rgba(212,168,75,0.45),0_0_20px_rgba(212,168,75,0.2),inset_0_1px_0_rgba(255,255,255,0.5)] hover:brightness-110"
             >
               Book a private view
             </Link>
             <Link
               to="/community"
-              className="pressable inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#C6A15B]/30 px-8 text-[13px] font-medium uppercase tracking-[0.1em] text-ivory hover:border-[#C6A15B]/60 hover:bg-white/5"
+              className="pressable inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#C6A15B]/40 bg-white/[0.08] px-8 text-[13px] font-medium uppercase tracking-[0.1em] text-ivory hover:border-[#C6A15B]/60 hover:bg-white/15"
             >
               Meet the artists
             </Link>
@@ -163,7 +163,7 @@ export default function Gallery() {
             <p className="font-display text-[20px] font-medium text-ivory">Exhibit with us.</p>
             <p className="mt-1 text-[14px] text-white/60">Open call every quarter — painters, photographers, textile and light artists.</p>
           </div>
-          <Link to="/contact" className="btn-shine pressable inline-flex h-[50px] shrink-0 items-center justify-center rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] px-8 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#171410] hover:brightness-105">
+          <Link to="/contact" className="btn-shine pressable inline-flex h-[50px] shrink-0 items-center justify-center rounded-[10px] border border-[#E8C77A]/40 bg-gradient-to-b from-[#E8C77A] to-[#C6A15B] px-8 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#171410] shadow-[0_8px_32px_rgba(212,168,75,0.4),0_0_16px_rgba(212,168,75,0.15)] hover:brightness-110">
             Submit portfolio
           </Link>
         </Reveal>

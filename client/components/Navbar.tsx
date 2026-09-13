@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { useScrolled } from "@/hooks/useReveal";
 
@@ -9,17 +9,6 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const initial = user?.email?.[0]?.toUpperCase() || "•";
-  const location = useLocation();
-  const navigate = useNavigate();
-  const goHome = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setMenuOpen(false);
-    if (location.pathname === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      navigate("/");
-    }
-  };
 
   return (
     <nav className={`sticky top-0 z-50 w-full border-b backdrop-blur-xl transition-all duration-500 ${scrolled ? "border-[#C6A15B]/35 bg-[#0B0B0C]/95 shadow-[0_12px_40px_rgba(0,0,0,0.45)]" : "border-[#C6A15B]/20 bg-[#0E0E0F]/92 supports-[backdrop-filter]:bg-[#0E0E0F]/80"}`}>
@@ -30,7 +19,7 @@ export default function Navbar() {
       </div>
       <div className="lounge-container flex flex-nowrap items-center justify-between gap-2 py-3 xl:gap-3">
       {/* Logo — always an obvious way home */}
-      <a href="/" onClick={goHome} aria-label="Creators Lounge — home" className="flex shrink-0 items-center gap-3 rounded-lg px-1 py-0.5 transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/50">
+        <Link to="/" onClick={() => { setMenuOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }} aria-label="Creators Lounge — home" className="flex shrink-0 items-center gap-3 rounded-lg px-1 py-0.5 transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/50">
         <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#C6A15B]/60 bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_0_0_1px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.12)]">
           <svg width="17" height="17" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -48,7 +37,7 @@ export default function Navbar() {
             Dine · Work · Exhibit
           </span>
         </span>
-      </a>
+      </Link>
 
       {/* Desktop Nav — 5 primary + More dropdown — xl:1280 so 1024-1279 shows hamburger instead of a crushed row */}
       <div className="mx-2 hidden min-w-0 flex-1 items-center justify-center gap-0.5 xl:mx-3 xl:flex xl:gap-1">
@@ -100,14 +89,14 @@ export default function Navbar() {
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1D1D1F] text-xs font-bold text-white">{initial}</span>
               <span className="max-w-[14ch] truncate">{user.email}</span>
             </Link>
-            <button onClick={signOut} className="inline-flex h-10 items-center justify-center rounded-[10px] border border-white/25 bg-white/[0.06] px-4 text-[13px] font-medium text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/50 xl:h-11 xl:px-5">Sign out</button>
+            <button onClick={signOut} className="inline-flex h-10 items-center justify-center rounded-[10px] border border-white/30 bg-white/[0.10] px-4 text-[13px] font-medium text-white transition-colors hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/50 xl:h-11 xl:px-5">Sign out</button>
           </>
         ) : (
-          <Link to="/auth" className="inline-flex h-10 items-center justify-center rounded-[10px] border border-white/15 bg-white/[0.06] px-4 text-[13px] font-medium text-white transition-colors hover:bg-white/10 xl:h-11 xl:px-5">
+          <Link to="/auth" className="inline-flex h-10 items-center justify-center rounded-[10px] border border-white/25 bg-white/[0.10] px-4 text-[13px] font-medium text-white transition-colors hover:bg-white/20 xl:h-11 xl:px-5">
             Sign in
           </Link>
         )}
-        <Link to="/book" className="btn-shine pressable inline-flex h-10 items-center justify-center whitespace-nowrap rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] px-5 text-[13px] font-semibold uppercase tracking-[0.08em] text-[#171410] shadow-[0_8px_24px_rgba(198,161,91,0.28),inset_0_1px_0_rgba(255,255,255,0.4)] hover:brightness-105 xl:h-11 xl:px-6">
+        <Link to="/book" className="btn-shine pressable inline-flex h-10 items-center justify-center whitespace-nowrap rounded-[10px] border border-[#E8C77A]/40 bg-gradient-to-b from-[#E8C77A] to-[#C6A15B] px-5 text-[13px] font-semibold uppercase tracking-[0.08em] text-[#171410] shadow-[0_8px_32px_rgba(212,168,75,0.45),0_0_16px_rgba(212,168,75,0.2),inset_0_1px_0_rgba(255,255,255,0.5)] hover:brightness-110 xl:h-11 xl:px-6">
           Reserve
         </Link>
       </div>
@@ -140,7 +129,7 @@ export default function Navbar() {
         <div className="animate-fade absolute left-0 right-0 top-full z-50 flex max-h-[80dvh] flex-col gap-4 overflow-auto border-t border-[#C6A15B]/20 bg-[#0E0E0F] p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-2xl xl:hidden">
           <Link to="/" className="text-white font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link to="/spaces" className="text-white font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Spaces</Link>
-          <Link to="/outlets" className="text-white font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Outlets</Link>
+          <Link to="/outlets" className="text-white font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Houses</Link>
           <Link to="/membership" className="text-white font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Membership</Link>
           <div className="h-px bg-white/10 my-1" />
           <p className="text-white/40 text-xs font-medium tracking-[0.18em] uppercase">More</p>
@@ -163,14 +152,14 @@ export default function Navbar() {
                   <span className="h-7 w-7 rounded-full bg-[#1D1D1F] text-white flex items-center justify-center text-xs font-bold">{initial}</span>
                   <span className="truncate">{user.email}</span>
                 </Link>
-                <button onClick={() => { signOut(); setMenuOpen(false); }} className="inline-flex items-center justify-center bg-white/[0.08] border border-white/40 text-white font-medium text-[15px] h-[50px] px-6 rounded-[10px] hover:bg-white/15 hover:border-white/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30 transition-colors">Sign out</button>
+                <button onClick={() => { signOut(); setMenuOpen(false); }} className="inline-flex items-center justify-center bg-white/[0.12] border border-white/30 text-white font-medium text-[15px] h-[50px] px-6 rounded-[10px] hover:bg-white/20 hover:border-white/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30 transition-colors">Sign out</button>
               </>
             ) : (
-              <Link to="/auth" onClick={() => setMenuOpen(false)} className="inline-flex items-center justify-center bg-white/10 border border-white/10 text-white font-semibold text-[15px] h-[50px] px-6 rounded-[10px] hover:bg-white/15 transition-colors text-center">
+              <Link to="/auth" onClick={() => setMenuOpen(false)} className="inline-flex items-center justify-center bg-white/15 border border-white/25 text-white font-semibold text-[15px] h-[50px] px-6 rounded-[10px] hover:bg-white/25 transition-colors text-center">
                 Sign in
               </Link>
             )}
-            <Link to="/book" onClick={() => setMenuOpen(false)} className="inline-flex items-center justify-center bg-brand-yellow text-[#1D1D1F] font-semibold text-[15px] h-[50px] px-6 rounded-[10px] hover:opacity-90 transition-opacity text-center">
+            <Link to="/book" onClick={() => setMenuOpen(false)} className="inline-flex items-center justify-center bg-gradient-to-b from-[#E8C77A] to-[#C6A15B] border border-[#E8C77A]/40 text-[#171410] font-semibold text-[15px] h-[50px] px-6 rounded-[10px] shadow-[0_8px_32px_rgba(212,168,75,0.45),0_0_16px_rgba(212,168,75,0.2)] hover:brightness-110 transition-all text-center">
               Book a space
             </Link>
           </div>

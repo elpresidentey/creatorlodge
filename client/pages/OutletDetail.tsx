@@ -75,7 +75,7 @@ export default function OutletDetail() {
                 <div className="photo-body overlay-text flex flex-col">
                   <p className="font-display text-[20px] font-medium leading-tight text-ivory line-clamp-2 min-h-[50px]">{s.name}</p>
                   <p className="photo-desc">{s.desc}</p>
-                  <Link to={`/book?space=${s.id}&outlet=${outlet.slug}`} className="mt-4 inline-flex h-[46px] items-center justify-center rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[13px] font-semibold uppercase tracking-[0.08em] text-[#171410] transition hover:brightness-105">
+                  <Link to={`/book?space=${s.id}&outlet=${outlet.slug}`} className="mt-4 inline-flex h-[46px] items-center justify-center rounded-[10px] border border-[#E8C77A]/40 bg-gradient-to-b from-[#E8C77A] to-[#C6A15B] text-[13px] font-semibold uppercase tracking-[0.08em] text-[#171410] shadow-[0_8px_28px_rgba(212,168,75,0.4),0_0_14px_rgba(212,168,75,0.15)] transition hover:brightness-110">
                     Book • {s.price}
                   </Link>
                 </div>
@@ -86,7 +86,7 @@ export default function OutletDetail() {
             <Link to={`/book?outlet=${outlet.slug}`} className="inline-flex bg-brand-yellow text-[#1D1D1F] font-semibold text-[15px] px-8 rounded-[10px] h-[50px] items-center justify-center hover:opacity-90">
               Book at this outlet
             </Link>
-            <Link to="/contact" className="inline-flex items-center justify-center border border-white/20 text-white font-medium text-[15px] px-8 rounded-[10px] hover:bg-white/10 h-[50px]">
+            <Link to="/contact" className="inline-flex items-center justify-center border border-white/25 bg-white/[0.08] text-white font-medium text-[15px] px-8 rounded-[10px] hover:bg-white/15 h-[50px]">
               Contact concierge
             </Link>
           </div>

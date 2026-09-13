@@ -39,7 +39,7 @@ export default function About() {
               <Link to="/outlets" className="inline-flex bg-white text-[#1D1D1F] font-medium text-[15px] px-8 rounded-[10px] hover:bg-zinc-100 transition-colors h-[50px] items-center justify-center">
                 Explore outlets
               </Link>
-              <Link to="/contact" className="inline-flex items-center justify-center border border-white/20 text-white font-medium text-[15px] px-8 rounded-[10px] hover:bg-white/10 transition-colors h-[50px]">
+              <Link to="/contact" className="inline-flex items-center justify-center border border-white/25 bg-white/[0.08] text-white font-medium text-[15px] px-8 rounded-[10px] hover:bg-white/15 transition-colors h-[50px]">
                 Say hello
               </Link>
             </div>

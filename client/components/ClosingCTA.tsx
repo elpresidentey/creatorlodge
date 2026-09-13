@@ -14,8 +14,8 @@ export default function ClosingCTA() {
             <p className="text-[15px] leading-[1.7] text-white/60">Reserve a table, a space or a wall — the house receives daily, 8am to 11pm.</p>
           </div>
           <div className="relative flex shrink-0 flex-wrap items-center gap-3">
-            <Link to="/book" className="btn-shine pressable inline-flex h-[52px] items-center justify-center rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] px-8 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#171410] shadow-[0_12px_32px_rgba(198,161,91,0.3)] hover:brightness-105">Reserve a space</Link>
-            <Link to="/contact" className="pressable inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#C6A15B]/30 px-8 text-[13px] font-medium uppercase tracking-[0.1em] text-ivory transition hover:border-[#C6A15B]/60 hover:bg-white/5">Speak to us</Link>
+            <Link to="/book" className="btn-shine pressable inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#E8C77A]/40 bg-gradient-to-b from-[#E8C77A] to-[#C6A15B] px-8 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#171410] shadow-[0_12px_40px_rgba(212,168,75,0.45),0_0_20px_rgba(212,168,75,0.2),inset_0_1px_0_rgba(255,255,255,0.5)] hover:brightness-110">Reserve a space</Link>
+            <Link to="/contact" className="pressable inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#C6A15B]/40 bg-white/[0.08] px-8 text-[13px] font-medium uppercase tracking-[0.1em] text-ivory transition hover:border-[#C6A15B]/60 hover:bg-white/15">Speak to us</Link>
           </div>
         </div>
         </Reveal>

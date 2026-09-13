@@ -60,13 +60,13 @@ export default function HeroSection() {
             <div className="animate-rise flex flex-wrap items-center gap-3 pt-2" style={{ animationDelay: "400ms" }}>
               <Link
                 to="/membership"
-                className="btn-shine pressable inline-flex h-[52px] items-center justify-center rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] px-8 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#171410] shadow-[0_12px_32px_rgba(198,161,91,0.3),inset_0_1px_0_rgba(255,255,255,0.45)] hover:brightness-105"
+                className="btn-shine pressable inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#E8C77A]/40 bg-gradient-to-b from-[#E8C77A] to-[#C6A15B] px-8 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#171410] shadow-[0_12px_40px_rgba(212,168,75,0.45),0_0_20px_rgba(212,168,75,0.2),inset_0_1px_0_rgba(255,255,255,0.5)] hover:brightness-110"
               >
                 Request invitation
               </Link>
               <Link
                 to="/outlets"
-                className="pressable inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#C6A15B]/30 bg-white/[0.04] px-8 text-[13px] font-medium uppercase tracking-[0.1em] text-ivory backdrop-blur-sm hover:border-[#C6A15B]/60 hover:bg-white/[0.08]"
+                className="pressable inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#C6A15B]/40 bg-white/[0.10] px-8 text-[13px] font-medium uppercase tracking-[0.1em] text-ivory backdrop-blur-sm hover:border-[#C6A15B]/60 hover:bg-white/[0.18]"
               >
                 Enter the houses
               </Link>

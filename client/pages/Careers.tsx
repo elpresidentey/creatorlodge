@@ -40,7 +40,7 @@ export default function Careers() {
               </div>
               <h3 className="font-cabin font-semibold text-[17px] text-white">{r.title}</h3>
               <p className="text-[15px] leading-[1.7] text-white/65 flex-1">{r.desc}</p>
-              <Link to="/contact" className="inline-flex items-center justify-center h-[46px] rounded-[10px] border border-white/20 bg-white/10 text-[13px] font-semibold uppercase tracking-[0.08em] text-white backdrop-blur-sm transition hover:bg-white/15 mt-2">
+              <Link to="/contact" className="inline-flex items-center justify-center h-[46px] rounded-[10px] border border-white/25 bg-white/[0.10] text-[13px] font-semibold uppercase tracking-[0.08em] text-white backdrop-blur-sm transition hover:bg-white/20 mt-2">
                 Apply now
               </Link>
             </div>

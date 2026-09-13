@@ -65,7 +65,8 @@ export default function Auth() {
         const { data, error } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
         if (error) throw error;
         // Session is set via onAuthStateChange; redirect param ?next=
-        const next = searchParams.get("next") || "/book";
+        const rawNext = searchParams.get("next") || "/book";
+        const next = rawNext.startsWith("/") && !rawNext.includes("://") ? rawNext : "/book";
         toast({ title: "Welcome back!" });
         if (data.session) navigate(next, { replace: true });
       } else {
