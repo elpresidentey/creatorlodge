@@ -17,7 +17,7 @@ export default function Outlets() {
           <h1 className="mt-4 font-cabin text-[40px] font-semibold leading-[0.95] tracking-[-0.035em] text-white sm:text-[56px]">
             Find your dome
           </h1>
-          <p className="mt-4 max-w-xl text-[15px] leading-[1.7] text-white/65">Three locations, one vibe. Each outlet blends dining, bar and focused work.</p>
+          <p className="mt-4 max-w-xl text-[15px] leading-[1.7] text-white/65">Eight houses, one circle. Each blends dining, bar, atelier, gallery and focused work.</p>
         </div>
       </section>
 

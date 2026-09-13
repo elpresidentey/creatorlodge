@@ -59,8 +59,8 @@ export default function Membership() {
             <p className="mt-2.5 text-xs font-medium uppercase tracking-[0.14em] text-white/60">Access for members</p>
           </div>
           <div>
-            <p className="font-cabin text-[30px] font-semibold tabular-nums leading-none tracking-[-0.025em] text-white">3</p>
-            <p className="mt-2.5 text-xs font-medium uppercase tracking-[0.14em] text-white/60">Outlets included</p>
+            <p className="font-cabin text-[30px] font-semibold tabular-nums leading-none tracking-[-0.025em] text-white">8</p>
+            <p className="mt-2.5 text-xs font-medium uppercase tracking-[0.14em] text-white/60">Houses included</p>
           </div>
         </div>
       </section>

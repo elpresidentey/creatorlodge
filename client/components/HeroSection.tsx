@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const gallery = [
   {
     src: "/images/pexels-30987048.jpg",
@@ -52,22 +54,22 @@ export default function HeroSection() {
             </h1>
 
             <p className="animate-rise max-w-[460px] text-[15px] font-normal leading-[1.75] text-white/65 md:text-[17px]" style={{ animationDelay: "280ms" }}>
-              Three houses, one circle — restaurant, bar, ateliers and gallery walls for Lagos&rsquo; patrons, artists and muses.
+              Eight houses, one circle — restaurant, bar, ateliers and gallery walls for Lagos&rsquo; patrons, artists and muses.
             </p>
 
             <div className="animate-rise flex flex-wrap items-center gap-3 pt-2" style={{ animationDelay: "400ms" }}>
-              <a
-                href="/membership"
+              <Link
+                to="/membership"
                 className="btn-shine pressable inline-flex h-[52px] items-center justify-center rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] px-8 text-[13px] font-semibold uppercase tracking-[0.1em] text-[#171410] shadow-[0_12px_32px_rgba(198,161,91,0.3),inset_0_1px_0_rgba(255,255,255,0.45)] hover:brightness-105"
               >
                 Request invitation
-              </a>
-              <a
-                href="/outlets"
+              </Link>
+              <Link
+                to="/outlets"
                 className="pressable inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#C6A15B]/30 bg-white/[0.04] px-8 text-[13px] font-medium uppercase tracking-[0.1em] text-ivory backdrop-blur-sm hover:border-[#C6A15B]/60 hover:bg-white/[0.08]"
               >
                 Enter the houses
-              </a>
+              </Link>
             </div>
 
             <div className="animate-fade flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-[#C6A15B]/20 pt-5 text-[12px] tracking-[0.08em] text-white/45" style={{ animationDelay: "560ms" }}>

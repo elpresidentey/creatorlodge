@@ -28,7 +28,7 @@ export default function Navbar() {
           <p className="truncate text-center text-[9px] font-medium uppercase tracking-[0.18em] text-[#C6A15B]/90 sm:text-[10px] sm:tracking-[0.28em]">Private members&rsquo; house — Lagos<span className="hidden min-[400px]:inline"> · Est. MMXIX</span></p>
         </div>
       </div>
-      <div className="lounge-container flex items-center justify-between gap-3 py-3">
+      <div className="lounge-container flex flex-nowrap items-center justify-between gap-2 py-3 xl:gap-3">
       {/* Logo — always an obvious way home */}
       <a href="/" onClick={goHome} aria-label="Creators Lounge — home" className="flex shrink-0 items-center gap-3 rounded-lg px-1 py-0.5 transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/50">
         <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#C6A15B]/60 bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_0_0_1px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.12)]">
@@ -50,27 +50,27 @@ export default function Navbar() {
         </span>
       </a>
 
-      {/* Desktop Nav — 5 primary + More dropdown */}
-      <div className="mx-3 hidden max-w-[620px] flex-1 items-center justify-center gap-1 lg:flex">
-        <Link to="/" onClick={() => window.scrollTo({ top: 0 })} className="rounded-lg px-3 py-2 font-cabin text-[12px] font-medium uppercase tracking-[0.14em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft">
+      {/* Desktop Nav — 5 primary + More dropdown — xl:1280 so 1024-1279 shows hamburger instead of a crushed row */}
+      <div className="mx-2 hidden min-w-0 flex-1 items-center justify-center gap-0.5 xl:mx-3 xl:flex xl:gap-1">
+        <Link to="/" onClick={() => window.scrollTo({ top: 0 })} className="whitespace-nowrap rounded-lg px-2.5 py-2 font-cabin text-[11px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft xl:px-3 xl:text-[12px] xl:tracking-[0.14em]">
           Home
         </Link>
-        <Link to="/spaces" className="rounded-lg px-3 py-2 font-cabin text-[12px] font-medium uppercase tracking-[0.14em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft">
+        <Link to="/spaces" className="whitespace-nowrap rounded-lg px-2.5 py-2 font-cabin text-[11px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft xl:px-3 xl:text-[12px] xl:tracking-[0.14em]">
           Salons
         </Link>
-        <Link to="/outlets" className="rounded-lg px-3 py-2 font-cabin text-[12px] font-medium uppercase tracking-[0.14em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft">
+        <Link to="/outlets" className="whitespace-nowrap rounded-lg px-2.5 py-2 font-cabin text-[11px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft xl:px-3 xl:text-[12px] xl:tracking-[0.14em]">
           Houses
         </Link>
-        <Link to="/membership" className="rounded-lg px-3 py-2 font-cabin text-[12px] font-medium uppercase tracking-[0.14em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft">
+        <Link to="/membership" className="whitespace-nowrap rounded-lg px-2.5 py-2 font-cabin text-[11px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft xl:px-3 xl:text-[12px] xl:tracking-[0.14em]">
           Patronage
         </Link>
-        <Link to="/contact" className="rounded-lg px-3 py-2 font-cabin text-[12px] font-medium uppercase tracking-[0.14em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft">
+        <Link to="/contact" className="whitespace-nowrap rounded-lg px-2.5 py-2 font-cabin text-[11px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft xl:px-3 xl:text-[12px] xl:tracking-[0.14em]">
           Contact
         </Link>
 
         {/* More dropdown — click + hover with bridge, no flicker */}
         <div className="relative">
-          <button onClick={() => setMoreOpen(!moreOpen)} onMouseEnter={() => setMoreOpen(true)} className="flex items-center gap-1.5 rounded-lg px-3 py-2 font-cabin text-[12px] font-medium uppercase tracking-[0.14em] text-white/60 transition-colors hover:bg-white/5 hover:text-white">
+          <button onClick={() => setMoreOpen(!moreOpen)} onMouseEnter={() => setMoreOpen(true)} className="flex items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 py-2 font-cabin text-[11px] font-medium uppercase tracking-[0.12em] text-white/60 transition-colors hover:bg-white/5 hover:text-white xl:px-3 xl:text-[12px] xl:tracking-[0.14em]">
             Atelier <span className={`text-[9px] transition ${moreOpen ? "rotate-180" : ""}`}>▼</span>
           </button>
           {moreOpen && (
@@ -88,28 +88,28 @@ export default function Navbar() {
       </div>
 
       {/* Desktop CTAs — compact 44px to keep nav slim and aligned */}
-      <div className="hidden shrink-0 items-center gap-2.5 lg:flex">
+      <div className="hidden shrink-0 items-center gap-2 xl:gap-2.5 xl:flex">
         {user ? (
           <>
-            <Link to="/auth" className="inline-flex h-11 items-center gap-2 rounded-[10px] bg-white px-4 text-[13px] font-medium text-[#1D1D1F] transition hover:bg-ivory">
+            <Link to="/auth" className="inline-flex h-10 items-center gap-2 rounded-[10px] bg-white px-3.5 text-[13px] font-medium text-[#1D1D1F] transition hover:bg-ivory xl:h-11 xl:px-4">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1D1D1F] text-xs font-bold text-white">{initial}</span>
               <span className="max-w-[14ch] truncate">{user.email}</span>
             </Link>
-            <button onClick={signOut} className="inline-flex h-11 items-center justify-center rounded-[10px] border border-white/25 bg-white/[0.06] px-5 text-[13px] font-medium text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/50">Sign out</button>
+            <button onClick={signOut} className="inline-flex h-10 items-center justify-center rounded-[10px] border border-white/25 bg-white/[0.06] px-4 text-[13px] font-medium text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/50 xl:h-11 xl:px-5">Sign out</button>
           </>
         ) : (
-          <Link to="/auth" className="inline-flex h-11 items-center justify-center rounded-[10px] border border-white/15 bg-white/[0.06] px-5 text-[13px] font-medium text-white transition-colors hover:bg-white/10">
+          <Link to="/auth" className="inline-flex h-10 items-center justify-center rounded-[10px] border border-white/15 bg-white/[0.06] px-4 text-[13px] font-medium text-white transition-colors hover:bg-white/10 xl:h-11 xl:px-5">
             Sign in
           </Link>
         )}
-        <Link to="/book" className="btn-shine pressable inline-flex h-11 items-center justify-center rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] px-6 text-[13px] font-semibold uppercase tracking-[0.08em] text-[#171410] shadow-[0_8px_24px_rgba(198,161,91,0.28),inset_0_1px_0_rgba(255,255,255,0.4)] hover:brightness-105">
+        <Link to="/book" className="btn-shine pressable inline-flex h-10 items-center justify-center whitespace-nowrap rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] px-5 text-[13px] font-semibold uppercase tracking-[0.08em] text-[#171410] shadow-[0_8px_24px_rgba(198,161,91,0.28),inset_0_1px_0_rgba(255,255,255,0.4)] hover:brightness-105 xl:h-11 xl:px-6">
           Reserve
         </Link>
       </div>
 
-      {/* Hamburger — visible below lg (1024) */}
+      {/* Hamburger — visible below xl (1280) */}
       <button
-        className="shrink-0 p-2.5 -mr-2 text-white lg:hidden"
+        className="shrink-0 p-2.5 -mr-2 text-white xl:hidden"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle menu"
       >
@@ -132,7 +132,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="animate-fade absolute left-0 right-0 top-full z-50 flex max-h-[80dvh] flex-col gap-4 overflow-auto border-t border-[#C6A15B]/20 bg-[#0E0E0F] p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-2xl lg:hidden">
+        <div className="animate-fade absolute left-0 right-0 top-full z-50 flex max-h-[80dvh] flex-col gap-4 overflow-auto border-t border-[#C6A15B]/20 bg-[#0E0E0F] p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-2xl xl:hidden">
           <Link to="/" className="text-white font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link to="/spaces" className="text-white font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Spaces</Link>
           <Link to="/outlets" className="text-white font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Outlets</Link>

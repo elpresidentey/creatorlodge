@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Breadcrumb from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
@@ -123,8 +124,7 @@ export default function Auth() {
 
   if (user) {
     return (
-      <div className="min-h-screen bg-brand-dark"><Navbar />
-        <section className="px-6 md:px-10 lg:px-16 py-12 md:py-16">
+      <div className="min-h-screen bg-brand-dark"><Navbar /><Breadcrumb trail={[{ label: "Account" }]} />        <section className="px-6 md:px-10 lg:px-16 py-12 md:py-16">
           <div className="max-w-[640px] mx-auto flex flex-col gap-6">
             <div className="bg-white rounded-[20px] border border-black/5 p-8 text-center shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
               <p className="text-[#6E6E73] text-xs font-semibold tracking-widest uppercase">Signed in — secure session</p>
@@ -188,7 +188,7 @@ export default function Auth() {
   }
 
   return (
-    <div className="min-h-screen bg-brand-dark"><Navbar />
+    <div className="min-h-screen bg-brand-dark"><Navbar /><Breadcrumb trail={[{ label: "Account" }]} />
       <section className="px-6 md:px-10 lg:px-16 py-12 md:py-16">
         <div className="max-w-[480px] mx-auto">
           <p className="text-brand-yellow text-xs font-semibold tracking-[0.2em] uppercase text-center">Secure account</p>

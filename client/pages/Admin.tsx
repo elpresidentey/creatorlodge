@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Breadcrumb from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/lib/supabase";
@@ -32,12 +33,13 @@ export default function Admin() {
 
   const isAdmin = user.email?.endsWith("@creatorslounge.com") || user.email === "ekene@example.com";
   if (!isAdmin) {
-    return <div className="min-h-screen bg-[#1D1D1F]"><Navbar /><div className="max-w-[640px] mx-auto px-6 py-24 text-center"><h1 className="font-cabin font-semibold text-2xl text-white">Admin only</h1><p className="text-white/60 text-sm mt-2">Your email {user.email} isn’t admin. Add it to ADMIN_EMAILS.</p><Link to="/" className="inline-flex h-[50px] px-6 rounded-[10px] bg-white text-[#1D1D1F] font-medium mt-6">Home</Link></div><Footer /></div>;
+    return <div className="min-h-screen bg-[#1D1D1F]"><Navbar /><Breadcrumb trail={[{ label: "Backstage" }]} /><div className="max-w-[640px] mx-auto px-6 py-24 text-center"><h1 className="font-cabin font-semibold text-2xl text-white">Admin only</h1><p className="text-white/60 text-sm mt-2">Your email {user.email} isn’t admin. Add it to ADMIN_EMAILS.</p><Link to="/" className="inline-flex h-[50px] px-6 rounded-[10px] bg-white text-[#1D1D1F] font-medium mt-6">Home</Link></div><Footer /></div>;
   }
 
   return (
     <div className="min-h-screen bg-[#F5F5F7]">
       <Navbar />
+      <Breadcrumb trail={[{ label: "Backstage" }]} />
       <section className="px-6 md:px-10 lg:px-16 py-8">
         <div className="max-w-[1312px] mx-auto">
           <p className="text-[#6E6E73] text-xs font-semibold tracking-[0.18em] uppercase">Admin</p>

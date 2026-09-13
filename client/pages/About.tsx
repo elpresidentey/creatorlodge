@@ -11,7 +11,7 @@ const values = [
 ];
 
 const stats = [
-  { value: "3", label: "Outlets (Lagos)" },
+  { value: "8", label: "Houses (Lagos & Abuja)" },
   { value: "12k+", label: "Creators hosted" },
   { value: "4.8★", label: "Avg. rating" },
   { value: "2019", label: "Since" },
@@ -32,8 +32,8 @@ export default function About() {
               Built for creators,<br />dreamers & doers.
             </h1>
             <p className="max-w-[560px] text-[15px] leading-[1.7] text-white/70 md:text-base">
-              Creators Lodge began as a single dining room in Yaba where designers, writers and founders traded ideas between courses.
-              Today it’s a network of domes — each blending restaurant, bar, gym and workspace — designed to make your best work feel effortless.
+              Creators Lounge began as a single dining room in Yaba where designers, writers and founders traded ideas between courses.
+              Today it’s a network of houses — from VI to Yaba, Lekki to Ikoyi and Abuja — each blending restaurant, bar, atelier, gallery and workspace — designed to make your best work feel effortless.
             </p>
             <div className="flex flex-wrap gap-3 pt-3">
               <Link to="/outlets" className="inline-flex bg-white text-[#1D1D1F] font-medium text-[15px] px-8 rounded-[10px] hover:bg-zinc-100 transition-colors h-[50px] items-center justify-center">

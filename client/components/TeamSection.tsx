@@ -46,7 +46,7 @@ export default function TeamSection() {
 
         <Reveal delay={120} className="mt-10 flex flex-col gap-5 rounded-[20px] border border-[#C6A15B]/25 bg-gradient-to-br from-[#171510] to-[#101010] p-6 shadow-[0_24px_60px_rgba(0,0,0,0.4)] sm:flex-row sm:items-center sm:justify-between md:p-8">
           <p className="text-[15px] leading-relaxed text-white/70">Want to join? <span className="font-medium text-ivory">We’re hiring hosts & creatives.</span></p>
-          <a href="/contact" className="btn-shine pressable inline-flex h-[48px] shrink-0 items-center justify-center rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] px-6 text-[13px] font-semibold uppercase tracking-[0.08em] text-[#171410] hover:brightness-105">View open roles</a>
+          <Link to="/contact" className="btn-shine pressable inline-flex h-[48px] shrink-0 items-center justify-center rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] px-6 text-[13px] font-semibold uppercase tracking-[0.08em] text-[#171410] hover:brightness-105">View open roles</Link>
         </Reveal>
       </div>
     </section>

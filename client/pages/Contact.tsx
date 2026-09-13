@@ -3,6 +3,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { useTitle } from "@/hooks/useTitle";
 import Footer from "@/components/Footer";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { toast } from "@/hooks/use-toast";
 
 export default function Contact() {
@@ -53,9 +54,9 @@ export default function Contact() {
             <div className="bg-white rounded-[16px] p-6 border border-black/5">
               <p className="font-semibold text-[#1D1D1F] text-[15px]">Need a space today?</p>
               <p className="text-[#424245] text-[15px] mt-2">Our concierge can confirm availability in minutes.</p>
-              <a href="/book" className="inline-flex items-center justify-center mt-4 bg-[#1D1D1F] text-white font-medium text-[15px] h-[50px] px-6 rounded-[10px] hover:bg-black">
+              <Link to="/book" className="inline-flex items-center justify-center mt-4 bg-[#1D1D1F] text-white font-medium text-[15px] h-[50px] px-6 rounded-[10px] hover:bg-black">
                 Book now
-              </a>
+              </Link>
             </div>
             <div className="rounded-2xl overflow-hidden h-[200px] bg-white/10 border border-white/10">
               <img

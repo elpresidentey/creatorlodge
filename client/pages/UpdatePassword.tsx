@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Breadcrumb from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
@@ -39,7 +40,7 @@ export default function UpdatePassword() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-dark"><Navbar />
+    <div className="min-h-screen bg-brand-dark"><Navbar /><Breadcrumb trail={[{ label: "Account", to: "/auth" }, { label: "New password" }]} />
       <section className="px-6 md:px-10 lg:px-16 py-16">
         <div className="max-w-[440px] mx-auto bg-white rounded-[20px] border border-black/5 p-6 md:p-8 flex flex-col gap-4 shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
           <h1 className="font-cabin font-semibold text-2xl text-[#1D1D1F] tracking-[-0.02em]">Set new password</h1>
