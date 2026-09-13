@@ -49,7 +49,7 @@ export default function Contact() {
                 Lagos, Nigeria
               </p>
               <p className="text-white/70 text-[15px] mt-4">+234 800 000 0000<br />hello@creatorslodge.com</p>
-              <p className="text-white/50 text-xs mt-4">Open daily 8am – 11pm</p>
+              <p className="text-white/65 text-xs mt-4">Open daily 8am – 11pm</p>
             </div>
             <div className="bg-white rounded-[16px] p-6 border border-black/5">
               <p className="font-semibold text-[#1D1D1F] text-[15px]">Need a space today?</p>

@@ -55,10 +55,10 @@ export default function GiftCards() {
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-soft">Creators Lounge</p>
               <p className="font-display text-[32px] font-medium text-ivory mt-4">₦{amount.toLocaleString()}</p>
-              <p className="text-white/50 text-[15px] mt-2">Gift card</p>
+              <p className="text-white/65 text-[15px] mt-2">Gift card</p>
             </div>
             <div className="mt-8 border-t border-white/10 pt-4">
-              <p className="text-white/40 text-[13px]">Redeemable at all eight houses — dining, bar, workspace, gallery.</p>
+              <p className="text-white/55 text-[13px]">Redeemable at all eight houses — dining, bar, workspace, gallery.</p>
             </div>
           </div>
 

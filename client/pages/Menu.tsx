@@ -77,7 +77,7 @@ export default function Menu() {
             </div>
           </div>
         )}
-        <p className="text-white/40 text-xs text-center mt-8">Tap any dish or cocktail — selection highlights in black. Pre-order attaches to your booking. • Vegan/Vegetarian marked • Allergies on request</p>
+        <p className="text-white/55 text-xs text-center mt-8">Tap any dish or cocktail — selection highlights in black. Pre-order attaches to your booking. • Vegan/Vegetarian marked • Allergies on request</p>
       </section>
 
       <Footer />

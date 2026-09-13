@@ -46,7 +46,7 @@ export default function Faq() {
                 className="w-full flex items-center justify-between gap-4 p-5 text-left"
               >
                 <span className="font-cabin font-semibold text-[15px] text-white">{f.q}</span>
-                <span className={`shrink-0 text-white/40 text-lg transition-transform ${open === i ? "rotate-45" : ""}`}>+</span>
+                <span className={`shrink-0 text-white/55 text-lg transition-transform ${open === i ? "rotate-45" : ""}`}>+</span>
               </button>
               {open === i && (
                 <div className="px-5 pb-5">

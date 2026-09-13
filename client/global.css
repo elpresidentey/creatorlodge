@@ -145,8 +145,9 @@
   /* Guaranteed legibility for type set over photography */
   .overlay-text {
     text-shadow:
-      0 1px 3px rgba(0, 0, 0, 0.7),
-      0 2px 18px rgba(0, 0, 0, 0.5);
+      0 1px 4px rgba(0, 0, 0, 0.85),
+      0 4px 24px rgba(0, 0, 0, 0.65),
+      0 0 40px rgba(0, 0, 0, 0.4);
   }
   .section-lede {
     @apply max-w-md text-[15px] leading-[1.7];
@@ -246,7 +247,7 @@
   }
   .photo-card .photo-gradient {
     @apply pointer-events-none absolute inset-0;
-    background: linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.35) 50%, transparent 100%);
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.1) 75%, transparent 100%);
   }
   .photo-card .photo-body {
     @apply relative p-5;
@@ -255,7 +256,7 @@
     @apply font-display text-[20px] font-medium leading-tight text-ivory line-clamp-2 min-h-[50px];
   }
   .photo-card .photo-desc {
-    @apply mt-2 line-clamp-2 min-h-[42px] text-[13px] leading-relaxed text-white/70;
+    @apply mt-2 line-clamp-2 min-h-[42px] text-[13px] leading-relaxed text-white/80;
   }
   .photo-card .photo-meta {
     @apply mt-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-soft;
@@ -270,16 +271,16 @@
     @apply mt-4 flex gap-2.5;
   }
   .photo-card .photo-btn-primary {
-    @apply btn-shine inline-flex h-[46px] flex-1 items-center justify-center rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[13px] font-semibold uppercase tracking-[0.08em] text-[#171410] transition hover:brightness-105;
+    @apply btn-shine inline-flex h-[46px] flex-1 items-center justify-center rounded-[10px] border border-[#E8C77A]/40 bg-gradient-to-b from-[#E8C77A] to-[#C6A15B] text-[13px] font-semibold uppercase tracking-[0.08em] text-[#171410] shadow-[0_8px_28px_rgba(212,168,75,0.4),0_0_14px_rgba(212,168,75,0.15)] transition hover:brightness-110;
   }
   .photo-card .photo-btn-secondary {
-    @apply inline-flex h-[46px] flex-1 items-center justify-center rounded-[10px] border border-white/20 bg-white/10 text-[13px] font-semibold uppercase tracking-[0.08em] text-white backdrop-blur-sm transition hover:bg-white/15;
+    @apply inline-flex h-[46px] flex-1 items-center justify-center rounded-[10px] border border-white/25 bg-white/15 text-[13px] font-semibold uppercase tracking-[0.08em] text-white backdrop-blur-sm transition hover:bg-white/25 hover:border-white/40;
   }
   .photo-card .photo-chip-row {
     @apply mt-3 flex flex-wrap gap-1.5;
   }
   .photo-card .photo-chip {
-    @apply rounded-full border border-white/15 bg-white/10 px-2 py-1 text-[11px] leading-none text-white/80 backdrop-blur-sm;
+    @apply rounded-full border border-white/20 bg-white/15 px-2.5 py-1 text-[11px] leading-none text-white/90 backdrop-blur-sm;
   }
 }
 

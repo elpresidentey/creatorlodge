@@ -32,7 +32,7 @@ export default function Outlets() {
                 <p className="photo-meta">{o.area}</p>
                 <h3 className="photo-title">{o.name}</h3>
                 <p className="mt-2 truncate text-[13px] leading-relaxed text-white/70">{o.address}</p>
-                <p className="mt-1 text-[12px] text-white/50">{o.hours} • {o.phone}</p>
+                <p className="mt-1 text-[12px] text-white/65">{o.hours} • {o.phone}</p>
                 <div className="photo-actions">
                   <Link to={`/outlets/${o.slug}`} className="photo-btn-secondary">View</Link>
                   <Link to={`/book?outlet=${o.slug}`} className="photo-btn-primary">Book</Link>

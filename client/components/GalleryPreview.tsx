@@ -33,7 +33,7 @@ export default function GalleryPreview() {
                 loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.06]"
               />
-              <div className="photo-gradient" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent" />
               <div className="absolute inset-x-0 top-0 flex flex-wrap gap-2 p-5">
                 <span className="surface-chip bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[#171410]">Now showing</span>
                 <span className="surface-chip border border-[#C6A15B]/30 bg-black/60 text-ivory backdrop-blur-md">{now.dates}</span>
@@ -66,7 +66,7 @@ export default function GalleryPreview() {
                   <div className="overlay-text relative flex h-full min-h-[200px] flex-col justify-center p-5">
                     <p className="photo-meta">{e.dates} · {e.venue}</p>
                     <h3 className="mt-1.5 font-display text-[20px] font-medium leading-tight text-ivory line-clamp-2 min-h-[50px]">{e.title}</h3>
-                    <p className="mt-1 line-clamp-1 text-[13px] text-white/65">{e.blurb}</p>
+                    <p className="mt-1 line-clamp-1 text-[13px] text-white/80">{e.blurb}</p>
                   </div>
                 </Link>
               </Reveal>

@@ -36,7 +36,7 @@ export default function Careers() {
             <div key={r.title} className="rounded-[20px] border border-white/10 bg-white/[0.04] p-6 flex flex-col gap-3 hover:border-[#C6A15B]/40 transition-colors">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-soft">{r.house}</span>
-                <span className="text-[11px] font-medium text-white/40">{r.type}</span>
+                <span className="text-[11px] font-medium text-white/55">{r.type}</span>
               </div>
               <h3 className="font-cabin font-semibold text-[17px] text-white">{r.title}</h3>
               <p className="text-[15px] leading-[1.7] text-white/65 flex-1">{r.desc}</p>

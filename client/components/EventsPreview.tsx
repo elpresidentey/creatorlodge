@@ -18,7 +18,7 @@ export default function EventsPreview() {
             <Reveal key={e.slug} delay={(i % 3) * 110}>
             <div className="group card-lift relative aspect-[3/3.8] overflow-hidden">
               <img src={e.image} alt={e.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.06]" />
-              <div className="photo-gradient" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent" />
               <div className="absolute inset-x-0 top-0 flex flex-wrap gap-2 p-4">
                 <span className="surface-chip border border-[#C6A15B]/30 bg-black/60 text-ivory backdrop-blur-md">{e.date} · {e.time}</span>
                 <span className="surface-chip bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[#171410]">{e.fee}</span>

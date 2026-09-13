@@ -27,7 +27,7 @@ export default function ServicesSection() {
             <Reveal key={s.title} delay={(i % 3) * 110}>
             <Link to={s.href} className="group card-lift pressable relative block aspect-[4/4.1] overflow-hidden">
               <img src={s.image} alt={s.title} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.06]" loading="lazy" />
-              <div className="photo-gradient transition group-hover:from-black/90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent transition group-hover:from-black/90" />
               <span className="absolute left-5 top-5 font-display text-[13px] italic tracking-[0.1em] text-gold-soft/90">{s.no}</span>
               <span className="absolute right-5 top-5 h-px w-8 bg-[#C6A15B]/50" />
               <div className="overlay-text absolute inset-x-0 bottom-0 p-5">

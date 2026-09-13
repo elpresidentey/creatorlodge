@@ -20,12 +20,12 @@ export default function SpacesPreview() {
             <Reveal key={s.id} delay={(i % 4) * 90}>
             <Link to={`/book?space=${s.id}&outlet=${outlets[0].slug}`} className="group card-lift pressable relative block aspect-[3/4] overflow-hidden">
               <img src={s.image} alt={s.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.06]" />
-              <div className="photo-gradient transition group-hover:from-black/95" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent transition group-hover:from-black/95" />
               <span className="photo-price right-4 left-auto">{s.price}</span>
               <div className="overlay-text absolute inset-x-0 bottom-0 p-5">
                 <h3 className="line-clamp-2 min-h-[50px] font-display text-[20px] font-medium leading-tight text-ivory">{s.name}</h3>
-                <p className="photo-desc">{s.desc}</p>
-                <p className="mt-3 border-t border-white/15 pt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-soft">{s.capacity}</p>
+                <p className="mt-1.5 line-clamp-2 min-h-[36px] text-[13px] leading-relaxed text-white/80">{s.desc}</p>
+                <p className="mt-3 border-t border-white/20 pt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-soft">{s.capacity}</p>
               </div>
             </Link>
             </Reveal>

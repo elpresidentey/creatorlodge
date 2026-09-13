@@ -38,11 +38,11 @@ export default function Press() {
                 <div className="flex items-center gap-3">
                   <span className="font-cabin font-semibold text-[15px] text-white">{p.outlet}</span>
                   <span className="text-[11px] font-medium text-white/30">·</span>
-                  <span className="text-[11px] font-medium text-white/40">{p.type}</span>
+                  <span className="text-[11px] font-medium text-white/55">{p.type}</span>
                 </div>
                 <p className="text-[15px] leading-[1.7] text-white/65">{p.headline}</p>
               </div>
-              <span className="text-[12px] text-white/40 shrink-0">{p.date}</span>
+              <span className="text-[12px] text-white/55 shrink-0">{p.date}</span>
             </div>
           ))}
         </div>
