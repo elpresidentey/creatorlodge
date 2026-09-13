@@ -31,7 +31,8 @@ export default function Admin() {
   if (loading) return <div className="min-h-screen bg-[#1D1D1F] flex items-center justify-center text-white/60">Loading…</div>;
   if (!user) return null;
 
-  const isAdmin = user.email?.endsWith("@creatorslounge.com") || user.email === "ekene@example.com";
+  const adminEmails = (import.meta.env.VITE_ADMIN_EMAILS || "admin@creatorslounge.com").split(",").map(s => s.trim().toLowerCase());
+  const isAdmin = !!user.email && adminEmails.includes(user.email.toLowerCase());
   if (!isAdmin) {
     return <div className="min-h-screen bg-[#1D1D1F]"><Navbar /><Breadcrumb trail={[{ label: "Backstage" }]} /><div className="max-w-[640px] mx-auto px-6 py-24 text-center"><h1 className="font-cabin font-semibold text-2xl text-white">Admin only</h1><p className="text-white/60 text-sm mt-2">Your email {user.email} isn’t admin. Add it to ADMIN_EMAILS.</p><Link to="/" className="inline-flex h-[50px] px-6 rounded-[10px] bg-white text-[#1D1D1F] font-medium mt-6">Home</Link></div><Footer /></div>;
   }
@@ -45,7 +46,8 @@ export default function Admin() {
           <p className="text-[#6E6E73] text-xs font-semibold tracking-[0.18em] uppercase">Admin</p>
           <h1 className="font-cabin font-semibold text-[32px] tracking-[-0.03em] text-[#1D1D1F] mt-2">Bookings · {bookings.length}</h1>
           <div className="flex gap-2 mt-4">
-            <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Search outlet, space, name, email" className="flex-1 max-w-md h-[44px] rounded-xl border border-black/10 bg-white px-4 text-sm placeholder:text-[#86868B] focus:outline-none focus:border-[#0071E3]" />
+            <label htmlFor="admin-search" className="sr-only">Search bookings</label>
+            <input id="admin-search" value={q} onChange={e=>setQ(e.target.value)} placeholder="Search outlet, space, name, email" className="flex-1 max-w-md h-[44px] rounded-xl border border-black/10 bg-white px-4 text-sm placeholder:text-[#86868B] focus:outline-none focus:border-[#0071E3]" />
             <span className="text-xs text-[#6E6E73] py-3">{filtered.length} shown</span>
           </div>
         </div>
@@ -55,7 +57,7 @@ export default function Admin() {
         <div className="max-w-[1312px] mx-auto bg-white rounded-[16px] border border-black/5 overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
-              <thead className="bg-[#F5F5F7] text-[#6E6E73] text-xs uppercase tracking-widest"><tr><th className="text-left px-4 py-3">ID</th><th className="text-left px-4 py-3">Outlet · Space</th><th className="text-left px-4 py-3">Date</th><th className="text-left px-4 py-3">Guest</th><th className="text-left px-4 py-3">Status</th></tr></thead>
+              <thead className="bg-[#F5F5F7] text-[#6E6E73] text-xs uppercase tracking-widest"><tr><th scope="col" className="text-left px-4 py-3">ID</th><th scope="col" className="text-left px-4 py-3">Outlet · Space</th><th scope="col" className="text-left px-4 py-3">Date</th><th scope="col" className="text-left px-4 py-3">Guest</th><th scope="col" className="text-left px-4 py-3">Status</th></tr></thead>
               <tbody>
                 {filtered.map(b=>(
                   <tr key={b.id} className="border-t border-black/5 hover:bg-[#F5F5F7]/50">

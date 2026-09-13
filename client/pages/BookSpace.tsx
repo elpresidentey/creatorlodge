@@ -217,16 +217,16 @@ export default function BookSpace() {
                 <>
                   <div className="grid sm:grid-cols-3 gap-4">
                     <div className="flex flex-col gap-2">
-                      <label className="text-[#1D1D1F] font-semibold text-xs tracking-wide">Date *</label>
-                      <input type="date" value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition" />
+                      <label htmlFor="book-date" className="text-[#1D1D1F] font-semibold text-xs tracking-wide">Date *</label>
+                      <input id="book-date" type="date" value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} min={new Date().toISOString().split("T")[0]} className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition" required />
                     </div>
                     <div className="flex flex-col gap-2">
-                      <label className="text-[#1D1D1F] font-semibold text-xs tracking-wide">Time</label>
-                      <input type="time" value={form.time} onChange={(e) => setForm({ ...form, time: e.target.value })} className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition" />
+                      <label htmlFor="book-time" className="text-[#1D1D1F] font-semibold text-xs tracking-wide">Time</label>
+                      <input id="book-time" type="time" value={form.time} onChange={(e) => setForm({ ...form, time: e.target.value })} className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition" />
                     </div>
                     <div className="flex flex-col gap-2">
-                      <label className="text-[#1D1D1F] font-semibold text-xs tracking-wide">Guests</label>
-                      <select value={form.guests} onChange={(e) => setForm({ ...form, guests: e.target.value })} className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition">
+                      <label htmlFor="book-guests" className="text-[#1D1D1F] font-semibold text-xs tracking-wide">Guests</label>
+                      <select id="book-guests" value={form.guests} onChange={(e) => setForm({ ...form, guests: e.target.value })} className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition">
                         {[1, 2, 3, 4, 6, 8, 12, 20, 50, 80].map((n) => (
                           <option key={n} value={String(n)}>{n}</option>
                         ))}
@@ -235,6 +235,12 @@ export default function BookSpace() {
                   </div>
                   <button type="button" onClick={() => {
                     if (!form.date) { toast({ title: "Pick a date", description: "Choose your date first." }); return; }
+                    if (!user) {
+                      const next = `/book?outlet=${form.outlet}&space=${form.space}`;
+                      toast({ title: "Sign in required", description: "Please sign up or log in to continue." });
+                      navigate(`/auth?next=${encodeURIComponent(next)}`);
+                      return;
+                    }
                     setStep(2);
                   }} className="inline-flex bg-[#1D1D1F] text-white font-semibold text-[15px] rounded-[10px] hover:bg-black transition-colors h-[50px] items-center justify-center">
                     Continue →
@@ -256,17 +262,17 @@ export default function BookSpace() {
                   )}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-2">
-                      <label className="text-[#1D1D1F] font-semibold text-xs tracking-wide">Full name *</label>
-                      <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Ada Lovelace" className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#86868B] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition" />
+                      <label htmlFor="book-name" className="text-[#1D1D1F] font-semibold text-xs tracking-wide">Full name *</label>
+                      <input id="book-name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Ada Lovelace" required className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#86868B] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition" />
                     </div>
                     <div className="flex flex-col gap-2">
-                      <label className="text-[#1D1D1F] font-semibold text-xs tracking-wide">Email *</label>
-                      <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="ada@creatorslodge.com" className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#86868B] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition" />
+                      <label htmlFor="book-email" className="text-[#1D1D1F] font-semibold text-xs tracking-wide">Email *</label>
+                      <input id="book-email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="ada@creatorslodge.com" required className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#86868B] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition" />
                     </div>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="text-[#1D1D1F] font-semibold text-xs tracking-wide">Notes (optional)</label>
-                    <textarea value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })} rows={3} placeholder="AV setup, dietary needs, accessibility..." className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#86868B] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 resize-none transition" />
+                    <label htmlFor="book-notes" className="text-[#1D1D1F] font-semibold text-xs tracking-wide">Notes (optional)</label>
+                    <textarea id="book-notes" value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })} rows={3} placeholder="AV setup, dietary needs, accessibility..." className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#86868B] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 resize-none transition" />
                   </div>
                   <div className="bg-[#F5F5F7] border border-black/[0.04] rounded-xl p-4 text-sm">
                     <p className="font-semibold text-[#1D1D1F]">{selectedSpace.name} — {selectedSpace.price}</p>

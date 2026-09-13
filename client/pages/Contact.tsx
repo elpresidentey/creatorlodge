@@ -70,31 +70,37 @@ export default function Contact() {
           {/* Form — high contrast, Apple polish */}
           <form onSubmit={onSubmit} className="lg:col-span-3 bg-white rounded-[20px] border border-black/5 shadow-[0_4px_24px_rgba(0,0,0,0.08)] p-6 md:p-8 flex flex-col gap-5">
             <div className="flex flex-col gap-2">
-              <label className="text-[#1D1D1F] font-semibold text-[13px] tracking-[-0.01em]">Your name</label>
+              <label htmlFor="contact-name" className="text-[#1D1D1F] font-semibold text-[13px] tracking-[-0.01em]">Your name</label>
               <input
+                id="contact-name"
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 placeholder="Ada Lovelace"
+                required
                 className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#86868B] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition"
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-[#1D1D1F] font-semibold text-[13px] tracking-[-0.01em]">Email</label>
+              <label htmlFor="contact-email" className="text-[#1D1D1F] font-semibold text-[13px] tracking-[-0.01em]">Email</label>
               <input
+                id="contact-email"
                 type="email"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 placeholder="ada@creatorslodge.com"
+                required
                 className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#86868B] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition"
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-[#1D1D1F] font-semibold text-[13px] tracking-[-0.01em]">Message</label>
+              <label htmlFor="contact-msg" className="text-[#1D1D1F] font-semibold text-[13px] tracking-[-0.01em]">Message</label>
               <textarea
+                id="contact-msg"
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 placeholder="Tell us what you need..."
                 rows={5}
+                required
                 className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#86868B] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 resize-none transition"
               />
             </div>

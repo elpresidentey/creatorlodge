@@ -47,12 +47,12 @@ export default function UpdatePassword() {
           <p className="text-[#6E6E73] text-sm">You arrived via a recovery link. Choose a new password.</p>
           <form onSubmit={submit} className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
-              <label className="text-[#1D1D1F] font-semibold text-xs">New password</label>
-              <input value={password} onChange={e=>setPassword(e.target.value)} type="password" autoComplete="new-password" placeholder="Min 8 chars, mix Aa1!" className="border border-[#D2D2D7] rounded-xl px-4 h-[48px] text-[15px] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20" required />
+              <label htmlFor="upd-pass" className="text-[#1D1D1F] font-semibold text-xs">New password</label>
+              <input id="upd-pass" value={password} onChange={e=>setPassword(e.target.value)} type="password" autoComplete="new-password" placeholder="Min 8 chars, mix Aa1!" className="border border-[#D2D2D7] rounded-xl px-4 h-[48px] text-[15px] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20" required />
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-[#1D1D1F] font-semibold text-xs">Confirm</label>
-              <input value={confirm} onChange={e=>setConfirm(e.target.value)} type="password" autoComplete="new-password" placeholder="Repeat password" className="border border-[#D2D2D7] rounded-xl px-4 h-[48px] text-[15px] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20" required />
+              <label htmlFor="upd-confirm" className="text-[#1D1D1F] font-semibold text-xs">Confirm</label>
+              <input id="upd-confirm" value={confirm} onChange={e=>setConfirm(e.target.value)} type="password" autoComplete="new-password" placeholder="Repeat password" className="border border-[#D2D2D7] rounded-xl px-4 h-[48px] text-[15px] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20" required />
             </div>
             <button disabled={loading} className="h-[50px] rounded-[10px] bg-[#1D1D1F] text-white font-medium hover:bg-black disabled:opacity-50">{loading?"Saving…":"Update password"}</button>
           </form>

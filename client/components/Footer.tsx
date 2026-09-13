@@ -28,8 +28,8 @@ export default function Footer() {
       </div>
 
       <div className="lounge-container flex flex-col justify-between gap-2 border-t border-white/[0.07] py-6 sm:flex-row sm:items-center">
-        <p className="text-[12px] tracking-[0.06em] text-white/30">© {new Date().getFullYear()} Creators Lounge · Lagos — 8am–11pm daily</p>
-        <p className="text-[12px] tracking-[0.06em] text-white/30">12a Creator Way, VI · hello@creatorslounge.com · +234 800 111 0000</p>
+        <p className="text-[12px] tracking-[0.06em] text-white/30">© {new Date().getFullYear()} Creators Lounge · Lagos &amp; Abuja</p>
+        <p className="text-[12px] tracking-[0.06em] text-white/30">12a Creator Way, VI · hello@creatorslounge.com · +234 800 111 0001</p>
       </div>
     </footer>
   );

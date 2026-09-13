@@ -4,10 +4,10 @@ const items = [
   "Belong",
   "La Table",
   "Le Bar",
-  "L’Atelier",
+  "L'Atelier",
   "La Galerie",
   "Vernissage Monthly",
-  "VI · Yaba · Lekki · Ikoyi · Abuja",
+  "VI · Yaba · Lekki · Festac · Surulere · Egbeda · Ikoyi · Abuja",
 ];
 
 export default function GoldTicker() {

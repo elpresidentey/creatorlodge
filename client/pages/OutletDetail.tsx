@@ -58,7 +58,7 @@ export default function OutletDetail() {
       <section className="px-6 md:px-10 lg:px-16 pb-8">
         <div className="max-w-[1312px] mx-auto grid grid-cols-3 gap-3 md:gap-5">
           {outlet.gallery.map((g, i) => (
-            <img key={i} src={g} alt="" className="h-[140px] md:h-[200px] w-full object-cover rounded-[20px] border border-white/10" />
+            <img key={i} src={g} alt={`${outlet.name} gallery image ${i + 1}`} className="h-[140px] md:h-[200px] w-full object-cover rounded-[20px] border border-white/10" />
           ))}
         </div>
       </section>

@@ -32,12 +32,13 @@ export default function Spaces() {
           <p className="mt-4 max-w-xl text-[15px] leading-[1.7] text-white/65">From hot desks to podcast booths — every space is designed for focus and flow.</p>
           <div className="flex flex-col sm:flex-row gap-3 mt-6">
             <div className="flex flex-wrap gap-2">
-              <button onClick={() => setFilter("all")} className={`px-4 py-2 rounded-full text-[13px] font-medium ${filter === "all" ? "bg-white text-[#1D1D1F]" : "bg-white/10 text-white"}`}>All outlets</button>
+              <button onClick={() => setFilter("all")} className={`min-h-[44px] px-4 py-2.5 rounded-full text-[13px] font-medium ${filter === "all" ? "bg-white text-[#1D1D1F]" : "bg-white/10 text-white"}`}>All outlets</button>
               {outlets.map((o) => (
-                <button key={o.slug} onClick={() => setFilter(o.slug)} className={`px-4 py-2 rounded-full text-[13px] font-medium capitalize ${filter === o.slug ? "bg-brand-yellow text-[#1D1D1F]" : "bg-white/10 text-white hover:bg-white/20"}`}>{o.slug.replace("-", " ")}</button>
+                <button key={o.slug} onClick={() => setFilter(o.slug)} className={`min-h-[44px] px-4 py-2.5 rounded-full text-[13px] font-medium capitalize ${filter === o.slug ? "bg-brand-yellow text-[#1D1D1F]" : "bg-white/10 text-white hover:bg-white/20"}`}>{o.slug.replace("-", " ")}</button>
               ))}
             </div>
-            <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Search spaces…" className="sm:ml-auto w-full sm:w-64 h-[44px] rounded-full bg-white/10 border border-white/15 px-4 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-white/30" />
+            <label htmlFor="spaces-search" className="sr-only">Search spaces</label>
+            <input id="spaces-search" value={q} onChange={e=>setQ(e.target.value)} placeholder="Search spaces…" className="sm:ml-auto w-full sm:w-64 h-[44px] rounded-full bg-white/10 border border-white/15 px-4 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-white/30" />
           </div>
           <p className="text-white/40 text-xs mt-3">{filtered.length} result{filtered.length!==1?"s":""} {dq && `for "${dq}"`}</p>
         </div>
