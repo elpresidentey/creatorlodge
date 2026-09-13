@@ -21,7 +21,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-[#1D1D1F]">
       <Navbar />
-      <Breadcrumb trail={[{ label: "Maison" }]} />
+      <Breadcrumb trail={[{ label: "About" }]} />
 
       {/* Hero */}
       <section className="lounge-container pt-16 md:pt-24 pb-12 md:pb-16">

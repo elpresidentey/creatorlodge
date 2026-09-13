@@ -24,6 +24,10 @@ const Community = lazy(() => import("./pages/Community"));
 const Auth = lazy(() => import("./pages/Auth"));
 const UpdatePassword = lazy(() => import("./pages/UpdatePassword"));
 const Admin = lazy(() => import("./pages/Admin"));
+const Faq = lazy(() => import("./pages/Faq"));
+const Careers = lazy(() => import("./pages/Careers"));
+const GiftCards = lazy(() => import("./pages/GiftCards"));
+const Press = lazy(() => import("./pages/Press"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -67,6 +71,10 @@ const App = () => (
           <Route path="/auth" element={<Auth />} />
           <Route path="/update-password" element={<UpdatePassword />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/gift-cards" element={<GiftCards />} />
+          <Route path="/press" element={<Press />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

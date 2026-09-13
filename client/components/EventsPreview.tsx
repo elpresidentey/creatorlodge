@@ -8,7 +8,7 @@ export default function EventsPreview() {
       <div className="lounge-container section-pad">
         <Reveal className="section-head">
           <div className="section-head-copy">
-            <p className="eyebrow eyebrow-rule text-[#C6A15B]">Vernissage · Ce Mois</p>
+            <p className="eyebrow eyebrow-rule text-[#C6A15B]">Events · This Month</p>
             <h2 className="section-title text-ivory">What&rsquo;s <span className="italic text-gold-soft">on.</span></h2>
           </div>
           <Link to="/events" className="section-link pressable text-gold-soft transition hover:text-white">See calendar →</Link>

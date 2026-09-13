@@ -10,10 +10,10 @@ export default function SpacesPreview() {
       <div className="lounge-container section-pad">
         <Reveal className="section-head">
           <div className="section-head-copy">
-            <p className="eyebrow eyebrow-rule text-[#9A7B3F]">Les Salons Privés</p>
+            <p className="eyebrow eyebrow-rule text-[#9A7B3F]">Private Spaces</p>
             <h2 className="section-title text-[#171410]">Work the way <span className="italic text-[#9A7B3F]">you wish.</span></h2>
           </div>
-          <Link to="/spaces" className="section-link pressable text-[#9A7B3F] hover:text-[#171410]">Browse all salons →</Link>
+          <Link to="/spaces" className="section-link pressable text-[#9A7B3F] hover:text-[#171410]">Browse all spaces →</Link>
         </Reveal>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {spaces.filter(s=>featured.includes(s.id)).map((s, i)=>(

@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import { Reveal } from "@/hooks/useReveal";
 
 const services = [
-  { no: "I", title: "La Table", desc: "Jollof, suya & garden plates.", image: "/images/pexels-37538487.jpg", href: "/menu" },
-  { no: "II", title: "Le Bar", desc: "Flamed cocktails, Lagos nights.", image: "/images/pexels-37461041.jpg", href: "/menu" },
-  { no: "III", title: "L’Atelier", desc: "Desks, studios & quiet salons.", image: "/images/pexels-30688907.jpg", href: "/spaces" },
-  { no: "IV", title: "La Galerie", desc: "Monthly shows, private views.", image: "/images/pexels-38942545.jpg", href: "/gallery" },
-  { no: "V", title: "Le Jardin", desc: "Brunch, beats & celebration halls.", image: "/images/pexels-35730164.jpg", href: "/spaces" },
-  { no: "VI", title: "La Scène", desc: "Jazz, drums & runway salons.", image: "/images/pexels-37572315.jpg", href: "/events" },
+  { no: "I", title: "The Kitchen", desc: "Jollof, suya & garden plates.", image: "/images/pexels-37538487.jpg", href: "/menu" },
+  { no: "II", title: "The Bar", desc: "Flamed cocktails, Lagos nights.", image: "/images/pexels-37461041.jpg", href: "/menu" },
+  { no: "III", title: "The Workspace", desc: "Desks, studios & quiet rooms.", image: "/images/pexels-30688907.jpg", href: "/spaces" },
+  { no: "IV", title: "The Gallery", desc: "Monthly shows, private views.", image: "/images/pexels-38942545.jpg", href: "/gallery" },
+  { no: "V", title: "The Garden", desc: "Brunch, beats & celebration halls.", image: "/images/pexels-35730164.jpg", href: "/spaces" },
+  { no: "VI", title: "The Stage", desc: "Jazz, drums & runway shows.", image: "/images/pexels-37572315.jpg", href: "/events" },
 ];
 
 export default function ServicesSection() {
@@ -16,10 +16,10 @@ export default function ServicesSection() {
       <div className="lounge-container section-pad">
         <Reveal className="section-head">
           <div className="section-head-copy">
-            <p className="eyebrow eyebrow-rule text-[#C6A15B]">Les Salons</p>
-            <h2 className="section-title text-ivory">Six salons, <span className="italic text-gold-soft">one roof.</span></h2>
+            <p className="eyebrow eyebrow-rule text-[#C6A15B]">The Spaces</p>
+            <h2 className="section-title text-ivory">Six spaces, <span className="italic text-gold-soft">one roof.</span></h2>
           </div>
-          <p className="section-lede pb-1 text-white/60">Restaurant, bar, atelier and galerie — composed for lingering, not rushing.</p>
+          <p className="section-lede pb-1 text-white/60">Restaurant, bar, workspace and gallery — composed for lingering, not rushing.</p>
         </Reveal>
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">

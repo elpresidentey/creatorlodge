@@ -36,7 +36,7 @@ export default function HeroSection() {
         <div className="flex flex-col items-start justify-between gap-14 lg:flex-row lg:items-center lg:gap-16">
           <div className="flex w-full flex-col gap-6 lg:w-[48%] lg:py-4">
             <div className="plaque animate-rise max-w-full flex-wrap self-start" style={{ animationDelay: "60ms" }}>
-              <span className="font-cabin text-[10px] font-semibold uppercase tracking-[0.24em] text-gold-soft">N°01 — Salon · Galerie · Maison</span>
+              <span className="font-cabin text-[10px] font-semibold uppercase tracking-[0.24em] text-gold-soft">N°01 — Space · Gallery · House</span>
               <span className="h-3 w-px bg-[#C6A15B]/30" />
               <span className="flex items-center gap-1.5 text-[11px] text-white/60">
                 <span className="relative flex h-1.5 w-1.5">
@@ -106,7 +106,7 @@ export default function HeroSection() {
               <div className="absolute bottom-8 right-3 z-20 h-[38%] w-[42%] overflow-hidden rounded-[18px] border border-[#C6A15B]/25 shadow-[0_20px_50px_rgba(0,0,0,0.5)] sm:right-5">
                 <img src={gallery[2].src} alt={gallery[2].alt} className="h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                <span className="absolute bottom-3 left-3 rounded-full border border-white/15 bg-black/55 px-2.5 py-1 font-cabin text-[9px] font-semibold uppercase tracking-[0.2em] text-white/85 backdrop-blur-md">La Carte</span>
+                <span className="absolute bottom-3 left-3 rounded-full border border-white/15 bg-black/55 px-2.5 py-1 font-cabin text-[9px] font-semibold uppercase tracking-[0.2em] text-white/85 backdrop-blur-md">The Menu</span>
               </div>
 
               <div className="absolute -bottom-1 left-[8%] z-30 inline-flex items-center gap-2.5 rounded-full border border-[#C6A15B]/30 bg-[#121110]/90 py-2 pl-2 pr-4 shadow-[0_12px_32px_rgba(0,0,0,0.45)] backdrop-blur-md">

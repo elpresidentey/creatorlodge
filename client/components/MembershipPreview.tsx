@@ -7,9 +7,9 @@ export default function MembershipPreview() {
     <section className="w-full bg-[#0E0E0F]">
       <div className="lounge-container section-pad">
         <Reveal className="flex max-w-2xl flex-col gap-4">
-          <p className="eyebrow eyebrow-rule text-[#C6A15B]">Patronage</p>
+          <p className="eyebrow eyebrow-rule text-[#C6A15B]">Membership</p>
           <h2 className="section-title text-ivory">One key, <span className="italic text-gold-soft">three houses.</span></h2>
-          <p className="max-w-xl text-[15px] leading-[1.7] text-white/60 md:text-base">Day salon or yearly patron — same table, same circle, same vernissage.</p>
+          <p className="max-w-xl text-[15px] leading-[1.7] text-white/60 md:text-base">Day pass or yearly member — same table, same circle, same exhibitions.</p>
         </Reveal>
         <div className="mt-10 grid items-stretch gap-5 md:mt-12 md:grid-cols-3 lg:gap-6">
           {tiers.map((t, i)=>(

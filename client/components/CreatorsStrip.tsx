@@ -8,7 +8,7 @@ export default function CreatorsStrip() {
       <div className="lounge-container section-pad">
         <Reveal className="section-head">
           <div className="section-head-copy">
-            <p className="eyebrow eyebrow-rule text-[#9A7B3F]">Le Cercle</p>
+            <p className="eyebrow eyebrow-rule text-[#9A7B3F]">The Circle</p>
             <h2 className="section-title text-[#171410]">Made by <span className="italic text-[#9A7B3F]">our people.</span></h2>
           </div>
           <Link to="/community" className="section-link pressable text-[#9A7B3F] hover:text-[#171410]">The circle →</Link>

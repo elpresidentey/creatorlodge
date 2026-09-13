@@ -10,7 +10,7 @@ export default function Events() {
   return (
     <div className="min-h-screen bg-[#1D1D1F]">
       <Navbar />
-      <Breadcrumb trail={[{ label: "Calendar" }]} />
+      <Breadcrumb trail={[{ label: "Events" }]} />
 
       <section className="px-6 md:px-10 lg:px-16 py-16 md:py-24">
         <div className="max-w-[1312px] mx-auto">
@@ -53,7 +53,7 @@ export default function Events() {
               Propose an event
             </Link>
             <Link to="/gallery" className="inline-flex items-center justify-center border border-[#C6A15B]/40 text-gold-soft font-medium text-[15px] h-[50px] px-6 rounded-[10px] hover:bg-white/5">
-              Browse La Galerie →
+              Browse Gallery →
             </Link>
           </div>
         </div>

@@ -18,7 +18,7 @@ export default function TeamSection() {
       <div className="lounge-container section-pad">
         <Reveal className="section-head">
           <div className="section-head-copy">
-            <p className="eyebrow eyebrow-rule text-[#C6A15B]">Les Hôtes</p>
+            <p className="eyebrow eyebrow-rule text-[#C6A15B]">The Hosts</p>
             <h2 className="section-title text-ivory">The hands behind <span className="italic text-gold-soft">the house</span></h2>
           </div>
           <p className="section-lede pb-1 text-white/60">Faces you&rsquo;ll actually meet — chefs, sommeliers, ateliers, muses.</p>

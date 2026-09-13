@@ -24,7 +24,7 @@ const NotFound = () => {
           Lost<span className="italic text-gold-soft">?</span>
         </h1>
         <p className="mt-4 max-w-md text-[15px] leading-[1.7] text-white/60">
-          This salon doesn&rsquo;t exist — but the house has many doors. Let us walk you back.
+          This page doesn&rsquo;t exist — but the house has many doors. Let us walk you back.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link

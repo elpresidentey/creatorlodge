@@ -11,7 +11,7 @@ export default function GalleryPreview() {
       <div className="lounge-container section-pad">
         <Reveal className="section-head">
           <div className="section-head-copy">
-            <p className="eyebrow eyebrow-rule text-[#9A7B3F]">La Galerie</p>
+            <p className="eyebrow eyebrow-rule text-[#9A7B3F]">The Gallery</p>
             <h2 className="section-title text-[#171410]">
               Now showing <span className="italic text-[#9A7B3F]">&amp; soon.</span>
             </h2>

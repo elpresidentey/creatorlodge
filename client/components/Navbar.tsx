@@ -56,13 +56,13 @@ export default function Navbar() {
           Home
         </Link>
         <Link to="/spaces" className="whitespace-nowrap rounded-lg px-2.5 py-2 font-cabin text-[11px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft xl:px-3 xl:text-[12px] xl:tracking-[0.14em]">
-          Salons
+          Spaces
         </Link>
         <Link to="/outlets" className="whitespace-nowrap rounded-lg px-2.5 py-2 font-cabin text-[11px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft xl:px-3 xl:text-[12px] xl:tracking-[0.14em]">
           Houses
         </Link>
         <Link to="/membership" className="whitespace-nowrap rounded-lg px-2.5 py-2 font-cabin text-[11px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft xl:px-3 xl:text-[12px] xl:tracking-[0.14em]">
-          Patronage
+          Membership
         </Link>
         <Link to="/contact" className="whitespace-nowrap rounded-lg px-2.5 py-2 font-cabin text-[11px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft xl:px-3 xl:text-[12px] xl:tracking-[0.14em]">
           Contact
@@ -71,16 +71,21 @@ export default function Navbar() {
         {/* More dropdown — click + hover with bridge, no flicker */}
         <div className="relative">
           <button onClick={() => setMoreOpen(!moreOpen)} onMouseEnter={() => setMoreOpen(true)} className="flex items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 py-2 font-cabin text-[11px] font-medium uppercase tracking-[0.12em] text-white/60 transition-colors hover:bg-white/5 hover:text-white xl:px-3 xl:text-[12px] xl:tracking-[0.14em]">
-            Atelier <span className={`text-[9px] transition ${moreOpen ? "rotate-180" : ""}`}>▼</span>
+            More <span className={`text-[9px] transition ${moreOpen ? "rotate-180" : ""}`}>▼</span>
           </button>
           {moreOpen && (
             <div onMouseLeave={() => setMoreOpen(false)} className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3">
               <div className="w-52 overflow-hidden rounded-2xl border border-[#C6A15B]/20 bg-[#141311] py-2 shadow-[0_24px_60px_rgba(0,0,0,0.5)]">
-                <Link to="/menu" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">Carte & Bar</Link>
+                <Link to="/menu" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">Menu</Link>
                 <Link to="/gallery" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">Gallery</Link>
-                <Link to="/events" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">Calendar</Link>
-                <Link to="/community" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">The Circle</Link>
-                <Link to="/about" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">Maison</Link>
+                <Link to="/events" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">Events</Link>
+                <Link to="/community" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">Community</Link>
+                <Link to="/about" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">About</Link>
+                <div className="my-1 border-t border-white/10" />
+                <Link to="/faq" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">FAQ</Link>
+                <Link to="/careers" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">Careers</Link>
+                <Link to="/gift-cards" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">Gift Cards</Link>
+                <Link to="/press" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">Press</Link>
               </div>
             </div>
           )}
@@ -145,6 +150,12 @@ export default function Navbar() {
           <Link to="/community" className="text-white/90 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Community</Link>
           <Link to="/about" className="text-white/90 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>About</Link>
           <Link to="/contact" className="text-white/90 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <div className="h-px bg-white/10 my-1" />
+          <p className="text-white/40 text-xs font-medium tracking-[0.18em] uppercase">Info</p>
+          <Link to="/faq" className="text-white/80 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>FAQ</Link>
+          <Link to="/careers" className="text-white/80 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Careers</Link>
+          <Link to="/gift-cards" className="text-white/80 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Gift Cards</Link>
+          <Link to="/press" className="text-white/80 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Press</Link>
           <div className="flex flex-col gap-3 pt-3 border-t border-white/10 mt-1">
             {user ? (
               <>

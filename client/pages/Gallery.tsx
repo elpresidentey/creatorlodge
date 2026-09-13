@@ -11,7 +11,7 @@ const exhibiting = creators.filter((c) =>
 );
 
 export default function Gallery() {
-  useTitle("La Galerie — Exhibitions in Lagos");
+  useTitle("Gallery — Exhibitions in Lagos");
   const now = exhibitions.find((e) => e.status === "now") ?? exhibitions[0];
   const upcoming = exhibitions.filter((e) => e.status === "upcoming");
   const past = exhibitions.filter((e) => e.status === "past");
@@ -19,12 +19,12 @@ export default function Gallery() {
   return (
     <div className="min-h-screen bg-[#0E0E0F]">
       <Navbar />
-      <Breadcrumb trail={[{ label: "La Galerie" }]} />
+      <Breadcrumb trail={[{ label: "Gallery" }]} />
 
       {/* Hero */}
       <section className="lounge-container pb-12 pt-16 md:pb-16 md:pt-24">
         <Reveal className="max-w-3xl">
-          <p className="eyebrow eyebrow-rule text-[#C6A15B]">La Galerie</p>
+          <p className="eyebrow eyebrow-rule text-[#C6A15B]">Gallery</p>
           <h1 className="mt-4 font-display text-[40px] font-medium leading-[0.98] tracking-[-0.015em] text-ivory sm:text-[56px]">
             Where Lagos hangs <span className="italic text-gold-soft">its heart.</span>
           </h1>

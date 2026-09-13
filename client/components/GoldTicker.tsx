@@ -2,11 +2,11 @@ const items = [
   "Dine",
   "Exhibit",
   "Belong",
-  "La Table",
-  "Le Bar",
-  "L'Atelier",
-  "La Galerie",
-  "Vernissage Monthly",
+  "The Kitchen",
+  "The Bar",
+  "The Workspace",
+  "The Gallery",
+  "Exhibition Nightly",
   "VI · Yaba · Lekki · Festac · Surulere · Egbeda · Ikoyi · Abuja",
 ];
 

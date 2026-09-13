@@ -11,19 +11,22 @@ export default function Footer() {
             </div>
             <span className="flex flex-col leading-none">
               <span className="font-display text-[19px] font-medium text-ivory">Creators Lounge</span>
-              <span className="mt-1.5 font-cabin text-[9px] font-medium uppercase tracking-[0.3em] text-white/40">Maison · Galerie · Salon</span>
+              <span className="mt-1.5 font-cabin text-[9px] font-medium uppercase tracking-[0.3em] text-white/40">House · Gallery · Space</span>
             </span>
           </Link>
           <p className="font-display text-[15px] italic leading-relaxed text-white/45">“Where Lagos dines, creates &amp; is seen.”</p>
         </div>
 
         <nav className="grid grid-cols-2 gap-x-12 gap-y-3 text-[13px] font-medium sm:grid-cols-3">
-          <Link to="/spaces" className="text-white/55 transition hover:text-gold-soft">Salons</Link>
+          <Link to="/spaces" className="text-white/55 transition hover:text-gold-soft">Spaces</Link>
           <Link to="/outlets" className="text-white/55 transition hover:text-gold-soft">Houses</Link>
-          <Link to="/menu" className="text-white/55 transition hover:text-gold-soft">Carte</Link>
+          <Link to="/menu" className="text-white/55 transition hover:text-gold-soft">Menu</Link>
           <Link to="/gallery" className="text-white/55 transition hover:text-gold-soft">Gallery</Link>
-          <Link to="/membership" className="text-white/55 transition hover:text-gold-soft">Patronage</Link>
+          <Link to="/membership" className="text-white/55 transition hover:text-gold-soft">Membership</Link>
           <Link to="/contact" className="text-white/55 transition hover:text-gold-soft">Contact</Link>
+          <Link to="/faq" className="text-white/55 transition hover:text-gold-soft">FAQ</Link>
+          <Link to="/careers" className="text-white/55 transition hover:text-gold-soft">Careers</Link>
+          <Link to="/gift-cards" className="text-white/55 transition hover:text-gold-soft">Gift Cards</Link>
         </nav>
       </div>
 
