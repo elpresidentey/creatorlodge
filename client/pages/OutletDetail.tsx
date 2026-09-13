@@ -68,13 +68,13 @@ export default function OutletDetail() {
           <h2 className="text-white font-cabin font-semibold text-[32px] tracking-[-0.03em] mb-6">Spaces at {outlet.name.split("—")[0]}</h2>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {outletSpaces.map((s) => (
-              <div key={s.id} className="group relative flex min-h-[400px] flex-col justify-end overflow-hidden rounded-[20px] border border-[#C6A15B]/20 shadow-[0_24px_60px_rgba(0,0,0,0.4)] transition-all duration-500 hover:-translate-y-1 hover:border-[#C6A15B]/55">
-                <img src={s.image} alt={s.name} className="absolute inset-0 h-full w-full object-cover transition duration-1000 group-hover:scale-[1.05]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/45 to-black/10" />
-                <span className="absolute right-4 top-4 z-10 rounded-full border border-[#C6A15B]/40 bg-black/60 px-2.5 py-1 text-[11px] font-semibold leading-none text-gold-soft backdrop-blur-md">{s.price}</span>
-                <div className="overlay-text relative flex flex-col p-5">
-                  <p className="font-display text-[19px] font-medium leading-tight text-ivory">{s.name}</p>
-                  <p className="mt-2 line-clamp-2 text-[13px] leading-relaxed text-white/70">{s.desc}</p>
+              <div key={s.id} className="group photo-card">
+                <img src={s.image} alt={s.name} />
+                <div className="photo-gradient" />
+                <span className="photo-price">{s.price}</span>
+                <div className="photo-body overlay-text flex flex-col">
+                  <p className="font-display text-[20px] font-medium leading-tight text-ivory line-clamp-2 min-h-[50px]">{s.name}</p>
+                  <p className="photo-desc">{s.desc}</p>
                   <Link to={`/book?space=${s.id}&outlet=${outlet.slug}`} className="mt-4 inline-flex h-[46px] items-center justify-center rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[13px] font-semibold uppercase tracking-[0.08em] text-[#171410] transition hover:brightness-105">
                     Book • {s.price}
                   </Link>

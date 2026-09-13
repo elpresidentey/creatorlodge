@@ -25,18 +25,18 @@ export default function Events() {
       <section className="px-6 md:px-10 lg:px-16 pb-16 md:pb-24">
         <div className="max-w-[1312px] mx-auto grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {events.map((e) => (
-            <div key={e.slug} className="group relative flex min-h-[420px] flex-col justify-end overflow-hidden rounded-[20px] border border-[#C6A15B]/20 shadow-[0_24px_60px_rgba(0,0,0,0.4)] transition-all duration-500 hover:-translate-y-1 hover:border-[#C6A15B]/55">
-              <img src={e.image} alt={e.title} className="absolute inset-0 h-full w-full object-cover transition duration-1000 group-hover:scale-[1.05]" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/40 to-black/10" />
+            <div key={e.slug} className="group photo-card">
+              <img src={e.image} alt={e.title} />
+              <div className="photo-gradient" />
               <div className="absolute inset-x-0 top-0 flex flex-wrap gap-2 p-4">
                 <span className="surface-chip border border-[#C6A15B]/30 bg-black/60 uppercase tracking-[0.14em] text-ivory backdrop-blur-md">{e.date} • {e.time}</span>
                 <span className="surface-chip bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[#171410]">{e.fee}</span>
               </div>
-              <div className="overlay-text relative flex flex-col p-5">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold-soft">{e.outlet}</p>
-                <h3 className="mt-1.5 font-display text-[21px] font-medium leading-tight text-ivory">{e.title}</h3>
+              <div className="photo-body overlay-text flex flex-col">
+                <p className="photo-meta tracking-[0.2em]">{e.outlet}</p>
+                <h3 className="mt-1.5 font-display text-[20px] font-medium leading-tight text-ivory line-clamp-2 min-h-[50px]">{e.title}</h3>
                 <button
-                  onClick={() => toast({ title: "RSVP sent", description: `You’re on the list for ${e.title} on ${e.date}.` })}
+                  onClick={() => toast({ title: "RSVP sent", description: `You're on the list for ${e.title} on ${e.date}.` })}
                   className="mt-4 inline-flex h-[46px] items-center justify-center rounded-[10px] border border-[#C6A15B]/40 bg-white/[0.06] text-[12px] font-semibold uppercase tracking-[0.12em] text-ivory backdrop-blur-sm transition hover:border-[#C6A15B]/70 hover:bg-white/10"
                 >
                   RSVP

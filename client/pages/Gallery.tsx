@@ -51,25 +51,24 @@ export default function Gallery() {
       {/* Now showing */}
       <section className="lounge-container pb-16 md:pb-24">
         <Reveal y={30}>
-          <div className="group relative flex min-h-[480px] flex-col justify-end overflow-hidden rounded-[24px] border border-[#C6A15B]/30 shadow-[0_32px_80px_rgba(0,0,0,0.5)]">
+          <div className="group photo-card">
             <img
               src={now.image}
               alt={now.title}
-              className="absolute inset-0 h-full w-full object-cover transition duration-1000 group-hover:scale-[1.04]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/40 to-black/10" />
+            <div className="photo-gradient" />
             <div className="absolute inset-x-0 top-0 flex flex-wrap items-center gap-2 p-5 md:p-8">
               <span className="surface-chip bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[#171410]">Now showing</span>
               <span className="surface-chip border border-[#C6A15B]/30 bg-black/60 text-ivory backdrop-blur-md">{now.dates}</span>
               <span className="surface-chip border border-white/15 bg-white/10 text-white/85 backdrop-blur-md">{now.venue} · {now.fee}</span>
             </div>
-            <div className="overlay-text relative max-w-2xl p-6 md:p-10">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-soft">{now.edition}</p>
+            <div className="photo-body overlay-text relative max-w-2xl md:p-10">
+              <p className="photo-meta tracking-[0.22em]">{now.edition}</p>
               <h2 className="mt-2 font-display text-[34px] font-medium leading-[1.05] text-ivory md:text-[48px]">{now.title}</h2>
               <p className="mt-3 max-w-xl text-[15px] leading-[1.7] text-white/70">{now.blurb}</p>
               <Link
                 to="/book?space=gallery-wall"
-                className="pressable mt-6 inline-flex h-[50px] items-center justify-center rounded-[10px] border border-[#C6A15B]/50 bg-black/50 px-8 text-[13px] font-semibold uppercase tracking-[0.1em] text-ivory backdrop-blur-md transition hover:bg-black/70"
+                className="pressable mt-6 inline-flex h-[46px] items-center justify-center rounded-[10px] border border-[#C6A15B]/50 bg-black/50 px-8 text-[13px] font-semibold uppercase tracking-[0.1em] text-ivory backdrop-blur-md transition hover:bg-black/70"
               >
                 Reserve vernissage seats
               </Link>
@@ -89,17 +88,17 @@ export default function Gallery() {
         <div className="grid gap-5 md:grid-cols-2 lg:gap-6">
           {upcoming.map((e, i) => (
             <Reveal key={e.slug} delay={(i % 2) * 110}>
-              <div className="group card-lift relative flex min-h-[380px] flex-col justify-end overflow-hidden rounded-[20px] border border-[#C6A15B]/20 shadow-[0_24px_60px_rgba(0,0,0,0.45)] hover:border-[#C6A15B]/50">
-                <img src={e.image} alt={e.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-1000 group-hover:scale-[1.06]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/40 to-black/10" />
+              <div className="group card-lift relative flex min-h-[380px] flex-col justify-end overflow-hidden">
+                <img src={e.image} alt={e.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.06]" />
+                <div className="photo-gradient" />
                 <div className="absolute inset-x-0 top-0 flex flex-wrap gap-2 p-4">
                   <span className="surface-chip border border-[#C6A15B]/30 bg-black/60 text-ivory backdrop-blur-md">{e.dates}</span>
                   <span className="surface-chip bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[#171410]">{e.fee}</span>
                 </div>
-                <div className="overlay-text relative p-6">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold-soft">{e.edition} · {e.venue}</p>
-                  <h3 className="mt-1.5 font-display text-[26px] font-medium leading-tight text-ivory">{e.title}</h3>
-                  <p className="mt-2 text-[14px] leading-relaxed text-white/65">{e.blurb}</p>
+                <div className="overlay-text relative p-5">
+                  <p className="photo-meta">{e.edition} · {e.venue}</p>
+                  <h3 className="mt-1.5 font-display text-[20px] font-medium leading-tight text-ivory line-clamp-2 min-h-[50px]">{e.title}</h3>
+                  <p className="mt-2 photo-desc">{e.blurb}</p>
                 </div>
               </div>
             </Reveal>
@@ -120,14 +119,14 @@ export default function Gallery() {
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {past.map((e, i) => (
               <Reveal key={e.slug} delay={(i % 3) * 100}>
-                <div className="group card-lift relative aspect-[3/3.6] overflow-hidden rounded-[20px] border border-[#171410]/10 shadow-[0_20px_55px_rgba(23,20,16,0.18)] hover:border-[#C6A15B]/50">
-                  <img src={e.image} alt={e.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover saturate-[0.85] transition duration-1000 group-hover:scale-[1.06] group-hover:saturate-100" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/10" />
-                  <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-black/55 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/75 backdrop-blur-md">Archive · {e.dates}</span>
+                <div className="group card-lift relative aspect-[3/3.6] overflow-hidden">
+                  <img src={e.image} alt={e.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover saturate-[0.85] transition duration-700 group-hover:scale-[1.06] group-hover:saturate-100" />
+                  <div className="photo-gradient" />
+                  <span className="surface-chip absolute left-4 top-4 z-10 border border-white/20 bg-black/55 backdrop-blur-md">Archive · {e.dates}</span>
                   <div className="overlay-text absolute inset-x-0 bottom-0 p-5">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold-soft">{e.edition}</p>
-                    <h3 className="mt-1 font-display text-[22px] font-medium leading-tight text-ivory">{e.title}</h3>
-                    <p className="mt-1.5 line-clamp-2 text-[13px] leading-relaxed text-white/65">{e.blurb}</p>
+                    <p className="photo-meta">{e.edition}</p>
+                    <h3 className="mt-1 font-display text-[20px] font-medium leading-tight text-ivory line-clamp-2 min-h-[50px]">{e.title}</h3>
+                    <p className="mt-1.5 photo-desc">{e.blurb}</p>
                   </div>
                 </div>
               </Reveal>

@@ -24,24 +24,18 @@ export default function Outlets() {
       <section className="px-6 md:px-10 lg:px-16 pb-8">
         <div className="max-w-[1312px] mx-auto grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {outlets.map((o) => (
-            <div key={o.slug} className="group relative flex min-h-[440px] flex-col justify-end overflow-hidden rounded-[20px] border border-[#C6A15B]/20 shadow-[0_24px_60px_rgba(0,0,0,0.4)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#C6A15B]/55">
-              <img src={o.image} alt={o.name} className="absolute inset-0 h-full w-full object-cover transition duration-1000 group-hover:scale-[1.06]" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/40 to-black/10" />
-              <span className="surface-chip absolute left-4 top-4 z-10 border border-[#C6A15B]/40 bg-black/60 uppercase tracking-[0.14em] text-gold-soft backdrop-blur-md">
-                {o.tag}
-              </span>
-              <div className="overlay-text relative flex flex-1 flex-col justify-end p-5">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-soft">{o.area}</p>
-                <h3 className="mt-1.5 line-clamp-2 min-h-[50px] font-display text-[20px] font-medium leading-tight text-ivory">{o.name}</h3>
+            <div key={o.slug} className="group photo-card">
+              <img src={o.image} alt={o.name} />
+              <div className="photo-gradient" />
+              <span className="photo-badge uppercase tracking-[0.14em]">{o.tag}</span>
+              <div className="photo-body overlay-text flex flex-1 flex-col justify-end">
+                <p className="photo-meta">{o.area}</p>
+                <h3 className="photo-title">{o.name}</h3>
                 <p className="mt-2 truncate text-[13px] leading-relaxed text-white/70">{o.address}</p>
                 <p className="mt-1 text-[12px] text-white/50">{o.hours} • {o.phone}</p>
-                <div className="mt-4 flex gap-2.5">
-                  <Link to={`/outlets/${o.slug}`} className="inline-flex h-[46px] flex-1 items-center justify-center rounded-[10px] border border-white/20 bg-white/10 text-[13px] font-semibold uppercase tracking-[0.08em] text-white backdrop-blur-sm transition hover:border-[#C6A15B]/60 hover:bg-white/15">
-                    View
-                  </Link>
-                  <Link to={`/book?outlet=${o.slug}`} className="inline-flex h-[46px] flex-1 items-center justify-center rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[13px] font-semibold uppercase tracking-[0.08em] text-[#171410] transition hover:brightness-105">
-                    Book
-                  </Link>
+                <div className="photo-actions">
+                  <Link to={`/outlets/${o.slug}`} className="photo-btn-secondary">View</Link>
+                  <Link to={`/book?outlet=${o.slug}`} className="photo-btn-primary">Book</Link>
                 </div>
               </div>
             </div>

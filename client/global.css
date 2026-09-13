@@ -220,6 +220,67 @@
   .surface-chip {
     @apply inline-flex items-center rounded-full px-2.5 py-1 text-[11px] font-semibold tracking-wide;
   }
+
+  /* ——— Unified photo-card system ——— */
+  .photo-card {
+    @apply relative overflow-hidden rounded-[20px] border border-[#C6A15B]/20
+      shadow-[0_24px_60px_rgba(0,0,0,0.4)]
+      transition-[transform,box-shadow,border-color] duration-500;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @media (hover: hover) {
+    .photo-card:hover {
+      @apply -translate-y-1.5 border-[#C6A15B]/50
+        shadow-[0_32px_80px_rgba(0,0,0,0.5)];
+    }
+  }
+  .photo-card > img,
+  .photo-card > .photo-bg {
+    @apply absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out will-change-transform;
+  }
+  @media (hover: hover) {
+    .group:hover .photo-card > img,
+    .group:hover .photo-card > .photo-bg {
+      transform: scale(1.06);
+    }
+  }
+  .photo-card .photo-gradient {
+    @apply pointer-events-none absolute inset-0;
+    background: linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.35) 50%, transparent 100%);
+  }
+  .photo-card .photo-body {
+    @apply relative p-5;
+  }
+  .photo-card .photo-title {
+    @apply font-display text-[20px] font-medium leading-tight text-ivory line-clamp-2 min-h-[50px];
+  }
+  .photo-card .photo-desc {
+    @apply mt-2 line-clamp-2 min-h-[42px] text-[13px] leading-relaxed text-white/70;
+  }
+  .photo-card .photo-meta {
+    @apply mt-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-soft;
+  }
+  .photo-card .photo-badge {
+    @apply surface-chip absolute left-4 top-4 z-10 border border-[#C6A15B]/40 bg-black/60 text-gold-soft backdrop-blur-md;
+  }
+  .photo-card .photo-price {
+    @apply surface-chip absolute right-4 top-4 z-10 border border-[#C6A15B]/40 bg-black/60 text-gold-soft backdrop-blur-md;
+  }
+  .photo-card .photo-actions {
+    @apply mt-4 flex gap-2.5;
+  }
+  .photo-card .photo-btn-primary {
+    @apply btn-shine inline-flex h-[46px] flex-1 items-center justify-center rounded-[10px] bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[13px] font-semibold uppercase tracking-[0.08em] text-[#171410] transition hover:brightness-105;
+  }
+  .photo-card .photo-btn-secondary {
+    @apply inline-flex h-[46px] flex-1 items-center justify-center rounded-[10px] border border-white/20 bg-white/10 text-[13px] font-semibold uppercase tracking-[0.08em] text-white backdrop-blur-sm transition hover:bg-white/15;
+  }
+  .photo-card .photo-chip-row {
+    @apply mt-3 flex flex-wrap gap-1.5;
+  }
+  .photo-card .photo-chip {
+    @apply rounded-full border border-white/15 bg-white/10 px-2 py-1 text-[11px] leading-none text-white/80 backdrop-blur-sm;
+  }
 }
 
 /* ——— Motion system: reveals, entrances, ticker, shine ——— */
@@ -303,11 +364,15 @@
 
 /* Card image drift + frame glow */
 .card-lift {
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease, border-color 0.5s ease;
+  @apply rounded-[20px] border border-[#C6A15B]/20
+    shadow-[0_24px_60px_rgba(0,0,0,0.4)]
+    transition-[transform,box-shadow,border-color] duration-500;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 @media (hover: hover) {
   .card-lift:hover {
-    transform: translateY(-6px);
+    @apply -translate-y-1.5 border-[#C6A15B]/50
+      shadow-[0_32px_80px_rgba(0,0,0,0.5)];
   }
 }
 
@@ -331,6 +396,7 @@
   .surface-card,
   .surface-card-dark,
   .surface-media > img,
+  .photo-card > img,
   .reveal,
   .animate-rise,
   .animate-fade,
@@ -341,5 +407,9 @@
     transition: none !important;
     transform: none !important;
     opacity: 1 !important;
+  }
+  .photo-card,
+  .card-lift {
+    transform: none !important;
   }
 }

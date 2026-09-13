@@ -25,14 +25,14 @@ export default function ServicesSection() {
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {services.map((s, i) => (
             <Reveal key={s.title} delay={(i % 3) * 110}>
-            <Link to={s.href} className="group card-lift pressable relative block aspect-[4/4.1] overflow-hidden rounded-[20px] border border-[#C6A15B]/20 shadow-[0_20px_60px_rgba(0,0,0,0.4)] hover:border-[#C6A15B]/45 hover:shadow-[0_28px_70px_rgba(0,0,0,0.5)]">
-              <img src={s.image} alt={s.title} className="absolute inset-0 h-full w-full object-cover transition duration-1000 group-hover:scale-[1.06]" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10 transition group-hover:from-black/90" />
+            <Link to={s.href} className="group card-lift pressable relative block aspect-[4/4.1] overflow-hidden">
+              <img src={s.image} alt={s.title} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.06]" loading="lazy" />
+              <div className="photo-gradient transition group-hover:from-black/90" />
               <span className="absolute left-5 top-5 font-display text-[13px] italic tracking-[0.1em] text-gold-soft/90">{s.no}</span>
               <span className="absolute right-5 top-5 h-px w-8 bg-[#C6A15B]/50" />
-              <div className="overlay-text absolute inset-x-0 bottom-0 p-6">
-                <h3 className="font-display text-[22px] font-medium leading-tight text-ivory">{s.title}</h3>
-                <p className="mt-2 text-[13px] leading-relaxed text-white/65">{s.desc}</p>
+              <div className="overlay-text absolute inset-x-0 bottom-0 p-5">
+                <h3 className="font-display text-[20px] font-medium leading-tight text-ivory line-clamp-2 min-h-[50px]">{s.title}</h3>
+                <p className="photo-desc">{s.desc}</p>
                 <span className="mt-4 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-soft transition-all group-hover:gap-3">Enter <span aria-hidden>→</span></span>
               </div>
             </Link>
