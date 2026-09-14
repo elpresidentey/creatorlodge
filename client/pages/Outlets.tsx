@@ -23,23 +23,23 @@ export default function Outlets() {
 
       <section className="px-6 md:px-10 lg:px-16 pb-8">
         <div className="max-w-[1312px] mx-auto grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {outlets.map((o) => (
-            <div key={o.slug} className="group photo-card">
-              <img src={o.image} alt={o.name} />
-              <div className="photo-gradient" />
-              <span className="photo-badge uppercase tracking-[0.14em]">{o.tag}</span>
-              <div className="photo-body overlay-text flex flex-1 flex-col justify-end">
-                <p className="photo-meta">{o.area}</p>
-                <h3 className="photo-title">{o.name}</h3>
-                <p className="mt-2 truncate text-[13px] leading-relaxed text-white/70">{o.address}</p>
-                <p className="mt-1 text-[12px] text-white/65">{o.hours} • {o.phone}</p>
-                <div className="photo-actions">
-                  <Link to={`/outlets/${o.slug}`} className="photo-btn-secondary">View</Link>
-                  <Link to={`/book?outlet=${o.slug}`} className="photo-btn-primary">Book</Link>
-                </div>
-              </div>
-            </div>
-          ))}
+           {outlets.map((o) => (
+             <Link to={`/outlets/${o.slug}`} key={o.slug} className="group photo-card relative block aspect-[3/4] overflow-hidden">
+               <img src={o.image} alt={o.name} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.06]" loading="lazy" />
+               <div className="photo-gradient" />
+               <span className="photo-badge uppercase tracking-[0.14em]">{o.tag}</span>
+               <div className="photo-body overlay-text flex flex-1 flex-col justify-end">
+                 <p className="photo-meta">{o.area}</p>
+                 <h3 className="photo-title">{o.name}</h3>
+                 <p className="mt-2 truncate text-[13px] leading-relaxed text-white/70">{o.address}</p>
+                 <p className="mt-1 text-[12px] text-white/65">{o.hours} • {o.phone}</p>
+                 <div className="photo-actions">
+                   <Link to={`/outlets/${o.slug}`} className="photo-btn-secondary">View</Link>
+                   <Link to={`/book?outlet=${o.slug}`} className="photo-btn-primary">Book</Link>
+                 </div>
+               </div>
+             </Link>
+           ))}
         </div>
       </section>
 
