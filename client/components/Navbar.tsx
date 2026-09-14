@@ -12,12 +12,7 @@ export default function Navbar() {
 
   return (
     <nav className={`sticky top-0 z-50 w-full border-b backdrop-blur-xl transition-all duration-500 ${scrolled ? "border-[#C6A15B]/35 bg-[#0B0B0C]/95 shadow-[0_12px_40px_rgba(0,0,0,0.45)]" : "border-[#C6A15B]/20 bg-[#0E0E0F]/92 supports-[backdrop-filter]:bg-[#0E0E0F]/80"}`}>
-      <div className="border-b border-white/[0.06]">
-        <div className="lounge-container flex items-center justify-center px-4 py-1.5">
-          <p className="truncate text-center text-[9px] font-medium uppercase tracking-[0.18em] text-[#C6A15B]/90 sm:text-[10px] sm:tracking-[0.28em]">Private members&rsquo; house — Lagos<span className="hidden min-[400px]:inline"> · Est. MMXIX</span></p>
-        </div>
-      </div>
-      <div className="lounge-container flex flex-nowrap items-center justify-between gap-2 py-3 lg:gap-3">
+      <div className="lounge-container flex flex-nowrap items-center justify-between gap-2 py-3 lg:py-3.5">
       {/* Logo — always an obvious way home */}
         <Link to="/" onClick={() => { setMenuOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }} aria-label="Creators Lounge — home" className="flex shrink-0 items-center gap-3 rounded-lg px-1 py-0.5 transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/50">
         <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#C6A15B]/60 bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_0_0_1px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.12)]">
