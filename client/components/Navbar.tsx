@@ -12,11 +12,11 @@ export default function Navbar() {
 
   return (
     <nav className={`sticky top-0 z-50 w-full border-b backdrop-blur-xl transition-all duration-500 ${scrolled ? "border-[#C6A15B]/35 bg-[#0B0B0C]/95 shadow-[0_12px_40px_rgba(0,0,0,0.45)]" : "border-[#C6A15B]/20 bg-[#0E0E0F]/92 supports-[backdrop-filter]:bg-[#0E0E0F]/80"}`}>
-      <div className="lounge-container flex flex-nowrap items-center justify-between gap-2 py-3 lg:py-3.5">
+      <div className="lounge-container flex flex-nowrap items-center justify-between gap-2 py-2.5 lg:py-3">
       {/* Logo — always an obvious way home */}
-        <Link to="/" onClick={() => { setMenuOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }} aria-label="Creators Lounge — home" className="flex shrink-0 items-center gap-3 rounded-lg px-1 py-0.5 transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/50">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#C6A15B]/60 bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_0_0_1px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.12)]">
-          <svg width="17" height="17" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <Link to="/" onClick={() => { setMenuOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }} aria-label="Creators Lounge — home" className="flex shrink-0 items-center gap-2 rounded-lg px-1 py-0.5 transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/50">
+        <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#C6A15B]/60 bg-gradient-to-b from-white/[0.08] to-transparent shadow-[0_0_0_1px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.12)]">
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M9.66735 1.61182C5.23482 1.61182 1.6082 5.23844 1.6082 9.67098C1.6082 14.1035 5.23482 17.7301 9.66735 17.7301C14.0999 17.7301 17.7265 14.1035 17.7265 9.67098C17.7265 5.23844 14.0999 1.61182 9.66735 1.61182ZM13.0522 13.0558L8.86144 10.4769V5.6414H10.0703V9.83216L13.6969 12.0081L13.0522 13.0558Z"
               fill="#C6A15B"
@@ -24,18 +24,13 @@ export default function Navbar() {
             />
           </svg>
         </div>
-        <span className="flex flex-col leading-none">
-          <span className="font-display text-[17px] font-medium tracking-[0.01em] text-ivory">
-            Creators Lounge
-          </span>
-          <span className="mt-1 font-cabin text-[9px] font-medium uppercase tracking-[0.3em] text-white/45">
-            Dine · Work · Exhibit
-          </span>
+        <span className="font-display text-[15px] font-medium tracking-[0.01em] text-ivory">
+          Creators Lounge
         </span>
       </Link>
 
       {/* Desktop Nav — 5 primary + More dropdown — lg:1024 so tablet shows full nav */}
-      <div className="mx-2 hidden min-w-0 flex-1 items-center justify-center gap-0.5 lg:mx-3 lg:flex lg:gap-1">
+      <div className="mx-2 hidden min-w-0 flex-1 items-center justify-center gap-0 lg:mx-3 lg:flex lg:gap-0.5">
         <Link to="/" onClick={() => window.scrollTo({ top: 0 })} className="whitespace-nowrap rounded-lg px-2 py-1.5 font-cabin text-[10px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft lg:px-2.5 lg:text-[11px] lg:tracking-[0.14em]">
           Home
         </Link>
@@ -77,21 +72,21 @@ export default function Navbar() {
       </div>
 
       {/* Desktop CTAs — compact 44px to keep nav slim and aligned */}
-      <div className="hidden shrink-0 items-center gap-2 lg:gap-2.5 lg:flex">
+      <div className="hidden shrink-0 items-center gap-1.5 lg:gap-2 lg:flex">
         {user ? (
           <>
-            <Link to="/auth" className="inline-flex h-9 items-center gap-2 rounded-[10px] bg-white px-3 text-[12px] font-medium text-[#1D1D1F] transition hover:bg-ivory lg:h-10 lg:px-3.5 lg:text-[13px]">
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#1D1D1F] text-[10px] font-bold text-white lg:h-7 lg:w-7">{initial}</span>
-              <span className="max-w-[12ch] truncate lg:max-w-[14ch]">{user.email}</span>
+            <Link to="/auth" className="inline-flex h-8 items-center gap-2 rounded-lg bg-white px-2.5 text-[11px] font-medium text-[#1D1D1F] transition hover:bg-ivory lg:h-9 lg:px-3 lg:text-[12px]">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#1D1D1F] text-[9px] font-bold text-white lg:h-6 lg:w-6">{initial}</span>
+              <span className="max-w-[10ch] truncate lg:max-w-[12ch]">{user.email}</span>
             </Link>
-            <button onClick={signOut} className="inline-flex h-9 items-center justify-center rounded-[10px] border border-white/30 bg-white/[0.10] px-3 text-[12px] font-medium text-white transition-colors hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/50 lg:h-10 lg:px-4 lg:text-[13px]">Sign out</button>
+            <button onClick={signOut} className="inline-flex h-8 items-center justify-center rounded-lg border border-white/30 bg-white/[0.10] px-2.5 text-[11px] font-medium text-white transition-colors hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/50 lg:h-9 lg:px-3 lg:text-[12px]">Sign out</button>
           </>
         ) : (
-          <Link to="/auth" className="inline-flex h-9 items-center justify-center rounded-[10px] border border-white/25 bg-white/[0.10] px-3 text-[12px] font-medium text-white transition-colors hover:bg-white/20 lg:h-10 lg:px-4 lg:text-[13px]">
+          <Link to="/auth" className="inline-flex h-8 items-center justify-center rounded-lg border border-white/25 bg-white/[0.10] px-2.5 text-[11px] font-medium text-white transition-colors hover:bg-white/20 lg:h-9 lg:px-3.5 lg:text-[12px]">
             Sign in
           </Link>
         )}
-        <Link to="/book" className="btn-shine pressable inline-flex h-9 items-center justify-center whitespace-nowrap rounded-[10px] border border-[#E8C77A]/40 bg-gradient-to-b from-[#E8C77A] to-[#C6A15B] px-4 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#171410] shadow-[0_8px_32px_rgba(212,168,75,0.45),0_0_16px_rgba(212,168,75,0.2),inset_0_1px_0_rgba(255,255,255,0.5)] hover:brightness-110 lg:h-10 lg:px-5 lg:text-[13px]">
+        <Link to="/book" className="btn-shine pressable inline-flex h-8 items-center justify-center whitespace-nowrap rounded-lg border border-[#E8C77A]/40 bg-gradient-to-b from-[#E8C77A] to-[#C6A15B] px-3 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#171410] shadow-[0_6px_24px_rgba(212,168,75,0.40),0_0_12px_rgba(212,168,75,0.18),inset_0_1px_0_rgba(255,255,255,0.5)] hover:brightness-110 lg:h-9 lg:px-4 lg:text-[12px]">
           Reserve
         </Link>
       </div>

@@ -9,7 +9,7 @@ const gallery = [
 
 export default function HeroSection() {
   return (
-    <section className="relative h-[calc(100dvh-56px)] w-full overflow-hidden bg-[#0E0E0F] sm:h-[calc(100dvh-60px)]">
+    <section className="relative h-[calc(100dvh-48px)] w-full overflow-hidden bg-[#0E0E0F] sm:h-[calc(100dvh-52px)]">
       <img
         src="/images/pexels-38942545.jpg"
         alt=""
