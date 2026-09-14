@@ -18,7 +18,7 @@ export default function HousesPreview() {
             <Reveal key={o.slug} delay={(i % 4) * 90}>
             <Link to={`/outlets/${o.slug}`} className="group card-lift pressable relative block aspect-[3/4] overflow-hidden">
               <img src={o.image} alt={o.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.06]" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent transition group-hover:from-black/95" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20 transition group-hover:from-black" />
               <div className="absolute inset-x-0 top-0 flex items-start justify-between p-4">
                 <span className="surface-chip border border-[#C6A15B]/40 bg-black/60 text-gold-soft backdrop-blur-md">{o.tag}</span>
                 <span className="font-display text-[12px] italic text-white/85">N°{["I", "II", "III", "IV", "V", "VI", "VII", "VIII"][i] ?? i + 1}</span>

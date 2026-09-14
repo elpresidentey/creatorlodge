@@ -4,12 +4,12 @@ import { Reveal } from "@/hooks/useReveal";
 const outletSlug: Record<string, string> = { "VI Dome": "vi-dome", Foundry: "yaba-foundry", Garden: "lekki-garden" };
 
 const team = [
-  { name: "Leonard", role: "Executive Chef", outlet: "VI Dome", image: "/images/pexels-36838303.jpg", pos: "50% 18%" },
-  { name: "Udoka", role: "Mixologist", outlet: "Foundry", image: "/images/pexels-37461041.jpg", pos: "50% 15%" },
-  { name: "Kemi", role: "Community", outlet: "VI Dome", image: "/images/pexels-36245744.jpg", pos: "50% 22%" },
-  { name: "Aneeka", role: "Gym Lead", outlet: "VI Dome", image: "/images/pexels-27593743.jpg", pos: "50% 12%" },
-  { name: "David", role: "Studio Producer", outlet: "Foundry", image: "/images/pexels-20695302.jpg", pos: "50% 16%" },
-  { name: "Loretta", role: "Housekeeping", outlet: "Garden", image: "/images/pexels-38909243.jpg", pos: "50% 10%" },
+  { name: "Leonard", role: "Executive Chef", outlet: "VI Dome", image: "/images/creator-1.jpg", pos: "50% 18%" },
+  { name: "Udoka", role: "Mixologist", outlet: "Foundry", image: "/images/creator-2.jpg", pos: "50% 15%" },
+  { name: "Kemi", role: "Community", outlet: "VI Dome", image: "/images/creator-3.jpg", pos: "50% 22%" },
+  { name: "Aneeka", role: "Gym Lead", outlet: "VI Dome", image: "/images/creator-4.jpg", pos: "50% 12%" },
+  { name: "David", role: "Studio Producer", outlet: "Foundry", image: "/images/creator-5.jpg", pos: "50% 16%" },
+  { name: "Loretta", role: "Housekeeping", outlet: "Garden", image: "/images/creator-6.jpg", pos: "50% 10%" },
 ];
 
 export default function TeamSection() {
@@ -29,7 +29,7 @@ export default function TeamSection() {
             <Reveal key={m.name} delay={(i % 3) * 110}>
               <Link to={`/outlets/${outletSlug[m.outlet] || "vi-dome"}`} className="group card-lift pressable relative block aspect-[4/3.4] overflow-hidden">
               <img src={m.image} alt={`${m.name} — ${m.role}`} style={{ objectPosition: (m as any).pos }} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.06]" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent transition group-hover:from-black/90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20 transition group-hover:from-black" />
               <div className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-[#C6A15B]/30 bg-black/55 px-3 py-1.5 backdrop-blur-md">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#34C759]" />
                 <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-white">{m.outlet}</span>
