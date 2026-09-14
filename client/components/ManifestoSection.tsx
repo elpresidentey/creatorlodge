@@ -6,9 +6,9 @@ export default function ManifestoSection() {
       <div className="lounge-container section-pad">
         <div className="grid items-start gap-10 md:grid-cols-12 md:gap-12">
           <Reveal className="flex flex-col gap-4 md:col-span-5">
-            <p className="eyebrow eyebrow-rule text-[#9A7B3F]">The House</p>
+            <p className="eyebrow eyebrow-rule text-[#7D6333]">The House</p>
             <h2 className="section-title text-[#171410]">
-              A house for the<br />people who <span className="italic text-[#9A7B3F]">make &amp; muse.</span>
+              A house for the<br />people who <span className="italic text-[#7D6333]">make &amp; muse.</span>
             </h2>
           </Reveal>
           <Reveal delay={140} className="flex flex-col gap-8 md:col-span-7">
@@ -19,9 +19,9 @@ export default function ManifestoSection() {
               Calibrated for focus, hospitality and creative energy across VI, Yaba and Lekki — with gallery walls, quiet ateliers and long tables.
             </p>
             <div className="grid grid-cols-3 gap-8 border-t border-[#9A7B3F]/25 pt-8">
-              <div><p className="font-display text-[28px] font-medium tabular-nums text-[#171410]">08</p><p className="mt-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#9A7B3F]">Houses</p></div>
-              <div><p className="font-display text-[28px] font-medium tabular-nums text-[#171410]">11</p><p className="mt-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#9A7B3F]">Salons</p></div>
-              <div><p className="font-display text-[28px] font-medium tabular-nums text-[#171410]">XII</p><p className="mt-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#9A7B3F]">Shows / yr</p></div>
+              <div><p className="font-display text-[28px] font-medium tabular-nums text-[#171410]">08</p><p className="mt-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#7D6333]">Houses</p></div>
+              <div><p className="font-display text-[28px] font-medium tabular-nums text-[#171410]">11</p><p className="mt-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#7D6333]">Salons</p></div>
+              <div><p className="font-display text-[28px] font-medium tabular-nums text-[#171410]">XII</p><p className="mt-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#7D6333]">Shows / yr</p></div>
             </div>
           </Reveal>
         </div>

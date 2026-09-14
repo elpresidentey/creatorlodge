@@ -33,7 +33,7 @@ export default function Press() {
       <section className="px-6 md:px-10 lg:px-16 pb-16 md:pb-24">
         <div className="max-w-[1312px] mx-auto flex flex-col gap-4">
           {press.map((p, i) => (
-            <div key={i} className="rounded-[16px] border border-white/10 bg-white/[0.04] p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-[#C6A15B]/40 transition-colors">
+            <div key={i} className="rounded-[16px] border border-white/20 bg-white/[0.04] p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-[#C6A15B]/40 transition-colors">
               <div className="flex flex-col gap-1">
                 <div className="flex items-center gap-3">
                   <span className="font-cabin font-semibold text-[15px] text-white">{p.outlet}</span>
@@ -49,7 +49,7 @@ export default function Press() {
       </section>
 
       <section className="px-6 md:px-10 lg:px-16 pb-16 md:pb-24">
-        <div className="max-w-[1312px] mx-auto bg-white/[0.06] border border-white/10 rounded-[20px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-[1312px] mx-auto bg-white/[0.06] border border-white/20 rounded-[20px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="font-cabin font-semibold text-[20px] text-white">Press enquiries</h2>
             <p className="text-white/60 text-[15px] mt-2">High-res images, interviews and media kits — we're happy to help.</p>

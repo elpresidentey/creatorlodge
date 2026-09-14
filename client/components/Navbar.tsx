@@ -31,19 +31,19 @@ export default function Navbar() {
 
       {/* Desktop Nav — 5 primary + More dropdown — lg:1024 so tablet shows full nav */}
       <div className="mx-2 hidden min-w-0 flex-1 items-center justify-center gap-0 lg:mx-3 lg:flex lg:gap-0.5">
-        <Link to="/" onClick={() => window.scrollTo({ top: 0 })} className="whitespace-nowrap rounded-lg px-2 py-1.5 font-cabin text-[10px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft lg:px-2.5 lg:text-[11px] lg:tracking-[0.14em]">
+        <Link to="/" onClick={() => window.scrollTo({ top: 0 })} className="whitespace-nowrap rounded-lg px-2 py-1.5 font-cabin text-[10px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/50 lg:px-2.5 lg:text-[11px] lg:tracking-[0.14em]">
           Home
         </Link>
-        <Link to="/spaces" className="whitespace-nowrap rounded-lg px-2 py-1.5 font-cabin text-[10px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft lg:px-2.5 lg:text-[11px] lg:tracking-[0.14em]">
+        <Link to="/spaces" className="whitespace-nowrap rounded-lg px-2 py-1.5 font-cabin text-[10px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/50 lg:px-2.5 lg:text-[11px] lg:tracking-[0.14em]">
           Spaces
         </Link>
-        <Link to="/outlets" className="whitespace-nowrap rounded-lg px-2 py-1.5 font-cabin text-[10px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft lg:px-2.5 lg:text-[11px] lg:tracking-[0.14em]">
+        <Link to="/outlets" className="whitespace-nowrap rounded-lg px-2 py-1.5 font-cabin text-[10px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/50 lg:px-2.5 lg:text-[11px] lg:tracking-[0.14em]">
           Houses
         </Link>
-        <Link to="/membership" className="whitespace-nowrap rounded-lg px-2 py-1.5 font-cabin text-[10px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft lg:px-2.5 lg:text-[11px] lg:tracking-[0.14em]">
+        <Link to="/membership" className="whitespace-nowrap rounded-lg px-2 py-1.5 font-cabin text-[10px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/50 lg:px-2.5 lg:text-[11px] lg:tracking-[0.14em]">
           Membership
         </Link>
-        <Link to="/contact" className="whitespace-nowrap rounded-lg px-2 py-1.5 font-cabin text-[10px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft lg:px-2.5 lg:text-[11px] lg:tracking-[0.14em]">
+        <Link to="/contact" className="whitespace-nowrap rounded-lg px-2 py-1.5 font-cabin text-[10px] font-medium uppercase tracking-[0.12em] text-white/75 transition-colors hover:bg-white/5 hover:text-gold-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A15B]/50 lg:px-2.5 lg:text-[11px] lg:tracking-[0.14em]">
           Contact
         </Link>
 
@@ -60,7 +60,7 @@ export default function Navbar() {
                 <Link to="/events" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">Events</Link>
                 <Link to="/community" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">Community</Link>
                 <Link to="/about" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">About</Link>
-                <div className="my-1 border-t border-white/10" />
+                <div className="my-1 border-t border-white/20" />
                 <Link to="/faq" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">FAQ</Link>
                 <Link to="/careers" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">Careers</Link>
                 <Link to="/gift-cards" onClick={() => setMoreOpen(false)} className="block px-5 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-gold-soft">Gift Cards</Link>
@@ -122,7 +122,7 @@ export default function Navbar() {
           <Link to="/outlets" className="text-white font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Houses</Link>
           <Link to="/membership" className="text-white font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Membership</Link>
           <div className="h-px bg-white/10 my-1" />
-          <p className="text-white/40 text-xs font-medium tracking-[0.18em] uppercase">More</p>
+          <p className="text-white/60 text-xs font-medium tracking-[0.18em] uppercase">More</p>
           <Link to="/menu" className="text-white/90 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Menu</Link>
           <Link to="/gallery" className="text-white/90 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Gallery</Link>
           <Link to="/events" className="text-white/90 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Events</Link>
@@ -130,12 +130,12 @@ export default function Navbar() {
           <Link to="/about" className="text-white/90 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>About</Link>
           <Link to="/contact" className="text-white/90 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Contact</Link>
           <div className="h-px bg-white/10 my-1" />
-          <p className="text-white/40 text-xs font-medium tracking-[0.18em] uppercase">Info</p>
+          <p className="text-white/60 text-xs font-medium tracking-[0.18em] uppercase">Info</p>
           <Link to="/faq" className="text-white/80 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>FAQ</Link>
           <Link to="/careers" className="text-white/80 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Careers</Link>
           <Link to="/gift-cards" className="text-white/80 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Gift Cards</Link>
           <Link to="/press" className="text-white/80 font-cabin font-medium text-[15px]" onClick={() => setMenuOpen(false)}>Press</Link>
-          <div className="flex flex-col gap-3 pt-3 border-t border-white/10 mt-1">
+          <div className="flex flex-col gap-3 pt-3 border-t border-white/20 mt-1">
             {user ? (
               <>
                 <Link to="/auth" onClick={() => setMenuOpen(false)} className="inline-flex items-center justify-center gap-2 bg-white text-[#1D1D1F] font-medium text-[15px] h-[50px] px-6 rounded-[10px] text-center">

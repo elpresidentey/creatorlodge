@@ -57,7 +57,7 @@ export default function GiftCards() {
               <p className="font-display text-[32px] font-medium text-ivory mt-4">₦{amount.toLocaleString()}</p>
               <p className="text-white/65 text-[15px] mt-2">Gift card</p>
             </div>
-            <div className="mt-8 border-t border-white/10 pt-4">
+            <div className="mt-8 border-t border-white/20 pt-4">
               <p className="text-white/55 text-[13px]">Redeemable at all eight houses — dining, bar, workspace, gallery.</p>
             </div>
           </div>
@@ -81,20 +81,20 @@ export default function GiftCards() {
             </div>
             <div className="flex flex-col gap-2">
               <label htmlFor="gift-name" className="text-[#1D1D1F] font-semibold text-[13px]">Recipient name</label>
-              <input id="gift-name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Ada Lovelace" required className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#86868B] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition" />
+              <input id="gift-name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Ada Lovelace" required className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#6E6E73] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition" />
             </div>
             <div className="flex flex-col gap-2">
               <label htmlFor="gift-email" className="text-[#1D1D1F] font-semibold text-[13px]">Recipient email</label>
-              <input id="gift-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="ada@example.com" required className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#86868B] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition" />
+              <input id="gift-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="ada@example.com" required className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#6E6E73] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition" />
             </div>
             <div className="flex flex-col gap-2">
               <label htmlFor="gift-note" className="text-[#1D1D1F] font-semibold text-[13px]">Personal note (optional)</label>
-              <textarea id="gift-note" value={note} onChange={(e) => setNote(e.target.value)} rows={3} placeholder="Happy birthday! Enjoy a day at the lounge." className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#86868B] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 resize-none transition" />
+              <textarea id="gift-note" value={note} onChange={(e) => setNote(e.target.value)} rows={3} placeholder="Happy birthday! Enjoy a day at the lounge." className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#6E6E73] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 resize-none transition" />
             </div>
             <button type="submit" className="inline-flex items-center justify-center h-[50px] rounded-[10px] bg-[#1D1D1F] text-white font-semibold text-[15px] hover:bg-black transition-colors">
               Send gift card
             </button>
-            <p className="text-[#86868B] text-xs text-center">Delivered instantly by email. Valid for 12 months.</p>
+            <p className="text-[#6E6E73] text-xs text-center">Delivered instantly by email. Valid for 12 months.</p>
           </form>
         </div>
       </section>

@@ -42,7 +42,7 @@ export default function Contact() {
         <div className="max-w-[1312px] mx-auto grid lg:grid-cols-5 gap-8">
           {/* Info */}
           <div className="lg:col-span-2 flex flex-col gap-5">
-            <div className="bg-white/[0.06] border border-white/10 rounded-[16px] p-6">
+            <div className="bg-white/[0.06] border border-white/20 rounded-[16px] p-6">
               <p className="text-white font-semibold text-[13px] uppercase tracking-widest">Visit</p>
               <p className="text-white/70 text-[15px] mt-3 leading-relaxed">
                 12a Creator Way, Victoria Island<br />
@@ -58,7 +58,7 @@ export default function Contact() {
                 Book now
               </Link>
             </div>
-            <div className="rounded-2xl overflow-hidden h-[200px] bg-white/10 border border-white/10">
+            <div className="rounded-2xl overflow-hidden h-[200px] bg-white/10 border border-white/20">
               <img
                 src="/images/pexels-35415671.jpg"
                 alt="Cultural festival in Lagos, Nigeria"

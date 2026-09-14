@@ -40,7 +40,7 @@ export default function Faq() {
       <section className="px-6 md:px-10 lg:px-16 pb-16 md:pb-24">
         <div className="max-w-[800px] mx-auto flex flex-col gap-3">
           {faqs.map((f, i) => (
-            <div key={i} className="rounded-[16px] border border-white/10 bg-white/[0.04] overflow-hidden">
+            <div key={i} className="rounded-[16px] border border-white/20 bg-white/[0.04] overflow-hidden">
               <button
                 onClick={() => setOpen(open === i ? null : i)}
                 className="w-full flex items-center justify-between gap-4 p-5 text-left"
@@ -59,7 +59,7 @@ export default function Faq() {
       </section>
 
       <section className="px-6 md:px-10 lg:px-16 pb-16 md:pb-24">
-        <div className="max-w-[800px] mx-auto bg-white/[0.06] border border-white/10 rounded-[20px] p-8 text-center">
+        <div className="max-w-[800px] mx-auto bg-white/[0.06] border border-white/20 rounded-[20px] p-8 text-center">
           <h2 className="font-cabin font-semibold text-[20px] text-white">Still have questions?</h2>
           <p className="text-white/60 text-[15px] mt-2">Our concierge team replies within a few hours.</p>
           <div className="flex flex-wrap justify-center gap-3 mt-6">

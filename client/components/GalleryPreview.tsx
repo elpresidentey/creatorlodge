@@ -11,12 +11,12 @@ export default function GalleryPreview() {
       <div className="lounge-container section-pad">
         <Reveal className="section-head">
           <div className="section-head-copy">
-            <p className="eyebrow eyebrow-rule text-[#9A7B3F]">The Gallery</p>
+            <p className="eyebrow eyebrow-rule text-[#7D6333]">The Gallery</p>
             <h2 className="section-title text-[#171410]">
-              Now showing <span className="italic text-[#9A7B3F]">&amp; soon.</span>
+              Now showing <span className="italic text-[#7D6333]">&amp; soon.</span>
             </h2>
           </div>
-          <Link to="/gallery" className="section-link pressable text-[#9A7B3F] hover:text-[#171410]">
+          <Link to="/gallery" className="section-link pressable text-[#7D6333] hover:text-[#171410]">
             Enter the gallery →
           </Link>
         </Reveal>

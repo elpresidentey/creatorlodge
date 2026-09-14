@@ -44,7 +44,7 @@ export default function Outlets() {
       </section>
 
       <section className="px-6 md:px-10 lg:px-16 pb-16 md:pb-24">
-        <div className="max-w-[1312px] mx-auto bg-white/[0.06] border border-white/10 rounded-[20px] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-[1312px] mx-auto bg-white/[0.06] border border-white/20 rounded-[20px] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-white font-cabin font-semibold text-[17px]">Looking for something private?</h3>
             <p className="text-white/60 text-[15px] mt-1">Host launches, dinners or team offsites — we handle catering, AV and more.</p>

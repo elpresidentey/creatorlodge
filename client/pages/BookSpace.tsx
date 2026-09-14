@@ -263,16 +263,16 @@ export default function BookSpace() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-2">
                       <label htmlFor="book-name" className="text-[#1D1D1F] font-semibold text-xs tracking-wide">Full name *</label>
-                      <input id="book-name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Ada Lovelace" required className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#86868B] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition" />
+                      <input id="book-name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Ada Lovelace" required className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#6E6E73] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition" />
                     </div>
                     <div className="flex flex-col gap-2">
                       <label htmlFor="book-email" className="text-[#1D1D1F] font-semibold text-xs tracking-wide">Email *</label>
-                      <input id="book-email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="ada@creatorslodge.com" required className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#86868B] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition" />
+                      <input id="book-email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="ada@creatorslodge.com" required className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#6E6E73] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 transition" />
                     </div>
                   </div>
                   <div className="flex flex-col gap-2">
                     <label htmlFor="book-notes" className="text-[#1D1D1F] font-semibold text-xs tracking-wide">Notes (optional)</label>
-                    <textarea id="book-notes" value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })} rows={3} placeholder="AV setup, dietary needs, accessibility..." className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#86868B] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 resize-none transition" />
+                    <textarea id="book-notes" value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })} rows={3} placeholder="AV setup, dietary needs, accessibility..." className="border border-[#D2D2D7] bg-white rounded-xl px-4 py-3 text-[15px] text-[#1D1D1F] placeholder:text-[#6E6E73] focus:outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/20 resize-none transition" />
                   </div>
                   <div className="bg-[#F5F5F7] border border-black/[0.04] rounded-xl p-4 text-sm">
                     <p className="font-semibold text-[#1D1D1F]">{selectedSpace.name} — {selectedSpace.price}</p>
@@ -290,7 +290,7 @@ export default function BookSpace() {
                         <span>Pay online via Paystack</span><span className="text-white/60 text-xs">₦{parseAmount(selectedSpace.price).toLocaleString()}</span>
                       </button>
                     )}
-                    <p className="text-[#86868B] text-[11px] text-center">Secure via Paystack • mock works without key, set PAYSTACK_SECRET_KEY for live.</p>
+                    <p className="text-[#6E6E73] text-[11px] text-center">Secure via Paystack • mock works without key, set PAYSTACK_SECRET_KEY for live.</p>
                   </div>
                 </>
               )}

@@ -177,12 +177,12 @@
     }
   }
   .surface-card:focus-visible {
-    @apply outline-none ring-2 ring-[#0071E3] ring-offset-2;
+    @apply outline-none ring-2 ring-[#5AC8FA] ring-offset-2;
   }
   .surface-card-dark {
     @apply rounded-[20px] overflow-hidden text-white
       bg-[#1D1D1F]
-      border border-white/10
+      border border-white/20
       shadow-[0_8px_32px_rgba(0,0,0,0.18)]
       transition-[transform,box-shadow,border-color] duration-500;
     transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
@@ -224,7 +224,7 @@
 
   /* ——— Unified photo-card system ——— */
   .photo-card {
-    @apply relative overflow-hidden rounded-[20px] border border-[#C6A15B]/20
+    @apply relative overflow-hidden rounded-[20px] border border-[#C6A15B]/35
       shadow-[0_24px_60px_rgba(0,0,0,0.4)]
       transition-[transform,box-shadow,border-color] duration-500;
     transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
@@ -274,7 +274,7 @@
     @apply btn-shine inline-flex h-[46px] flex-1 items-center justify-center rounded-[10px] border border-[#E8C77A]/40 bg-gradient-to-b from-[#E8C77A] to-[#C6A15B] text-[13px] font-semibold uppercase tracking-[0.08em] text-[#171410] shadow-[0_8px_28px_rgba(212,168,75,0.4),0_0_14px_rgba(212,168,75,0.15)] transition hover:brightness-110;
   }
   .photo-card .photo-btn-secondary {
-    @apply inline-flex h-[46px] flex-1 items-center justify-center rounded-[10px] border border-white/25 bg-white/15 text-[13px] font-semibold uppercase tracking-[0.08em] text-white backdrop-blur-sm transition hover:bg-white/25 hover:border-white/40;
+    @apply inline-flex h-[46px] flex-1 items-center justify-center rounded-[10px] border border-white/35 bg-white/15 text-[13px] font-semibold uppercase tracking-[0.08em] text-white backdrop-blur-sm transition hover:bg-white/25 hover:border-white/50;
   }
   .photo-card .photo-chip-row {
     @apply mt-3 flex flex-wrap gap-1.5;

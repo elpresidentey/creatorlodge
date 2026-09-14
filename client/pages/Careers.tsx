@@ -33,7 +33,7 @@ export default function Careers() {
       <section className="px-6 md:px-10 lg:px-16 pb-16 md:pb-24">
         <div className="max-w-[1312px] mx-auto grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {roles.map((r) => (
-            <div key={r.title} className="rounded-[20px] border border-white/10 bg-white/[0.04] p-6 flex flex-col gap-3 hover:border-[#C6A15B]/40 transition-colors">
+            <div key={r.title} className="rounded-[20px] border border-white/20 bg-white/[0.04] p-6 flex flex-col gap-3 hover:border-[#C6A15B]/40 transition-colors">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-soft">{r.house}</span>
                 <span className="text-[11px] font-medium text-white/55">{r.type}</span>
@@ -49,7 +49,7 @@ export default function Careers() {
       </section>
 
       <section className="px-6 md:px-10 lg:px-16 pb-16 md:pb-24">
-        <div className="max-w-[1312px] mx-auto bg-white/[0.06] border border-white/10 rounded-[20px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-[1312px] mx-auto bg-white/[0.06] border border-white/20 rounded-[20px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="font-cabin font-semibold text-[20px] text-white">Don't see your role?</h2>
             <p className="text-white/60 text-[15px] mt-2">We're always open to exceptional people. Send us a note.</p>

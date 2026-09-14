@@ -42,7 +42,7 @@ export default function Menu() {
             <div key={section.title} className="bg-white rounded-[16px] md:rounded-[20px] border border-black/5 shadow-sm flex flex-col h-full overflow-hidden">
               <div className="px-5 md:px-6 pt-5 md:pt-6 pb-3 border-b border-black/5 shrink-0">
                 <h3 className="font-cabin font-semibold text-[12px] tracking-[0.12em] uppercase text-[#6E6E73]">{section.title}</h3>
-                <p className="text-[#86868B] text-[11px] mt-1">{section.items.length} items</p>
+                <p className="text-[#6E6E73] text-[11px] mt-1">{section.items.length} items</p>
               </div>
               <div className="flex flex-col gap-2 p-3 flex-1">
                 {section.items.map((item) => {

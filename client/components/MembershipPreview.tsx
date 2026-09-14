@@ -14,7 +14,7 @@ export default function MembershipPreview() {
         <div className="mt-10 grid items-stretch gap-5 md:mt-12 md:grid-cols-3 lg:gap-6">
           {tiers.map((t, i)=>(
             <Reveal key={t.name} delay={i * 120}>
-            <div className={`card-lift flex h-full flex-col rounded-[20px] p-7 md:p-8 ${t.featured ? "border border-[#C6A15B]/45 bg-gradient-to-b from-[#1A1815] to-[#101010] shadow-[0_28px_70px_rgba(0,0,0,0.5),0_0_0_1px_rgba(198,161,91,0.12)]" : "border border-white/10 bg-white/[0.04]"}`}>
+            <div className={`card-lift flex h-full flex-col rounded-[20px] p-7 md:p-8 ${t.featured ? "border border-[#C6A15B]/45 bg-gradient-to-b from-[#1A1815] to-[#101010] shadow-[0_28px_70px_rgba(0,0,0,0.5),0_0_0_1px_rgba(198,161,91,0.12)]" : "border border-white/20 bg-white/[0.04]"}`}>
               <div className="flex items-center justify-between gap-3">
                 <p className={`text-[11px] font-semibold uppercase tracking-[0.2em] ${t.featured ? "text-gold-soft" : "text-white/50"}`}>{t.name}</p>
                 {t.featured && <span className="surface-chip bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[#171410]">Most coveted</span>}

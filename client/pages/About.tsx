@@ -48,7 +48,7 @@ export default function About() {
             <img
               src="/images/pexels-30689114.jpg"
               alt="Creative team collaborating in Lagos office"
-              className="w-full h-[380px] md:h-[460px] object-cover rounded-[20px] border border-white/10"
+              className="w-full h-[380px] md:h-[460px] object-cover rounded-[20px] border border-white/20"
             />
           </div>
         </div>
@@ -58,7 +58,7 @@ export default function About() {
       <section className="lounge-container pb-4">
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:gap-5">
           {stats.map((s) => (
-            <div key={s.label} className="rounded-[16px] border border-white/10 bg-white/[0.06] p-6 text-center md:p-7">
+            <div key={s.label} className="rounded-[16px] border border-white/20 bg-white/[0.06] p-6 text-center md:p-7">
               <p className="font-cabin text-[30px] font-semibold tabular-nums leading-none tracking-[-0.025em] text-brand-yellow">{s.value}</p>
               <p className="mt-2.5 text-xs font-medium uppercase tracking-[0.14em] text-white/60">{s.label}</p>
             </div>

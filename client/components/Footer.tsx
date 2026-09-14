@@ -11,10 +11,10 @@ export default function Footer() {
             </div>
             <span className="flex flex-col leading-none">
               <span className="font-display text-[19px] font-medium text-ivory">Creators Lounge</span>
-              <span className="mt-1.5 font-cabin text-[9px] font-medium uppercase tracking-[0.3em] text-white/40">House · Gallery · Space</span>
+              <span className="mt-1.5 font-cabin text-[9px] font-medium uppercase tracking-[0.3em] text-white/60">House · Gallery · Space</span>
             </span>
           </Link>
-          <p className="font-display text-[15px] italic leading-relaxed text-white/45">“Where Lagos dines, creates &amp; is seen.”</p>
+          <p className="font-display text-[15px] italic leading-relaxed text-white/55">“Where Lagos dines, creates &amp; is seen.”</p>
         </div>
 
         <nav className="grid grid-cols-2 gap-x-12 gap-y-3 text-[13px] font-medium sm:grid-cols-3">
@@ -30,9 +30,9 @@ export default function Footer() {
         </nav>
       </div>
 
-      <div className="lounge-container flex flex-col justify-between gap-2 border-t border-white/[0.07] py-6 sm:flex-row sm:items-center">
-        <p className="text-[12px] tracking-[0.06em] text-white/30">© {new Date().getFullYear()} Creators Lounge · Lagos &amp; Abuja</p>
-        <p className="text-[12px] tracking-[0.06em] text-white/30">12a Creator Way, VI · hello@creatorslounge.com · +234 800 111 0001</p>
+      <div className="lounge-container flex flex-col justify-between gap-2 border-t border-white/[0.14] py-6 sm:flex-row sm:items-center">
+        <p className="text-[12px] tracking-[0.06em] text-white/50">© {new Date().getFullYear()} Creators Lounge · Lagos &amp; Abuja</p>
+        <p className="text-[12px] tracking-[0.06em] text-white/50">12a Creator Way, VI · hello@creatorslounge.com · +234 800 111 0001</p>
       </div>
     </footer>
   );

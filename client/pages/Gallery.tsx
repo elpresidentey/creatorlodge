@@ -111,8 +111,8 @@ export default function Gallery() {
         <div className="lounge-container section-pad">
           <Reveal className="section-head">
             <div className="section-head-copy">
-              <p className="eyebrow eyebrow-rule text-[#9A7B3F]">The archive</p>
-              <h2 className="section-title text-[#171410]">Past <span className="italic text-[#9A7B3F]">hangs.</span></h2>
+              <p className="eyebrow eyebrow-rule text-[#7D6333]">The archive</p>
+              <h2 className="section-title text-[#171410]">Past <span className="italic text-[#7D6333]">hangs.</span></h2>
             </div>
             <p className="section-lede pb-1 text-[#6B6355]">Sold-out walls live on here — and with their collectors.</p>
           </Reveal>
@@ -158,7 +158,7 @@ export default function Gallery() {
           ))}
         </div>
 
-        <Reveal delay={120} className="mt-10 flex flex-col gap-5 rounded-[20px] border border-white/10 bg-white/[0.04] p-6 sm:flex-row sm:items-center sm:justify-between md:p-8">
+        <Reveal delay={120} className="mt-10 flex flex-col gap-5 rounded-[20px] border border-white/20 bg-white/[0.04] p-6 sm:flex-row sm:items-center sm:justify-between md:p-8">
           <div>
             <p className="font-display text-[20px] font-medium text-ivory">Exhibit with us.</p>
             <p className="mt-1 text-[14px] text-white/60">Open call every quarter — painters, photographers, textile and light artists.</p>

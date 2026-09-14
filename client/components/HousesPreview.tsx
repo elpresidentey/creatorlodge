@@ -8,10 +8,10 @@ export default function HousesPreview() {
       <div className="lounge-container section-pad">
         <Reveal className="section-head">
           <div className="section-head-copy">
-            <p className="eyebrow eyebrow-rule text-[#9A7B3F]">The Houses</p>
-            <h2 className="section-title text-[#171410]">Eight doors, <span className="italic text-[#9A7B3F]">one key.</span></h2>
+            <p className="eyebrow eyebrow-rule text-[#7D6333]">The Houses</p>
+            <h2 className="section-title text-[#171410]">Eight doors, <span className="italic text-[#7D6333]">one key.</span></h2>
           </div>
-          <Link to="/outlets" className="section-link pressable text-[#9A7B3F] hover:text-[#171410]">View all houses →</Link>
+          <Link to="/outlets" className="section-link pressable text-[#7D6333] hover:text-[#171410]">View all houses →</Link>
         </Reveal>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {outlets.map((o, i) => (

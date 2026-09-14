@@ -49,7 +49,7 @@ export default function Membership() {
       </section>
 
       <section className="px-6 md:px-10 lg:px-16 pb-16 md:pb-24">
-        <div className="max-w-[1312px] mx-auto bg-white/[0.06] border border-white/10 rounded-[20px] p-8 grid md:grid-cols-3 gap-8 text-center">
+        <div className="max-w-[1312px] mx-auto bg-white/[0.06] border border-white/20 rounded-[20px] p-8 grid md:grid-cols-3 gap-8 text-center">
           <div>
             <p className="font-cabin text-[30px] font-semibold tabular-nums leading-none tracking-[-0.025em] text-brand-yellow">120+</p>
             <p className="mt-2.5 text-xs font-medium uppercase tracking-[0.14em] text-white/60">Events / year</p>

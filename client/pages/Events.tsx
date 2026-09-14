@@ -45,7 +45,7 @@ export default function Events() {
             </div>
           ))}
         </div>
-        <div className="max-w-[1312px] mx-auto mt-8 bg-white/[0.06] border border-white/10 rounded-[20px] p-6 text-center">
+        <div className="max-w-[1312px] mx-auto mt-8 bg-white/[0.06] border border-white/20 rounded-[20px] p-6 text-center">
           <p className="text-white font-semibold text-[15px]">Want to host?</p>
           <p className="text-white/60 text-[15px] mt-1">Pitch your workshop, launch or supper club — we handle space, food and promo.</p>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
