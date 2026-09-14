@@ -29,7 +29,7 @@ export default function TeamSection() {
             <Reveal key={m.name} delay={(i % 3) * 110}>
               <Link to={`/outlets/${outletSlug[m.outlet] || "vi-dome"}`} className="group card-lift pressable relative block aspect-[4/3.4] overflow-hidden">
               <img src={m.image} alt={`${m.name} — ${m.role}`} style={{ objectPosition: (m as any).pos }} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.06]" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20 transition group-hover:from-black" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition group-hover:from-black/95" />
               <div className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-[#C6A15B]/30 bg-black/55 px-3 py-1.5 backdrop-blur-md">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#34C759]" />
                 <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-white">{m.outlet}</span>

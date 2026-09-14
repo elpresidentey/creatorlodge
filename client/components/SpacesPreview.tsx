@@ -20,7 +20,7 @@ export default function SpacesPreview() {
             <Reveal key={s.id} delay={(i % 4) * 90}>
             <Link to={`/book?space=${s.id}&outlet=${outlets[0].slug}`} className="group card-lift pressable relative block aspect-[3/4] overflow-hidden">
               <img src={s.image} alt={s.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.06]" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20 transition group-hover:from-black" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition group-hover:from-black/95" />
               <span className="photo-price right-4 left-auto">{s.price}</span>
               <div className="overlay-text absolute inset-x-0 bottom-0 p-5">
                 <h3 className="line-clamp-2 min-h-[50px] font-display text-[20px] font-medium leading-tight text-ivory">{s.name}</h3>

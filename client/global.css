@@ -235,13 +235,14 @@
         shadow-[0_32px_80px_rgba(0,0,0,0.5)];
     }
   }
-  .photo-card > img,
-  .photo-card > .photo-bg {
-    @apply absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out will-change-transform;
-  }
-  @media (hover: hover) {
-    .group:hover .photo-card > img,
-    .group:hover .photo-card > .photo-bg {
+   .photo-card > img,
+   .photo-card > .photo-bg {
+     @apply absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out will-change-transform;
+     filter: brightness(0.95) saturate(0.85) contrast(1.05) sepia(0.08);
+   }
+   @media (hover: hover) {
+     .group:hover .photo-card > img,
+     .group:hover .photo-card > .photo-bg {
       transform: scale(1.06);
     }
   }

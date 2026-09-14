@@ -33,7 +33,7 @@ export default function GalleryPreview() {
                 loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.06]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
               <div className="absolute inset-x-0 top-0 flex flex-wrap gap-2 p-5">
                 <span className="surface-chip bg-gradient-to-b from-[#DDBB7A] to-[#C6A15B] text-[#171410]">Now showing</span>
                 <span className="surface-chip border border-[#C6A15B]/30 bg-black/60 text-ivory backdrop-blur-md">{now.dates}</span>
@@ -62,7 +62,7 @@ export default function GalleryPreview() {
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.06]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/30" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/30 to-transparent" />
                   <div className="overlay-text relative flex h-full min-h-[200px] flex-col justify-center p-5">
                     <p className="photo-meta">{e.dates} · {e.venue}</p>
                     <h3 className="mt-1.5 font-display text-[20px] font-medium leading-tight text-ivory line-clamp-2 min-h-[50px]">{e.title}</h3>
